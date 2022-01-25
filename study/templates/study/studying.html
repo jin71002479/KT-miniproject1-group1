@@ -1,0 +1,202 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+  <head>
+     <title>studying</title>
+    <meta charset="utf-8">
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+   <link rel="stylesheet" href="/static/css/style.css"> 
+   <link rel="stylesheet" href="/static/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/style_rank.css" type="text/css">
+   
+
+   
+
+   </head>
+   <body>
+
+        <!-- Header Section Begin -->
+    <header class="header">
+      <div class="header__top">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-6 col-md-6">
+                      <div class="header__top__left">
+                          <ul>
+                              <li><i class="fa fa-home fa-2x"></i>https://ktedu.kt.com/aivle</li>
+                              
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6">
+                      <div class="header__top__right">
+                          <div class="header__top__right__social">
+                              <a href="https://instagram.com/aivlestory?utm_medium=copy_link "><i class="fa fa-instagram fa-2x" aria-hidden= "true"></i></a>
+                              <a href="https://classum.com/"><i class="fa fa-copyright fa-2x" aria-hidden="true"></i></a>
+                              <a href="https://blog.naver.com/porory_rei"><i class="fa fa-bold fa-2x" aria-hidden="true"></i></a>
+                          </div>
+                          <div class="header__top__right__language">
+                              <img src="img/language.png"alt="">
+                              <div>Korean</div>
+                              <span class="arrow_carrot-down"></span>
+                              <ul>
+                                  <li><a href="#">English</a></li>
+                                  <li><a href="#">Korean</a></li>
+                              </ul>
+                          </div>
+              
+                              {% if user.is_authenticated %}
+                                
+                              <div class="header__top__right__auth">
+                                  <a href="{% url 'userapp:login' %}"><i class="fa fa-user"></i> logout</a>
+                              </div> 
+                              
+                              <h6>{{user.username}} 님</h6>
+                              
+
+                              {% else %}
+                              <div class="header__top__right__auth">
+                                  <a href="{% url 'userapp:login' %}"><i class="fa fa-user"></i> Login</a>
+                              </div>
+                              {% endif %}
+
+                          
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-3">
+                  <div class="header__logo">
+                      <a href="{% url 'main:index' %}"><img src="/static/img/logo2.png" alt=""></a>
+                  </div>
+              </div>
+              <div class="col-lg-6">
+                  <nav class="header__menu">
+                      <ul>
+                          <li class="active"><a href="{% url 'main:index' %}">홈</a></li>
+                          <li><a href="./shop-grid.html">채팅</a></li>
+                          <li><a href="#">테스트</a>
+                              <ul class="header__menu__dropdown">
+                                  <li><a href="./shop-details.html">Shop Details</a></li>
+                                  <li><a href="./shoping-cart.html">Shoping Cart</a></li>
+                                  <li><a href="./checkout.html">Check Out</a></li>
+                                  <li><a href="./blog-details.html">Blog Details</a></li>
+                              </ul>
+                          </li>
+                          <li><a href="./blog.html">랭킹 TOP 100</a></li>
+                          <li><a href="./contact.html">학습</a></li>
+                          <li><a href="./contact.html">커뮤니티</a></li>
+                      </ul>
+                  </nav>
+              </div>
+              <div class="col-lg-3">
+                  <div class="header__cart">
+                      <ul>
+                          <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+                          <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                      </ul>
+                      <div class="header__cart__price">item: <span>$150.00</span></div>
+                  </div>
+              </div>
+          </div>
+          <div class="humberger__open">
+              <i class="fa fa-bars"></i>
+          </div>
+      </div>
+  </header>
+  <!-- Header Section End -->
+
+
+  <section class="ftco-section">
+    <div class="container">
+       <div class="row justify-content-center">
+          <div class="col-md-6 text-center mb-5">
+            <a href="#"><img src="/static/images/book.png" alt="">
+             <h2 class="heading-section">Aivler's Studying Cafe</h2>
+          </div>
+       </div>
+       <div class="row">
+          <div class="col-md-12">
+             <div class="table-wrap">
+                <table class="table">
+                  <thead class="thead-primary">
+                    <tr>
+                      <th>언어</th>
+                      <th>유튜브 링크</th>
+                      <th>강의 다시보기</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                         <th scope="row">Python</th>
+                         <td>  <a href="https://www.youtube.com/playlist?list=PLMsa_0kAjjrd8hYYCwbAuDsXZmHpqHvlV ">
+                            <img src="/static/images/youtube.png"> </td>
+                         <td> <a href="https://ktaivle-ai.moducoding.com/MyCoding/List">
+                            <img src="/static/images/replay.png"> </td>
+                                                   
+                      </tr>
+                      <tr>
+                        <th scope="row">Django</th>
+                        <td>  <a href="https://www.youtube.com/playlist?list=PLuHgQVnccGMDLp4GH-rgQhVKqqZawlNwG ">
+                            <img src="/static/images/youtube.png"> </td>
+                         <td> <a href="https://ktaivle-ai.moducoding.com/MyCoding/List">
+                            <img src="/static/images/replay.png"> </td>
+                                                  
+                     </tr>
+                     <tr>
+                        <th scope="row">JAVA</th>
+                        <td>  <a href="https://www.youtube.com/playlist?list=PLuHgQVnccGMCeAy-2-llhw3nWoQKUvQck ">
+                            <img src="/static/images/youtube.png"> </td>
+                         <td> <a href="https://ktaivle-ai.moducoding.com/MyCoding/List">
+                            <img src="/static/images/replay.png"> </td>
+                                                 
+                     </tr>
+                     <tr>
+                        <th scope="row">SQL</th>
+                        <td>  <a href="https://www.youtube.com/playlist?list=PL7ZVZgsnLwEGjReAO-qJtQiJB6e2MJ0ud ">
+                            <img src="/static/images/youtube.png"> </td>
+                         <td> <a href="https://ktaivle-ai.moducoding.com/MyCoding/List">
+                            <img src="/static/images/replay.png"> </td>
+                                                
+                     </tr>
+                     <tr>
+                        <th scope="row">C언어</th>
+                        <td>  <a href="https://www.youtube.com/playlist?list=PLMsa_0kAjjreuGLbwYdkrCTXxfJIrmmA6 ">
+                            <img src="/static/images/youtube.png"> </td>
+                         <td> <a href="https://ktaivle-ai.moducoding.com/MyCoding/List">
+                            <img src="/static/images/replay.png"> </td>
+                                             
+                     </tr>
+                  </tbody>
+                </table>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
+
+ <script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/popper.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/main.js"></script>
+
+ </body>
+</html>

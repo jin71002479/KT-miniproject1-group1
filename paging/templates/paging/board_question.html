@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<body style='margin:30px;'>
+    <table class='table table-striped'>
+        <tr>
+            <td>번호</td>
+            <td>주제</td>
+            <td>내용</td>
+            <td>일시</td>
+        </tr>
+        {% for data in info %}
+        <tr>
+            <td>{{ data.id }}</td>
+            <td>{{ data.subject }}</td>
+            <td>{{ data.content }}</td>
+            <td>{{ data.pub_date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <div style='text-align:center;'>
+        <ul class='pagination'>
+            {% for i in page_range %}
+            <li>
+                <a href='{% url "paging:question_list" %}?page={{ i }}'>
+                    {{ i }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
