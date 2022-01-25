@@ -12,6 +12,10 @@ def index(request):
     context = {'question_list': question_list}
     return render(request, 'board/question_list.html', context)
 
+def index2(request):
+    question_list = Question.objects.order_by('-pub_date')
+    context = {'question_list': question_list}
+    return render(request, 'board/question_list2.html', context)
 
 def detail(request, question_id):
     question = get_object_or_404(Question, id=question_id)

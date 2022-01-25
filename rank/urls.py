@@ -7,6 +7,7 @@ app_name = "rank"
 
 urlpatterns = [
     path('rank1_100/', views.rank1_100, name = "rank1_100"),
+    path('rank2_100/', views.rank2_100, name = "rank2_100"),
     path('insert/', views.insert),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

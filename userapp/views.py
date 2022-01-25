@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect
+
+from config.settings import LOGIN_URL
 from .models import User
 from django.contrib.auth.decorators import login_required #로그인여부
 
@@ -14,6 +16,17 @@ def login_view(request):
             login(request,user)
             return redirect('main:index')
     return render(request, "userapp/login.html")
+
+def login2_view(request):
+    if request.method == "POST" :
+        username = request.POST["username"]
+        password = request.POST["password"]
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            login(request,user)
+            return redirect('main:index2')
+    return render(request, "userapp/login2.html")
+
 
 
 def logout_view(request):
