@@ -34,5 +34,6 @@ urlpatterns = [
     path('freeboard/', include('freeboard.urls')),
     path('paging/', include('paging.urls')),
     path('study/', include('study.urls')),
+     path('youtubeboard/', include('youtubeboard.urls')),
 ] + static(
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
