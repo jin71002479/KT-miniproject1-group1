@@ -29,99 +29,100 @@
    </head>
    <body>
 
-        <!-- Header Section Begin -->
+    <!-- Header Section Begin -->
     <header class="header">
-      <div class="header__top">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-6 col-md-6">
-                      <div class="header__top__left">
-                          <ul>
-                              <li><i class="fa fa-home fa-2x"></i>https://ktedu.kt.com/aivle</li>
-                              
-                          </ul>
-                      </div>
-                  </div>
-                  <div class="col-lg-6 col-md-6">
-                      <div class="header__top__right">
-                          <div class="header__top__right__social">
-                              <a href="https://instagram.com/aivlestory?utm_medium=copy_link "><i class="fa fa-instagram fa-2x" aria-hidden= "true"></i></a>
-                              <a href="https://classum.com/"><i class="fa fa-copyright fa-2x" aria-hidden="true"></i></a>
-                              <a href="https://blog.naver.com/porory_rei"><i class="fa fa-bold fa-2x" aria-hidden="true"></i></a>
-                          </div>
-                          <div class="header__top__right__language">
-                              <img src="img/language.png"alt="">
-                              <div>Korean</div>
-                              <span class="arrow_carrot-down"></span>
-                              <ul>
-                                  <li><a href="#">English</a></li>
-                                  <li><a href="#">Korean</a></li>
-                              </ul>
-                          </div>
-              
-                              {% if user.is_authenticated %}
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__left">
+                            <ul>
+                                <li>{{user.username}} 에이블러님 반갑습니다 !!</li>
                                 
-                              <div class="header__top__right__auth">
-                                  <a href="{% url 'userapp:login' %}"><i class="fa fa-user"></i> logout</a>
-                              </div> 
-                              
-                              <h6>{{user.username}} 님</h6>
-                              
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__right">
+                            <div class="header__top__right__social">
+                                <a href="https://instagram.com/aivlestory?utm_medium=copy_link "><i class="fa fa-instagram fa-2x" aria-hidden= "true"></i></a>
+                                <a href="https://classum.com/"><i class="fa fa-copyright fa-2x" aria-hidden="true"></i></a>
+                                <a href="https://blog.naver.com/porory_rei"><i class="fa fa-bold fa-2x" aria-hidden="true"></i></a>
+                            </div>
+                            <div class="header__top__right__language">
+                                <img src="img/language.png"alt="">
+                                <div>AI 개발자</div>
+                                <span class="arrow_carrot-down"></span>
+                                <ul>
+                                    <li><a href="#">AI 개발자</a></li>
+                                    <li><a href="{% url 'main:index2'%}">DX 컨설턴트</a></li>
+                                </ul>
+                            </div>
+                
+                                {% if user.is_authenticated %}
+                                  
+                                <div class="header__top__right__auth">
+                                    <a href="{% url 'userapp:logout' %}"><i class="fa fa-user"></i>logout</a>
+                                 
+                                </div> 
+                               
+                
 
-                              {% else %}
-                              <div class="header__top__right__auth">
-                                  <a href="{% url 'userapp:login' %}"><i class="fa fa-user"></i> Login</a>
-                              </div>
-                              {% endif %}
-
-                          
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="container">
-          <div class="row">
-              <div class="col-lg-3">
-                  <div class="header__logo">
-                      <a href="./index.html"><img src="/static/img/logo2.png" alt=""></a>
-                  </div>
-              </div>
-              <div class="col-lg-6">
-                  <nav class="header__menu">
-                      <ul>
-                          <li class="active"><a href="./index.html">홈</a></li>
-                          <li><a href="./shop-grid.html">채팅</a></li>
-                          <li><a href="#">테스트</a>
-                              <ul class="header__menu__dropdown">
-                                  <li><a href="./shop-details.html">Shop Details</a></li>
-                                  <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                                  <li><a href="./checkout.html">Check Out</a></li>
-                                  <li><a href="./blog-details.html">Blog Details</a></li>
-                              </ul>
-                          </li>
-                          <li><a href="./blog.html">랭킹 TOP 100</a></li>
-                          <li><a href="./contact.html">학습</a></li>
-                          <li><a href="./contact.html">커뮤니티</a></li>
-                      </ul>
-                  </nav>
-              </div>
-              <div class="col-lg-3">
-                  <div class="header__cart">
-                      <ul>
-                          <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                          <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
-                      </ul>
-                      <div class="header__cart__price">item: <span>$150.00</span></div>
-                  </div>
-              </div>
-          </div>
-          <div class="humberger__open">
-              <i class="fa fa-bars"></i>
-          </div>
-      </div>
-  </header>
-  <!-- Header Section End -->
+                                {% else %}
+                                <div class="header__top__right__auth">
+                                    <a href="{% url 'userapp:login' %}"><i class="fa fa-user"></i> Login</a>
+                                </div>
+                                {% endif %}
+  
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="header__logo">
+                        <a href="{% url 'main:index' %}"><img src="/static/img/logo2.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <nav class="header__menu">
+                        <ul>
+                            <li class="active"><a href="{% url 'main:index' %}">홈</a></li>
+                            <li><a href="{% url 'main:index' %}">채팅</a></li>
+                            <li><a href="#">커뮤니티</a>
+                                <ul class="header__menu__dropdown">
+                                    <li><a href="./shop-details.html">자유게시판</a></li>
+                                    <li><a href="{% url 'board:index' %}">Q&A</a></li>
+                                    <li><a href="./checkout.html">게시판</a></li>
+                                    <li><a href="{% url 'blog:index' %}">정보방</a></li>
+                                    
+                                </ul>
+                            </li>
+                            <li><a href="{% url 'rank:rank1_100' %}">랭킹 TOP 100</a></li>
+                            <li><a href="{% url 'study:studying' %}">학습</a></li>
+                            <li><a href="/quiz/main">퀴즈</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    <div class="header__cart">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-rss"></i> <span>1</span></a></li>
+                            <li><a href="#"><i class="fa fa-desktop"></i> <span>3</span></a></li>
+                        </ul>
+                       <div class="header__cart__price">score: <span>{{user.score}}</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="humberger__open">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
   
   <!--체크박스-->
 
@@ -149,37 +150,42 @@
         color: #fff;
     }  
 </style>
+<div class="col-md-12 text-center mb-5">
+<input  type="checkbox" name="tags" value="1" id="tag_0" onclick="myFunction()">
 
-<input type="checkbox" name="tags" value="1" id="tag_0" onclick="myFunction()">
-       
-            <label for="tag_0" >1번태그</label>
-   
-
-
-<input type="checkbox" name="tags" value="2" id="tag_1" onclick="myFunction1()">
-       
-            <label for="tag_1" >2번태그</label>
-
+            <label class=" " for="tag_0" >뉴스</label>
+            
+            
+            <input type="checkbox" name="tags" value="2" id="tag_10" onclick="myFunction10()">
+            
+            <label for="tag_10" >꿀팁</label>
+            
+            
+            <input type="checkbox" name="tags" value="3" id="tag_20" onclick="myFunction20()">
+            
+            <label for="tag_20" >정보</label>
+            
+</div>
 
 
 <!-- 1번 게시글-->
 <div class ="container" id="text" style="display:none" >
     <div class="row mt-2 pt-3">
-            <div class="col-md-8"><!-- 좌우 길이-->
+            <div class="col-md-12 text-center mb-5"><!-- 좌우 길이-->
                 <div class="card shadow my-3">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-4">
-                        <img src="" alt="img">
+                        <img src="/static/img/KTCEO.PNG" alt="img">
                     </div>
                     <div class="col-md-8">
-                        <small>20th June 2022</small>
+                        <a class="h6" target='_blank' href="https://www.youtube.com/watch?v=iB7Butd-JkE&">청년희망프로젝트</a><small>　　2021년 12월 27일</small>
                         <hr>
-                        <a class="h4" href="">First Post</a>
-                        <p>
-                           111111111
-                           111111111
-                     
+                        
+                        <p><br>
+                            구현모 KT 대표 모두발언 풀버전<br>
+                            <br>
+                            "KT는 얼마 전 인공지능 기술 교육 ‘에이블 스쿨(AIVLE School)’을 개강한 데 이어 <br>내년부터 9개월 과정 200명을 대상으로 코딩 역량 개발 프로그램을 운영할 계획입니다"
                         </p>
                     </div>
                 </div>
@@ -190,8 +196,39 @@
 </div>
 
 <div class ="container" id="text1" style="display:none" >
+    <div class="row mt-2 pt-10">
+            <div class="col-md-12 text-center mb-5"><!-- 좌우 길이-->
+                <div class="card shadow my-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                        <img src="/static/img/Newdeal.PNG" alt="img">
+                    </div>
+                    <div class="col-md-8">
+                        <a class="h6" target='_blank' href="https://www.moel.go.kr/news/enews/report/enewsView.do?news_seq=13117">디지털 대전환 시대 소프트웨어 인재양성을 위한 민.관 협력 본격화</a>
+                        <small>　　2021년 12월 29일</small>
+                        <hr>
+                        
+                        <p><br>
+                            디지털 선도기업 아카데미의 경우, 케이티(KT)의 에이블 스쿨, 삼성의 청년 소프트웨어 아카데미(SSAFY) 등이
+                            K-디지털 트레이닝 과정으로 선정되어 더 많은 청년들이 양질의 훈련과정에 참여할 수 있게 되었다.
+
+
+                           
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<div class ="container" id="text10" style="display:none" >
     <div class="row mt-2 pt-3">
-            <div class="col-md-8"><!-- 좌우 길이-->
+            <div class="col-md-12 text-center mb-5"><!-- 좌우 길이-->
                 <div class="card shadow my-3">
                     <div class="card-body">
                         <div class="row">
@@ -201,7 +238,7 @@
                     <div class="col-md-8">
                         <small>20th June 2022</small>
                         <hr>
-                        <a class="h4" href="">First Post</a>
+                        <a class="h4" target='_blank' href="">First Post</a>
                         <p>
                            2222222
                         </p>
@@ -212,6 +249,35 @@
     </div>
 </div>
 </div>
+
+<div class ="container" id="text20" style="display:none" >
+    <div class="row mt-2 pt-3">
+            <div class="col-md-12 text-center mb-5"><!-- 좌우 길이-->
+                <div class="card shadow my-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                        <img src="/static/img/helper.PNG" alt="img">
+                    </div>
+                    <div class="col-md-8">
+                        <a class="h6" target='_blank' href="https://www.kua.go.kr/uaptm010/selectMain.do">국민취업제도</a>
+                        <hr>
+                     
+                        <p>
+                           <br><br>
+                           K디지털 트레이닝 (KT AIVLE School포함) 훈련 받으면<br>
+                           2유형은 대부분 신청 가능합니다. <br><br>
+                           <i> Tip. 1유형부터 신청하세요.</i>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
 
 
 
