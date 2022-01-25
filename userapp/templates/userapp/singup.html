@@ -89,57 +89,100 @@
     </div>
     <!-- Humberger End -->
 
-    <!-- Header Section Begin -->
-    <header class="header">
-        <div class="header__top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="header__top__left">
-                            <ul>
-                              <li><i class="fa fa-home fa-2x"></i>https://ktedu.kt.com/aivle</li>
-                                
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="header__top__right">
-                            <div class="header__top__right__social">
-                              <a href="https://instagram.com/aivlestory?utm_medium=copy_link "><i class="fa fa-instagram fa-2x" aria-hidden= "true"></i></a>
-                              <a href="https://classum.com/"><i class="fa fa-copyright fa-2x" aria-hidden="true"></i></a>
-                              <a href="https://blog.naver.com/porory_rei"><i class="fa fa-bold fa-2x" aria-hidden="true"></i></a>
-                            </div>
-                            <div class="header__top__right__language">
-                                <img src="img/language.png" alt="">
-                                <div>English</div>
-                                <span class="arrow_carrot-down"></span>
-                                <ul>
-                                    <li><a href="#">English</a></li>
-                                    <li><a href="#">Korean</a></li>
-                                </ul>
-                            </div>
-                            <div class="header__top__right__auth">
-                                <a href="#"><i class="fa fa-user"></i> Login</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+   <!-- Header Section Begin -->
+   <header class="header">
+    <div class="header__top">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3">
-                    <div class="header__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                <div class="col-lg-6 col-md-6">
+                    <div class="header__top__left">
+                        <ul>
+                            <li>{{user.username}} 에이블러님 반갑습니다 !!</li>
+                            
+                        </ul>
                     </div>
                 </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="header__top__right">
+                        <div class="header__top__right__social">
+                            <a href="https://instagram.com/aivlestory?utm_medium=copy_link "><i class="fa fa-instagram fa-2x" aria-hidden= "true"></i></a>
+                            <a href="https://classum.com/"><i class="fa fa-copyright fa-2x" aria-hidden="true"></i></a>
+                            <a href="https://blog.naver.com/porory_rei"><i class="fa fa-bold fa-2x" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="header__top__right__language">
+                            <img src="img/language.png"alt="">
+                            <div>AI 개발자</div>
+                            <span class="arrow_carrot-down"></span>
+                            <ul>
+                                <li><a href="#">AI 개발자</a></li>
+                                <li><a href="{% url 'main:index2'%}">DX 컨설턴트</a></li>
+                            </ul>
+                        </div>
+            
+                            {% if user.is_authenticated %}
+                              
+                            <div class="header__top__right__auth">
+                                <a href="{% url 'userapp:logout' %}"><i class="fa fa-user"></i>logout</a>
+                             
+                            </div> 
+                           
+            
 
-            <div class="humberger__open">
-                <i class="fa fa-bars"></i>
+                            {% else %}
+                            <div class="header__top__right__auth">
+                                <a href="{% url 'userapp:login' %}"><i class="fa fa-user"></i> Login</a>
+                            </div>
+                            {% endif %}
+
+                        
+                    </div>
+                </div>
             </div>
         </div>
-    </header>
-    <!-- Header Section End -->
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="header__logo">
+                    <a href="{% url 'main:index' %}"><img src="/static/img/logo2.png" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <nav class="header__menu">
+                    <ul>
+                        <li class="active"><a href="{% url 'main:index' %}">홈</a></li>
+                        <li><a href="{% url 'main:index' %}">채팅</a></li>
+                        <li><a href="#">커뮤니티</a>
+                            <ul class="header__menu__dropdown">
+                                <li><a href="./shop-details.html">자유게시판</a></li>
+                                <li><a href="{% url 'board:index' %}">Q&A</a></li>
+                                <li><a href="./checkout.html">게시판</a></li>
+                                <li><a href="{% url 'blog:index' %}">정보방</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li><a href="{% url 'rank:rank1_100' %}">랭킹 TOP 100</a></li>
+                        <li><a href="{% url 'study:studying' %}">학습</a></li>
+                        <li><a href="/quiz/main">퀴즈</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-lg-3">
+                <div class="header__cart">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-rss"></i> <span>1</span></a></li>
+                        <li><a href="#"><i class="fa fa-desktop"></i> <span>3</span></a></li>
+                    </ul>
+                   <div class="header__cart__price">score: <span>{{user.score}}</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="humberger__open">
+            <i class="fa fa-bars"></i>
+        </div>
+    </div>
+</header>
+<!-- Header Section End -->
 
    
     <!--회원가입-->
@@ -148,7 +191,7 @@
     <div class="container">
         <div class="input-form-backgroud row">
           <div class="input-form col-sm-7 col-sm-push-9 mx-auto">
-            <label for="email"> </label>
+            <br>
         
             <h3 class="mb-3">회원가입</h3>
             <form class="validation-form" novalidate>
@@ -160,7 +203,7 @@
                     이름을 입력해주세요.
                   </div>
                 </div>
-                <div class="col-md-4 mb-3">
+                <div class="col-md-5 mb-3">
                   <label for="password">비밀번호</label>
                   <input type="password" class="form-control" name='password' placeholder="비밀번호를 입력하세요" value="" required>
                   <div class="invalid-feedback">
@@ -169,7 +212,7 @@
                 </div>
           
 
-             <div class="col-md-9 mb-3">
+             <div class="col-md-10 mb-3">
                 <label for="fullname">이름</label>
                 <input type="text" class="form-control" name='fullname' placeholder="이름을 입력하세요" required>
                 <div class="invalid-feedback">
@@ -178,7 +221,7 @@
                 </div>
               </div>
 
-              <div class="col-md-9 mb-3">
+              <div class="col-md-10 mb-3">
                 <label for="phone">휴대폰 번호</label>
                 <input type="tel" class="form-control" name='phone' placeholder="01012345678" maxlength="11" required>
                 <div class="invalid-feedback">
@@ -186,7 +229,7 @@
                 </div>
               </div>
     
-              <div class="col-md-9 mb-3">
+              <div class="col-md-10 mb-3">
                 <label for="email">이메일</label>
                 <input type="email" class="form-control" name='email' placeholder="이메일을 입력하세요" required>
                 <div class="invalid-feedback">
@@ -201,19 +244,16 @@
                 </div>
               </div>
             </div>
-              <hr class="mb-4">
+
               <div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input" id="aggrement" required>
                 <label class="custom-control-label" for="aggrement">개인정보 수집 및 이용에 동의합니다.</label>
               </div>
-              <div class="mb-4"></div>
+              <div class="my-5"></div>
               <button class="btn" type="submit">가입 완료</button>
             </form>
           </div>
         </div>
-        <footer class="my-3 text-center text-small">
-          <p class="mb-1">&copy; 2022 충남/충북 1조</p>
-        </footer>
       </div>
 
       <script>
