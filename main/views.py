@@ -26,7 +26,7 @@ def search(request):
         search = request.POST.get('search')
         sel=request.POST.get('sel')
         
-
+        
         print(sel)
         result=Question.objects.filter(subject__contains=search)
         return render(
