@@ -23,61 +23,14 @@
     <link rel="stylesheet" href="/static/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="/static/css/style_rank.css" type="text/css">
    
-
-   
-
    </head>
+
    <body>
 
 
-   <!-- Header Section Begin -->
-   <header class="header">
-    <div class="header__top">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6">
-                    <div class="header__top__left">
-                        <ul>
-                            <li>{{user.username}} 에이블러님 반갑습니다 !!</li>
-                            
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="header__top__right">
-                        <div class="header__top__right__social">
-                            <a href="https://instagram.com/aivlestory?utm_medium=copy_link "target='_blank' ><i class="fa fa-instagram fa-2x" aria-hidden= "true"></i></a>
-                            <a href="https://classum.com/"target='_blank' ><i class="fa fa-copyright fa-2x" aria-hidden="true"></i></a>
-                            <a href="https://blog.naver.com/porory_rei"target='_blank' ><i class="fa fa-bold fa-2x" aria-hidden="true"></i></a>
-                            <a href="https://ktedu.kt.com/aivle/about.html"target='_blank' ><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
-                        </div>
-                        <div class="header__top__right__language">
-                            <img src="img/language.png"alt="">
-                            <div>AI 개발자</div>
-                            <span class="arrow_carrot-down"></span>
-                            <ul>
-                                <li><a href="#">AI 개발자</a></li>
-                                <li><a href="{% url 'main:index2'%}">DX 컨설턴트</a></li>
-                            </ul>
-                        </div>
-            
-                            {% if user.is_authenticated %}
-                              
-                            <div class="header__top__right__auth">
-                                <a href="{% url 'userapp:logout' %}"><i class="fa fa-user"></i>logout</a>
-                             
-                            </div> 
-                           
-            
-
-                            {% else %}
-                            <div class="header__top__right__auth">
-                                <a href="{% url 'userapp:login' %}"><i class="fa fa-user"></i> Login</a>
-                            </div>
-                            {% endif %}
 
 
-                        
+
                     </div>
                 </div>
             </div>
@@ -225,6 +178,13 @@
                         <td> <a href="https://drive.google.com/file/d/1ioFq_x-a_Uq8BvZBgBgQ3VuntPSIXTvE/view?usp=sharing" target='_blank'>
                            <img src="/static/images/pdf_down1.png"> </td>                   
                      </tr>
+                     <tr>
+                        <th scope="row">전체 교육 과정</th>
+                        <td>KT AIVLE</td>
+                        <td></td>
+                        <td> <a href="https://docs.google.com/spreadsheets/d/1naUm4zrcBSAqUqL2l4fXLdshMxs0JEQH/edit?usp=sharing&ouid=115816752512693076192&rtpof=true&sd=true" target='_blank'>
+                           <img src="/static/images/pdf_down1.png"> </td>                   
+                     </tr>
 
                   </tbody>
                 </table>
@@ -239,5 +199,5 @@
 <script src="/static/js/bootstrap.min.js"></script>
 <script src="/static/js/main.js"></script>
 
- </body>
+</body>
 </html>

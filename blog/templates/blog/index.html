@@ -29,9 +29,12 @@
    </head>
    <body>
 
-    <!-- Header Section Begin -->
+        <!-- Header Section Begin -->
     <header class="header">
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
       <div class="header__top">
           <div class="container">
               <div class="row">
@@ -52,14 +55,14 @@
                               <a href="https://ktedu.kt.com/aivle/about.html"target='_blank' ><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
                           </div>
                           <div class="header__top__right__language">
-                              <img src="img/language.png"alt="">
-                              <div>Korean</div>
-                              <span class="arrow_carrot-down"></span>
-                              <ul>
-                                  <li><a href="#">English</a></li>
-                                  <li><a href="#">Korean</a></li>
-                              </ul>
-                          </div>
+                            <img src="img/language.png"alt="">
+                            <div>AI 개발자</div>
+                            <span class="arrow_carrot-down"></span>
+                            <ul>
+                                <li><a href="#">AI 개발자</a></li>
+                                <li><a href="{% url 'main:index2'%}">DX 컨설턴트</a></li>
+                            </ul>
+                        </div>
               
                               {% if user.is_authenticated %}
                                 
@@ -124,11 +127,14 @@
       </div>
   </header>
   <!-- Header Section End -->
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
   
   <!--체크박스-->
 
-<style>
+  <style>
     input[type="checkbox"] {
         display: none;
     }
@@ -281,28 +287,5 @@
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
 <!--자바-->
 <script src="{% static 'css/myFunction.js'%}" charset="utf-8"></script>
-<script src="{% static 'css/myFunction1.js'%}" charset="utf-8"></script>

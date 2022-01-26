@@ -9,7 +9,7 @@
     <meta charset="utf-8">
    
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -133,20 +133,22 @@
             </tr>
         </thead>
         <tbody>
-            {% if question_list %}
-            {% for question in question_list %}
-            <tr>
-                <td>{{ forloop.revcounter }}</td>
-                <td>
-                    <a href="{% url 'board:detail' question.id %}">
-                        {{ question.subject }}
-                    </a>
-                </td>
-                <td>
-                    {{user.username}}
-                </td>
-                <td>{{ question.pub_date }}</td>
-            </tr>
+            {% if info %}
+          
+                {% for question in info %}
+                <tr>
+                    <td>{{ forloop.revcounter }}</td>
+                    <td>
+                        <a href="{% url 'board:detail' question.id %}">
+                            {{ question.subject }}
+                        </a>
+                    </td>
+                    <td>
+                        {{question.username}}
+                    </td>
+                    <td>{{ question.pub_date }}</td>
+                </tr>
+                
             {% endfor %}
             {% else %}
             <tr>
@@ -155,6 +157,17 @@
             {% endif %}
         </tbody>
         </table>
+        <div style='text-align:center;'>
+            <ul class='pagination'>
+                {% for i in page_range %}
+                <li>
+                <a href='{% url "board:index" %}?page={{ i }}'>
+                    {{ i }}
+                </a>
+                </li>
+                {% endfor %}
+                </ul>
+            </div>
         <div style='text-align:right;'>
             <a href="{% url 'board:question_create' %}" class="btn btn-primary">
                 질문 등록하기
