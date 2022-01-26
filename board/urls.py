@@ -3,6 +3,8 @@ from . import views
 from django.conf.urls.static import static
 from django.conf import settings
 
+# from .views import FileDownloadView
+
 app_name = 'board'
 
 urlpatterns = [
@@ -17,4 +19,8 @@ urlpatterns = [
     path('<int:question_id>/update/',views.update, name="update"),
     path('<int:question_id>/delete/',views.delete, name="delete"),
     path('upload3/', views.upload3, name='upload3'),
+    path('download/<int:question_id>/', views.download, name='download'),
+    # path('download/%3Fid=<int:question_id>/', views.download, name='download'),
+    # path('download/', views.download, name='download'),
+    # path('document/<int:document_id>/', FileDownloadView.as_view(), name="download"),
 ]
