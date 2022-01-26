@@ -29,7 +29,7 @@
    </head>
    <body>
 
-        <!-- Header Section Begin -->
+    <!-- Header Section Begin -->
     <header class="header">
       <div class="header__top">
           <div class="container">
@@ -51,14 +51,14 @@
                               <a href="https://ktedu.kt.com/aivle/about.html"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
                           </div>
                           <div class="header__top__right__language">
-                            <img src="img/language.png"alt="">
-                            <div>AI 개발자</div>
-                            <span class="arrow_carrot-down"></span>
-                            <ul>
-                                <li><a href="#">AI 개발자</a></li>
-                                <li><a href="{% url 'main:index2'%}">DX 컨설턴트</a></li>
-                            </ul>
-                        </div>
+                              <img src="img/language.png"alt="">
+                              <div>AI 개발자</div>
+                              <span class="arrow_carrot-down"></span>
+                              <ul>
+                                  <li><a href="#">AI 개발자</a></li>
+                                  <li><a href="{% url 'main:index2'%}">DX 컨설턴트</a></li>
+                              </ul>
+                          </div>
               
                               {% if user.is_authenticated %}
                                 
@@ -126,7 +126,7 @@
   
   <!--체크박스-->
 
-  <style>
+<style>
     input[type="checkbox"] {
         display: none;
     }
@@ -158,12 +158,12 @@
             
             <input type="checkbox" name="tags" value="2" id="tag_10" onclick="myFunction10()">
             
-            <label for="tag_10" >꿀팁</label>
+            <label for="tag_10" >정보</label>
             
             
             <input type="checkbox" name="tags" value="3" id="tag_20" onclick="myFunction20()">
             
-            <label for="tag_20" >정보</label>
+            <label for="tag_20" >꿀팁</label>
             
 </div>
 
@@ -236,9 +236,10 @@
                         <img src="" alt="img">
                     </div>
                     <div class="col-md-8">
-                        <small>20th June 2022</small>
+                        <a class="h6" target='_blank' href="https://www.youtube.com/watch?v=__FtxYUQ5B4">KT aivle school [디지털 선도기업 아카데미]</a>
+                        <small>　　2021년 12월 29일</small>
                         <hr>
-                        <a class="h4" target='_blank' href="">First Post</a>
+                       
                         <p>
                            2222222
                         </p>
@@ -279,5 +280,28 @@
 </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 <!--자바-->
 <script src="{% static 'css/myFunction.js'%}" charset="utf-8"></script>
+<script src="{% static 'css/myFunction1.js'%}" charset="utf-8"></script>
