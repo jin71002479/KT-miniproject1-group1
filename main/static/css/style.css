@@ -648,6 +648,7 @@ ol {
 }
 
 .hero__search__form form .hero__search__categories {
+
 	width: 30%;
 	float: left;
 	font-size: 16px;
@@ -656,6 +657,7 @@ ol {
 	padding-left: 18px;
 	padding-top: 11px;
 	position: relative;
+	z-index: 1;
 }
 
 .hero__search__form form .hero__search__categories:after {
