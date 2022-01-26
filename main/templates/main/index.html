@@ -107,7 +107,6 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__left">
                             <ul>
-                                <li>{{user.username}} 에이블러님 반갑습니다 !!</li>
                                 
                             </ul>
                         </div>
@@ -184,13 +183,9 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-2">
                     <div class="header__cart">
-                        <ul>
-                            <li><a href="#"><i class="fa fa-rss"></i> <span>1</span></a></li>
-                            <li><a href="#"><i class="fa fa-desktop"></i> <span>3</span></a></li>
-                        </ul>
-                       <div class="header__cart__price">score: <span>{{user.score}}</span></div>
+             
                     </div>
                 </div>
             </div>
@@ -205,7 +200,7 @@
     <section class="hero">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3">
+                <div class="col-lg-2.5">
                     <div class="hero__categories">
                         <div class="hero__categories__all">
                             <i class="fa fa-trophy fa-2x"></i>
@@ -214,18 +209,19 @@
                         <ul>
                             <li>{% for rank in rank_list %}
                                    {% if forloop.counter == 1 %}
-                                        <li><img src="/static/img/gold.png" alt="">  {{ rank.username }} / {{ rank.score }}</li>
+                                        <li><img src="/static/img/crown1.png" alt=""> - {{ rank.username }} -Score: {{ rank.score }}</li>
                                     {% elif forloop.counter == 2 %}
-                                        <li><img src="/static/img/silver.png" alt="">  {{ rank.username }} / {{ rank.score }}</li>
+                                        <li><img src="/static/img/crown2.png" alt=""> - {{ rank.username }} -Score: {{ rank.score }}</li>
                                     {% elif forloop.counter == 3 %}
-                                        <li><img src="/static/img/bronze.png" alt="">  {{ rank.username }} / {{ rank.score }}</li>
+                                        <li><img src="/static/img/crown3.png" alt=""> - {{ rank.username }} -Score: {{ rank.score }}</li>
                                     {% else %}
-                                        <li> {{forloop.counter}} / {{ rank.username }} / {{ rank.score }}</li>
+                                        <li>{{forloop.counter}}등 - {{ rank.username }}-Score: {{ rank.score }}　　</li>
                                     {% endif%}
+                                    <div class="col my-1">
+                                    </div>
                                 {% endfor %}
                             </li>
-                                <hr>
-                                
+                             
                            
                         </ul>
                     </div>
@@ -260,12 +256,10 @@
                             </form>
                         </div>
                          <div class="hero__search__phone">
-                            <div class="hero__search__phone__icon">
-                                <i class="fa fa-envelope" aria-hidden="true"></i>
-                            </div>
-                            <div class="hero__search__phone__text">
-                                <h6>KTAIVLE@kt.com</h6>
-                                <span>support 24/7 time</span>
+                           
+                            <div >
+                                <b>　　　　　{{user.username}}님</b>
+                                <div class="header__cart__price">　　　　　score: <span>{{user.score}}</span></div>
                             </div>
                         </div>
                     </div>
@@ -339,3 +333,4 @@
 </body>
 </html>
 <br><br><br>
+
