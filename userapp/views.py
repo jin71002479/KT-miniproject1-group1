@@ -32,6 +32,7 @@ def login2_view(request):
 def logout_view(request):
     logout(request)
     return redirect("userapp:login")
+ 
 
 
 def signup_view(request):

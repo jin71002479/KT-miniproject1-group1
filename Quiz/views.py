@@ -11,3 +11,13 @@ def main(request): ## 점수 저장
         user_score.score=score
         user_score.save()
     return render(request,'Quiz/index.html')
+
+@login_required (login_url='userapp:login2')
+
+def main2(request): ## 점수 저장
+    if request.method == "POST":
+        score = request.POST["score"]
+        user_score=User.objects.get(username= request.user.username)
+        user_score.score=score
+        user_score.save()
+    return render(request,'Quiz/index.html')    
