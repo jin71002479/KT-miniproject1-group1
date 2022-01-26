@@ -7,6 +7,6 @@ from django.shortcuts import redirect
 from userapp.models import User
 
 def index(request):
-    question_list = Freewrite.objects.order_by('-free_pub_date')
-    context = {'question_list': question_list}
-    return render(request, 'board/question_list.html', context)
+    freewrite_list = Freewrite.objects.order_by('-free_pub_date')
+    context = {'freewrite_list': freewrite_list}
+    return render(request, 'freeboard/freewrite_list.html', context)
