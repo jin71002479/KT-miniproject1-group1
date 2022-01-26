@@ -161,20 +161,20 @@ ol {
 
 /* buttons */
 
-.primary-btn{
+.primary-btn {
 	display: inline-block;
 	font-size: 14px;
 	padding: 10px 28px 10px;
 	color: #ffffff;
 	text-transform: uppercase;
 	font-weight: 700;
-	background: #F27173;
+	background:  #F27173;
 	letter-spacing: 2px;
 }
 
-.site-btn2 {
+.site-btn {
 	font-size: 14px;
-	color: #ffffff;
+	color:  #ffffff;
 	font-weight: 800;
 	text-transform: uppercase;
 	display: inline-block;
@@ -316,7 +316,7 @@ ol {
 .header__top__right__social a {
 	font-size: 14px;
 	display: inline-block;
-	color: #F27173;
+	color:  #F27173;
 	margin-right: 20px;
 }
 
@@ -450,7 +450,7 @@ ol {
 }
 
 .header__menu ul li .header__menu__dropdown li:hover>a {
-	color: 7B#F27173;
+	color:  #F27173;
 }
 
 .header__menu ul li .header__menu__dropdown li a {
@@ -461,7 +461,7 @@ ol {
 }
 
 .header__menu ul li.active a {
-	color: #F27173;
+	color:  #F27173;
 }
 
 .header__menu ul li:hover .header__menu__dropdown {
@@ -471,7 +471,7 @@ ol {
 }
 
 .header__menu ul li:hover>a {
-	color: #F27173;
+	color:  #F27173;
 }
 
 .header__menu ul li:last-child {
@@ -588,9 +588,9 @@ ol {
 }
 
 .hero__categories__all {
-	background: #F27173;
+	background:  #F27173;
 	position: relative;
-	padding: 10px 25px 10px 40px;
+	padding: 10px 78px 10px 40px;
 	cursor: pointer;
 }
 
@@ -640,11 +640,11 @@ ol {
 }
 
 .hero__search__form {
-	width: 610px;
+	width: 847px;
 	height: 50px;
 	border: 1px solid #ebebeb;
 	position: relative;
-	float: left;
+	float: right;
 }
 
 .hero__search__form form .hero__search__categories {
@@ -696,12 +696,12 @@ ol {
 }
 
 .hero__search__phone {
-	float: right;
+	float: left;
 }
 
-.hero__search__phone__icon{
+.hero__search__phone__icon {
 	font-size: 18px;
-	color: #F27173;
+	color:  #F27173;
 	height: 50px;
 	width: 50px;
 	background: #f5f5f5;
@@ -728,7 +728,7 @@ ol {
 }
 
 .hero__item {
-	height: 431px;
+	height: 480px;
 	display: flex;
 	align-items: center;
 	padding-left: 75px;
@@ -759,7 +759,7 @@ ol {
 -----------------------*/
 
 .categories__item {
-	height: 270px;
+	height: 150px;
 	position: relative;
 }
 

@@ -7,6 +7,10 @@ from django.shortcuts import redirect
 from userapp.models import User
 from django.core.paginator import Paginator
 
+from django.views.generic.detail import SingleObjectMixin
+from django.http import FileResponse
+from django.core.files.storage import FileSystemStorage
+
 
 def index(request):
     now_page = request.GET.get('page', 1)
@@ -74,6 +78,25 @@ def question_create(request):
 
     return render(request, 'board/question_form.html', context)
 
+
+def upload3(request):
+    if request.method == 'POST':
+        form = QuestionForm(request.POST, request.FILES)
+        if form.is_valid():
+            # uploadFile = form.save()
+            uploadFile = form.save(commit=False)
+            name = uploadFile.file.name
+            size = uploadFile.file.size
+            # question = form.save(commit=False)
+            uploadFile.pub_date = timezone.now()
+            uploadFile.username = request.user.username
+            uploadFile.save()
+            return redirect('board:index')
+    else:
+        form = QuestionForm()
+    return render(
+        request, 'board/question_form.html', {'form': form})
+
 def update(request, question_id):
     question = Question.objects.get(id=question_id)
     if(question.username == request.user.username):
@@ -89,9 +112,53 @@ def update(request, question_id):
             return render(request, 'board/update.html', {'question':question})
     else :
         return render(request, 'board/warning.html')
+
+
 def delete(request, question_id):
     question = Question.objects.get(id=question_id)
     if(question.username == request.user.username):
         question.delete()
         return redirect('board:index')
     return render(request, 'board/warning.html')
+
+# def download(request):
+#     question = get_object_or_404(Question, id=question_id)
+   
+#     # file_url = urllib.parse.unquote(url)
+#     filepath = str(settings.BASE_DIR) + ('/media/%s' % question.file.name)
+#     filename = os.path.basename(filepath)
+#     context = {
+#         'question': question
+#     }
+#     with open(filepath, 'rb') as f:
+#         response = HttpResponse(f, content_type='application/octet-stream')
+#         response['Content-Disposition'] = 'attachment; filename=%s' % filename
+#         return render(request, 'board/question_detail.html', context)
+
+    
+#     return render(request, 'board/question_detail.html', context)
+
+    # id = request.GET.get('id')
+    # question = Question.objects.get(id=id)
+    # filepath = str(settings.BASE_DIR) + ('/media/%s' % question.file.name)
+    # filename = os.path.basename(filepath)
+    # with open(filepath, 'rb') as f:
+    #     response = HttpResponse(f, content_type='application/octet-stream')
+    #     response['Content-Disposition'] = 'attachment; filename=%s' % filename
+    #     return response
+
+from config import settings
+import os
+def download(request,question_id):   
+    
+    question = get_object_or_404(Question, pk=question_id)
+    file_url = question.file.url[1:]
+    # filepath = str(settings.BASE_DIR) + ('/media/%s' % question.file.name)   
+    if os.path.exists(file_url) :
+        with open(file_url, 'rb') as f:
+            filename = os.path.basename(file_url)
+            response = HttpResponse(f, content_type='application/octet-stream')
+            response['Content-Disposition'] = 'attachment; filename=%s' % filename
+            return response
+    else :  
+        return redirect('board:delete')
