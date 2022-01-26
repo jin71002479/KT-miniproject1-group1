@@ -1,1 +1,1 @@
-web: gunicorn kt-miniproject1.wsgi --log-file -
+web: gunicorn kt-miniproject1.wsgi
