@@ -89,6 +89,8 @@ def update(request, question_id):
             return render(request, 'board/update.html', {'question':question})
     else :
         return render(request, 'board/warning.html')
+
+        
 def delete(request, question_id):
     question = Question.objects.get(id=question_id)
     if(question.username == request.user.username):

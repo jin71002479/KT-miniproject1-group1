@@ -4,6 +4,7 @@ class Freewrite(models.Model):
     free_subject = models.CharField(max_length=200)
     free_content = models.TextField()
     free_pub_date = models.DateTimeField()
+    username = models.CharField(max_length=200)
 
 class Comment(models.Model):
     freewrite = models.ForeignKey(Freewrite, on_delete=models.CASCADE)
