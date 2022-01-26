@@ -590,7 +590,7 @@ ol {
 .hero__categories__all {
 	background: #2BB7B3;
 	position: relative;
-	padding: 10px 25px 10px 40px;
+	padding: 10px 78px 10px 40px;
 	cursor: pointer;
 }
 
@@ -640,14 +640,15 @@ ol {
 }
 
 .hero__search__form {
-	width: 610px;
+	width: 847px;
 	height: 50px;
 	border: 1px solid #ebebeb;
 	position: relative;
-	float: left;
+	float: right;
 }
 
 .hero__search__form form .hero__search__categories {
+
 	width: 30%;
 	float: left;
 	font-size: 16px;
@@ -656,6 +657,7 @@ ol {
 	padding-left: 18px;
 	padding-top: 11px;
 	position: relative;
+	z-index: 1;
 }
 
 .hero__search__form form .hero__search__categories:after {
@@ -728,7 +730,7 @@ ol {
 }
 
 .hero__item {
-	height: 431px;
+	height: 480px;
 	display: flex;
 	align-items: center;
 	padding-left: 75px;

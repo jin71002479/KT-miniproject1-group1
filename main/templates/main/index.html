@@ -200,13 +200,53 @@
     <section class="hero">
         <div class="container">
             <div class="row">
-                <div class="col-lg-2.5">
-                    <div class="hero__categories">
-                        <div class="hero__categories__all">
-                            <i class="fa fa-trophy fa-2x"></i>
-                            <span>Total Rank</span>
+          
+                <div class="col-lg-9">
+                    <div class="hero__search">
+                        <div class="hero__search__form">
+
+
+                            <form method="post" action="{% url 'main:search' %}">
+                                {% csrf_token %}
+                                <div class="hero__search__categories">
+                                    All Categories
+                                    <span class="arrow_carrot-down"></span>
+                                    
+                                </div>
+                             
+                                </select>
+                                    <input type="text" name="search" placeholder="검색어를 입력하세요"><br>
+                                    <button type="submit" class="site-btn" value="로그인">search</button>
+                                
+                            </form>
+                            
                         </div>
-                        <ul>
+                      
+                    </div>
+                    <div class="hero__item set-bg" data-setbg="/static/img/aivleshedule.png"></div>
+                        
+                    </div>
+                    <div >
+                        <a>　　<img src="/static/img/person.png" alt=""></a>
+                    
+                        <b>　{{user.username}}님</b>　 <b>score:</b> <span>{{user.score}}</span>
+                    
+                    
+
+                    <div class="col-lg">
+                        <div class="hero__categories">
+                          
+                            
+                            <br>
+                            
+                            
+
+                            <div class="hero__categories__all">
+                                <i class="fa fa-trophy fa-2x"></i>
+                                
+                                <span>Total Rank</span>
+                            </div>
+                            <ul>
                             <li>{% for rank in rank_list %}
                                    {% if forloop.counter == 1 %}
                                         <li><img src="/static/img/crown1.png" alt=""> - {{ rank.username }} -Score: {{ rank.score }}</li>
@@ -214,8 +254,9 @@
                                         <li><img src="/static/img/crown2.png" alt=""> - {{ rank.username }} -Score: {{ rank.score }}</li>
                                     {% elif forloop.counter == 3 %}
                                         <li><img src="/static/img/crown3.png" alt=""> - {{ rank.username }} -Score: {{ rank.score }}</li>
-                                    {% else %}
+                                    {% elif forloop.counter < 15 %}
                                         <li>{{forloop.counter}}등 - {{ rank.username }}-Score: {{ rank.score }}　　</li>
+                                    {% else %}    
                                     {% endif%}
                                     <div class="col my-1">
                                     </div>
@@ -224,49 +265,14 @@
                              
                            
                         </ul>
-                    </div>
-                </div>
-                <div class="col-lg-9">
-                    <div class="hero__search">
-                        <div class="hero__search__form">
-                            <form action="#">
-                                <div class="hero__search__categories">
-                                    All Categories
-                                    <span class="arrow_carrot-down"></span>
-                                </div>
-                                <head>
-                                    <meta charset="utf-8" />
-                                    <title>datalist 태그</title>
-                                    </head>
-                                <input type="text"list="disneyCharacterList" placeholder="검색어를 입력하세요">
-                                <datalist id="disneyCharacterList">
-                                    <option value="python">python</option>
-                                    <option value="파이썬">파이썬</option>
-                                    <option value="알고리즘">알고리즘</option>
-                                    <option value="AWS">AWS</option>
-                                    <option value="스터디 구합니다">스터디 구합니다</option>
-                                    <option value="anaconda">anaconda</option>
-                                    <option value="jupyter notebook">jupyter notebook</option>
-                                    <option value="파이썬 기초문법">파이썬 기초문법</option>
-                                    <option value="파이썬 알고리즘">파이썬 알고리즘</option>
-                                    <option value="파이썬 데이터 분석">파이썬 데이터 분석</option>
-                                    <option value="django">django</option>
-                                </datalist>
-                                <button type="submit" class="site-btn">SEARCH</button>
-                            </form>
-                        </div>
-                         <div class="hero__search__phone">
-                           
-                            <div >
-                                <b>　　　　　{{user.username}}님</b>
-                                <div class="header__cart__price">　　　　　score: <span>{{user.score}}</span></div>
-                            </div>
                         </div>
                     </div>
-                    <div class="hero__item set-bg" data-setbg="/static/img/aivleshedule.png"></div>
-                        
-                    </div>
                 </div>
+            </div>
+
+
+                
+
             </div>
         </div>
     </section>
@@ -279,27 +285,27 @@
             <div class="row">
                 <div class="categories__slider owl-carousel">
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" tyle = "width:200px" data-setbg="/static/img/categories/ai1.png">
+                        <div class="categories__item set-bg" data-setbg="/static/img/categories/ai1.png">
                             <h5><a href="#"></a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" tyle = "width:200px" data-setbg="/static/img/categories/ai2.png">
+                        <div class="categories__item set-bg"  data-setbg="/static/img/categories/ai2.png">
                             <h5><a href="#"></a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" tyle = "width:200px" data-setbg="/static/img/categories/ai3.png">
+                        <div class="categories__item set-bg"  data-setbg="/static/img/categories/ai3.png">
                             <h5><a href="#"></a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" tyle = "width:200px" data-setbg="/static/img/categories/ai3.png">
+                        <div class="categories__item set-bg"  data-setbg="/static/img/categories/ai3.png">
                             <h5><a href="#"></a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" tyle = "width:200px" data-setbg="/static/img/categories/ai5.png">
+                        <div class="categories__item set-bg"  data-setbg="/static/img/categories/ai5.png">
                             <h5><a href="#"></a></h5>
                         </div>
                     </div>
