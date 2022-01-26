@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="/static/css/login_style.css">
+    <link rel="stylesheet" href="/static/css/login_style2.css" type="text/css">
     <link rel="stylesheet" href="/static/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="/static/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="/static/css/elegant-icons.css" type="text/css">
@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="/static/css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="/static/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="/static/css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="/static/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/style2.css" type="text/css">
 
 </head>
 
@@ -81,6 +81,7 @@
             <a href="https://instagram.com/aivlestory?utm_medium=copy_link "><i class="fa fa-instagram fa-2x" aria-hidden= "true"></i></a>
             <a href="https://classum.com/"><i class="fa fa-copyright fa-2x" aria-hidden="true"></i></a>
             <a href="https://blog.naver.com/porory_rei"><i class="fa fa-bold fa-2x" aria-hidden="true"></i></a>
+            <a href="https://ktedu.kt.com/aivle/about.html"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
         </div>
         <div class="humberger__menu__contact">
             <ul>
@@ -91,75 +92,90 @@
     </div>
     <!-- Humberger End -->
 
-    <!-- Header Section Begin -->
-    <header class="header">
-        <div class="header__top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="header__top__left">
-                            <ul>
-                                <li>{{user.username}} 에이블러님 반갑습니다 !!</li>  
-                                
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="header__top__right">
-                            <div class="header__top__right__social">
-                                <a href="https://instagram.com/aivlestory?utm_medium=copy_link "><i class="fa fa-instagram fa-2x" aria-hidden= "true"></i></a>
-                                <a href="https://classum.com/"><i class="fa fa-copyright fa-2x" aria-hidden="true"></i></a>
-                                <a href="https://blog.naver.com/porory_rei"><i class="fa fa-bold fa-2x" aria-hidden="true"></i></a>
-                                <a href="https://ktedu.kt.com/aivle/about.html"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
-                                
-                            </div>
-                            <div class="header__top__right__language">
-                                <img src="img/language.png" alt="">
-                                <div>Korean</div>
-                                <span class="arrow_carrot-down"></span>
-                                <ul>
-                                    <li><a href="#">English</a></li>
-                                    <li><a href="#">Korean</a></li>
-                                </ul>
-                            </div>
-                            <div class="header__top__right__auth">
-                                <a href="#"><i class="fa fa-user"></i> Login</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+   <!-- Header Section Begin -->
+   <header class="header">
+    <div class="header__top">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3">
-                    <div class="header__logo">
-                        <a href="{% url 'main:index' %}"><img src="img/logo.png" alt=""></a>
+                <div class="col-lg-6 col-md-6">
+                    <div class="header__top__left">
+                        <ul>
+                            <li>{{user.username}} 에이블러님 반갑습니다 !!</li>
+                            
+                        </ul>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <nav class="header__menu">
-                       
-                    </nav>
-                </div>
-                <div class="col-lg-3">
-                    <div class="header__cart">
-                    
+                <div class="col-lg-6 col-md-6">
+                    <div class="header__top__right">
+                        <div class="header__top__right__social">
+                            <a href="https://instagram.com/aivlestory?utm_medium=copy_link "><i class="fa fa-instagram fa-2x" aria-hidden= "true"></i></a>
+                            <a href="https://classum.com/"><i class="fa fa-copyright fa-2x" aria-hidden="true"></i></a>
+                            <a href="https://blog.naver.com/porory_rei"><i class="fa fa-bold fa-2x" aria-hidden="true"></i></a>
+                            <a href="https://ktedu.kt.com/aivle/about.html"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="header__top__right__language">
+                            <img src="img/language.png"alt="">
+                            <div>AI 개발자</div>
+                            <span class="arrow_carrot-down"></span>
+                            <ul>
+                                <li><a href="#">AI 개발자</a></li>
+                                <li><a href="{% url 'main:index2'%}">DX 컨설턴트</a></li>
+                            </ul>
+                        </div>
+            
+                            {% if user.is_authenticated %}
+                              
+                            <div class="header__top__right__auth">
+                                <a href="{% url 'userapp:logout' %}"><i class="fa fa-user"></i>logout</a>
+                             
+                            </div> 
+                           
+            
+
+                            {% else %}
+                            <div class="header__top__right__auth">
+                                <a href="{% url 'userapp:login2' %}"><i class="fa fa-user"></i> Login</a>
+                            </div>
+                            {% endif %}
+
+                        
                     </div>
                 </div>
-            </div>
-            <div class="humberger__open">
-                <i class="fa fa-bars"></i>
             </div>
         </div>
-    </header>
-    <!-- Header Section End -->
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="header__logo">
+                    <a href="{% url 'main:index2' %}"><img src="/static/img/logo2.png" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                
+            </div>
+            <div class="col-lg-3">
+                <div class="header__cart">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-rss"></i> <span>1</span></a></li>
+                        <li><a href="#"><i class="fa fa-desktop"></i> <span>3</span></a></li>
+                    </ul>
+                   <div class="header__cart__price">score: <span>{{user.score}}</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="humberger__open">
+            <i class="fa fa-bars"></i>
+        </div>
+    </div>
+</header>
+<!-- Header Section End -->
 
     {% if user.is_authenticated %}
     로그인 성공!   
     <h3>{{user.username}} 님 환영합니다.</h3>
     <a href="{% url 'userapp:logout' %}">로그아웃</a>
-    <a href="{% url 'main:index' %}">메인화면가기</a>
+    <a href="{% url 'main:index2' %}">메인화면가기</a>
 
     {% else %}
      
@@ -199,7 +215,7 @@
                 <div class="bottomText">
                     <h6>아직 계정이 없으신가요?<h6> <a href="{% url 'userapp:signup' %}">계정 만들기</a>
                     <footer class="my-3 text-center text-small">
-                        <p class="mb-1">&copy; 2022 충남/충북 1조</p>
+                        <p class="mb-1">&copy; 2022 충남/충북 13조</p>
                     </footer>
                 </div>
             </form>

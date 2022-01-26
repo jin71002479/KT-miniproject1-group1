@@ -34,7 +34,7 @@
               <div class="col-lg-6 col-md-6">
                   <div class="header__top__left">
                       <ul>
-                          <li><i class="fa fa-home fa-2x"></i>https://ktedu.kt.com/aivle</li>
+                          
                           
                       </ul>
                   </div>
@@ -45,6 +45,7 @@
                           <a href="https://instagram.com/aivlestory?utm_medium=copy_link "><i class="fa fa-instagram fa-2x" aria-hidden= "true"></i></a>
                           <a href="https://classum.com/"><i class="fa fa-copyright fa-2x" aria-hidden="true"></i></a>
                           <a href="https://blog.naver.com/porory_rei"><i class="fa fa-bold fa-2x" aria-hidden="true"></i></a>
+                          <a href="https://ktedu.kt.com/aivle/about.html"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
                       </div>
                       <div class="header__top__right__language">
                           <img src="img/language.png"alt="">
@@ -89,17 +90,17 @@
                   <ul>
                       <li class="active"><a href="./index.html">홈</a></li>
                       <li><a href="./shop-grid.html">채팅</a></li>
-                      <li><a href="#">테스트</a>
+                      <li><a href="#">커뮤니티</a>
                           <ul class="header__menu__dropdown">
-                              <li><a href="./shop-details.html">Shop Details</a></li>
-                              <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                              <li><a href="./checkout.html">Check Out</a></li>
-                              <li><a href="./blog-details.html">Blog Details</a></li>
+                              <li><a href="./shop-details.html">자유게시판/a></li>
+                              <li><a href="{% url 'board:index' %}">Q&A</a></li>
+                              <li><a href="./checkout.html">게시판</a></li>
+                              <li><a href="{% url 'blog:index' %}">정보방</a></li>
                           </ul>
                       </li>
-                      <li><a href="./blog.html">랭킹 TOP 100</a></li>
-                      <li><a href="./contact.html">학습</a></li>
-                      <li><a href="./contact.html">커뮤니티</a></li>
+                      <li><a href="{% url 'study:studying' %}">랭킹 TOP 100</a></li>
+                      <li><a href="{% url 'rank:rank1_100' %}">학습</a></li>
+                      <li><a href="/quiz/main">퀴즈</a></li>
                   </ul>
               </nav>
           </div>

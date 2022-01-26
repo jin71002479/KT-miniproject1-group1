@@ -7,6 +7,7 @@ app_name = "study"
 
 urlpatterns = [
     path('studying/', views.studying, name = "studying"),
+    path('studying2/', views.studying2, name = "studying2"),
     
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -11,3 +11,8 @@ def studying(request):
         'study/studying.html',
     )
 
+def studying2(request):
+    return render(
+        request,
+        'study/studying2.html',
+    )

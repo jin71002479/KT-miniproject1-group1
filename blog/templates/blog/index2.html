@@ -13,7 +13,7 @@
 
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
    
-   <link rel="stylesheet" href="/static/css/style.css"> 
+   <link rel="stylesheet" href="/static/css/style2.css"> 
    <link rel="stylesheet" href="/static/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="/static/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="/static/css/elegant-icons.css" type="text/css">
@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="/static/css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="/static/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="/static/css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="/static/css/style_rank.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/style_rank2.css" type="text/css">
    
 
    
@@ -37,7 +37,7 @@
                   <div class="col-lg-6 col-md-6">
                       <div class="header__top__left">
                           <ul>
-                            <li>{{user.username}} 에이블러님 반갑습니다 !!</li>   
+                            <li>{{user.username}} 에이블러님 반갑습니다 !!</li>
                               
                           </ul>
                       </div>
@@ -85,24 +85,24 @@
           <div class="row">
               <div class="col-lg-3">
                   <div class="header__logo">
-                      <a href="{% url 'main:index' %}"><img src="/static/img/logo2.png" alt=""></a>
+                      <a href="{% url 'main:index2' %}"><img src="/static/img/logo2.png" alt=""></a>
                   </div>
               </div>
               <div class="col-lg-6">
                   <nav class="header__menu">
                       <ul>
-                          <li class="active"><a href="{% url 'main:index' %}">홈</a></li>
+                          <li class="active"><a href="{% url 'main:index2' %}">홈</a></li>
                           <li><a href="./shop-grid.html">채팅</a></li>
                           <li><a href="#">커뮤니티</a>
                               <ul class="header__menu__dropdown">
                                   <li><a href="./shop-details.html">자유게시판</a></li>
-                                  <li><a href="{% url 'board:index' %}">Q&A</a></li>
+                                  <li><a href="{% url 'board:index2' %">Q&A</a></li>
                                   <li><a href="./checkout.html">게시판</a></li>
-                                  <li><a href="{% url 'blog:index' %}">정보방</a></li>
+                                  <li><a href="{% url 'blog:index2' %}">정보방</a></li>
                               </ul>
                           </li>
-                          <li><a href="{% url 'rank:rank1_100' %}">랭킹 TOP 100</a></li>
-                          <li><a href="{% url 'study:studying' %}">학습</a></li>
+                          <li><a href="{% url 'rank:rank2_100' %}">랭킹 TOP 100</a></li>
+                          <li><a href="{% url 'study:studying2' %}">학습</a></li>
                           <li><a href="/quiz/main">퀴즈</a></li>
                       </ul>
                   </nav>
@@ -123,51 +123,119 @@
       </div>
   </header>
   <!-- Header Section End -->
+  
+  <!--체크박스-->
+
+<style>
+    input[type="checkbox"] {
+        display: none;
+    }
+ 
+    label {
+        display: inline-block;
+        border-radius: 20px;
+        text-align: center;
+        text-decoration: none;
+        border: solid 1px #ccc;
+        transition: 0.25s;
+        padding: 6px 18px;
+        cursor: pointer;
+        font-size: 14px;
+        margin: 3px;
+        
+    }
+
+    input[type="checkbox"]:checked + label {
+        background: #00809d;
+        color: #fff;
+    }  
+</style>
+
+<input type="checkbox" name="tags" value="1" id="tag_0" onclick="myFunction()">
+       
+            <label for="tag_0" >1번태그</label>
+   
 
 
-   <section class="ftco-section">
-      <div class="container">
-         <div class="row justify-content-center">
-            <div class="col-md-6 text-center mb-5">
-                <a href="#"><img src="/static/images/cap.png" alt="">
-               <h2 class="heading-section">AIVLER'S RANK</h2>
-            </div>
-         </div>
-         <div class="row">
-            <div class="col-md-12">
-               <div class="table-wrap">
-                  <table class="table">
-                    <thead class="thead-primary">
-                      <tr>
-                        <th>Rank</th>
-                        <th>ID</th>
-                        <th>NAME</th>
-                        <th>SCORE</th>
-                      </tr>
-                    </thead>
-                    <tbody>
+<input type="checkbox" name="tags" value="2" id="tag_1" onclick="myFunction1()">
+       
+            <label for="tag_1" >2번태그</label>
+
+
+
+<!-- 1번 게시글-->
+<div class ="container" id="text" style="display:none" >
+    <div class="row mt-2 pt-3">
+            <div class="col-md-8"><!-- 좌우 길이-->
+                <div class="card shadow my-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                        <img src="" alt="img">
+                    </div>
+                    <div class="col-md-8">
+                        <small>20th June 2022</small>
+                        <hr>
+                        <a class="h4" href="">First Post</a>
+                        <p>
+                           111111111
+                           111111111
                      
-                     {% for rank in rank_list %}
-                        <tr>
-                           <th scope="row">{{forloop.counter}}</th>
-                           <td> {{rank.username}} </td>
-                           <td> {{rank.fullname}} </td>
-                           <td> {{rank.score}} </td>                           
-                        </tr>
-                     {% endfor %}
-                      
-                    </tbody>
-                  </table>
-               </div>
+                        </p>
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
-   </section>
+        </div>
+    </div>
+</div>
+</div>
 
-   <script src="/static/js/jquery.min.js"></script>
-  <script src="/static/js/popper.js"></script>
-  <script src="/static/js/bootstrap.min.js"></script>
-  <script src="/static/js/main.js"></script>
+<div class ="container" id="text1" style="display:none" >
+    <div class="row mt-2 pt-3">
+            <div class="col-md-8"><!-- 좌우 길이-->
+                <div class="card shadow my-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                        <img src="" alt="img">
+                    </div>
+                    <div class="col-md-8">
+                        <small>20th June 2022</small>
+                        <hr>
+                        <a class="h4" href="">First Post</a>
+                        <p>
+                           2222222
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 
-   </body>
-</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<!--자바-->
+<script src="{% static 'css/myFunction.js'%}" charset="utf-8"></script>
+<script src="{% static 'css/myFunction1.js'%}" charset="utf-8"></script>
