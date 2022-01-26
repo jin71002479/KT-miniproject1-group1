@@ -7,7 +7,7 @@
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ogani | Template</title>
+    <title>KT AIVLE STUDY</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
@@ -20,9 +20,15 @@
     <link rel="stylesheet" href="/static/css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="/static/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="/static/css/slicknav.min.css" type="text/css">
-   
     <link rel="stylesheet" href="/static/css/style2.css" type="text/css">
+    
 </head>
+
+
+
+
+
+
 
 <body>
     <!-- Page Preloder -->
@@ -46,20 +52,20 @@
         <div class="humberger__menu__widget">
             <div class="header__top__right__language">
                 <img src="img/language.png" alt="">
-                <div>DX 컨설턴트</div>
+                <div>AI 개발자</div>
                 <span class="arrow_carrot-down"></span>
                 <ul>
-                    <li><a href="#">DX 컨설턴트</a></li>
                     <li><a href="#">AI 개발자</a></li>
+                    <li><a href="#">DX 컨설턴트</a></li>
                 </ul>
             </div>
             <div class="header__top__right__auth">
-                <a href="#"><i class="fa fa-user"></i> Login</a>
+                <a href=""><i class="fa fa-user"></i> Login</a>
             </div>
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
-                <li class="active"><a href="{% url 'main:index2' %}">홈</a></li>
+                <li class="active"><a href="./index.html">홈</a></li>
                 <li><a href="./shop-grid.html">채팅</a></li>
                 <li><a href="#">테스트</a>
                     <ul class="header__menu__dropdown">
@@ -71,6 +77,9 @@
                 </li>
                 <li><a href="./blog.html">랭킹 TOP100</a></li>
                 <li><a href="./contact.html">학습</a></li>
+                <ul class="header__menu__dropdown">
+                    
+                </ul>
                 <li><a href="./contact.html">커뮤니티</a></li>
             </ul>
         </nav>
@@ -83,7 +92,8 @@
         </div>
         <div class="humberger__menu__contact">
             <ul>
-               
+                <li>{{user.username}}님</li>
+                
             </ul>
         </div>
     </div>
@@ -97,7 +107,6 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__left">
                             <ul>
-                                <li>{{user.username}} 에이블러님 반갑습니다 !!</li>   
                                 
                             </ul>
                         </div>
@@ -115,28 +124,27 @@
                                 <div>DX 컨설턴트</div>
                                 <span class="arrow_carrot-down"></span>
                                 <ul>
-                                    <li><a href="#">DX 컨설턴트</a></li>
+                                    <li><a href="{% url 'main:index2'%}">DX 컨설턴트</a></li>
                                     <li><a href="{% url 'main:index'%}">AI 개발자</a></li>
                                 </ul>
                             </div>
-                            {% if user.is_authenticated %}
+                
+                                {% if user.is_authenticated %}
                                   
-                            <div class="header__top__right__auth">
-                                <a href="{% url 'userapp:logout' %}"><i class="fa fa-user"></i>logout</a>
-                             
-                            </div> 
-                           
-            
+                                <div class="header__top__right__auth">
+                                    <a href="{% url 'userapp:logout' %}"><i class="fa fa-user"></i>logout</a>
+                                 
+                                </div> 
+                               
+                
 
-                            {% else %}
-                            <div class="header__top__right__auth">
-                                <a href="{% url 'userapp:login2' %}"><i class="fa fa-user"></i> Login</a>
-                            </div>
-                            {% endif %}
+                                {% else %}
+                                <div class="header__top__right__auth">
+                                    <a href="{% url 'userapp:login' %}"><i class="fa fa-user"></i> Login</a>
+                                </div>
+                                {% endif %}
+  
                             
-                            <div class="header__top__right__auth">
-                              
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -153,35 +161,31 @@
                     <nav class="header__menu">
                         <ul>
                             <li class="active"><a href="{% url 'main:index2' %}">홈</a></li>
-                            <li><a href="./shop-grid.html">채팅</a></li>
+                            <li><a href="{% url 'main:index2' %}">채팅</a></li>
                             <li><a href="#">커뮤니티</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="./shop-details.html">자유게시판</a></li>
-                                    <li><a href="{% url 'board:index2 %">Q&A</a></li>
+                                    <li><a href="{% url 'board:index2' %}">Q&A</a></li>
                                     <li><a href="./checkout.html">게시판</a></li>
                                     <li><a href="{% url 'blog:index2' %}">정보방</a></li>
+                                    
                                 </ul>
                             </li>
                             <li><a href="{% url 'rank:rank2_100' %}">랭킹 TOP 100</a></li>
                             <li><a href="">학습</a>
-                            <ul class="header__menu__dropdown">
-                                <li><a href="{% url 'study:studying2' %}">AIVLE 강의</a></li>
-                                <li><a href="{% url 'youtubeboard:index' %}">YOUTUBE 강의</a></li>   
-                            
+                                <ul class="header__menu__dropdown">
+                                    <li><a href="{% url 'study:studying2' %}">AIVLE 강의</a></li>
+                                    <li><a href="{% url 'youtubeboard:index2' %}">YOUTUBE 강의</a></li>   
+                                
                                 </ul>
-                            </li>
+                            </li>                           
                             <li><a href="/quiz/main2">퀴즈</a></li>
-                            
                         </ul>
                     </nav>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-2">
                     <div class="header__cart">
-                        <ul>
-                            <li><a href="#"><i class="fa fa-rss"></i> <span>1</span></a></li>
-                            <li><a href="#"><i class="fa fa-desktop"></i> <span>3</span></a></li>
-                        </ul>
-                        <div class="header__cart__price">item: <span>$150.00</span></div>
+             
                     </div>
                 </div>
             </div>
@@ -196,33 +200,14 @@
     <section class="hero">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3">
-                    <div class="hero__categories">
-                        <div class="hero__categories__all">
-                            <i class="fa fa-trophy fa-2x"></i>
-                            <span>Total Rank</span>
-                        </div>
-                        <ul>
-                            <li>{% for rank in rank_list %}
-                                {% if forloop.counter == 1 %}
-                                     <li><img src="/static/img/gold.png" alt="">  {{ rank.username }} / {{ rank.score }}</li>
-                                 {% elif forloop.counter == 2 %}
-                                     <li><img src="/static/img/silver.png" alt="">  {{ rank.username }} / {{ rank.score }}</li>
-                                 {% elif forloop.counter == 3 %}
-                                     <li><img src="/static/img/bronze.png" alt="">  {{ rank.username }} / {{ rank.score }}</li>
-                                 {% else %}
-                                     <li> {{forloop.counter}} / {{ rank.username }} / {{ rank.score }}</li>
-                                 {% endif%}
-                             {% endfor %}
-                         </li>
-                           
-                        </ul>
-                    </div>
-                </div>
+          
                 <div class="col-lg-9">
                     <div class="hero__search">
                         <div class="hero__search__form">
-                            <form action="#">
+
+
+                            <form method="post" action="{% url 'main:search' %}">
+                                {% csrf_token %}
                                 <div class="hero__search__categories">
                                     All Categories
                                     <span class="arrow_carrot-down"></span>
@@ -231,69 +216,95 @@
                                     <meta charset="utf-8" />
                                     <title>datalist 태그</title>
                                     </head>
-                                <input type="text"list="disneyCharacterList" placeholder="What do yo u need?">
-                                <datalist id="disneyCharacterList">
-                                    <option value="python">python</option>
-                                    <option value="파이썬">파이썬</option>
-                                    <option value="알고리즘">알고리즘</option>
-                                    <option value="AWS">AWS</option>
-                                    <option value="스터디 구합니다">스터디 구합니다</option>
-                                    <option value="anaconda">anaconda</option>
-                                    <option value="jupyter notebook">jupyter notebook</option>
-                                    <option value="파이썬 기초문법">파이썬 기초문법</option>
-                                    <option value="파이썬 알고리즘">파이썬 알고리즘</option>
-                                    <option value="파이썬 데이터 분석">파이썬 데이터 분석</option>
-                                    <option value="django">django</option>
-                                </datalist>
-                                <button type="submit" class="site-btn2">SEARCH</button>
+                                    <input type="text" name="search" placeholder="검색어를 입력하세요"><br>
+                                    <button type="submit" class="site-btn" value="로그인">search</button>
+                                
                             </form>
+                            
                         </div>
-                        <div class="hero__search__phone">
-                            <div class="hero__search__phone__icon">
-                                <i class="fa fa-envelope" aria-hidden="true"></i>
-                            </div>
-                            <div class="hero__search__phone__text">
-                                <h5>KTAIVLE@kt.com</h5>
-                                <span>support 24/7 time</span>
-                            </div>
-                        </div>
+                      
                     </div>
-                    <div class="hero__item set-bg" data-setbg="/static/img/aivleshedule2.png">
+                    <div class="hero__item set-bg" data-setbg="/static/img/aivleshedule2.png"></div>
                         
                     </div>
+                    <div >
+                        <b>　　　　　{{user.username}}님</b>
+                        <div class="header__cart__price">　　　　　score: <span>{{user.score}}</span></div>
+                    
+
+                    <div class="col-lg">
+                        <div class="hero__categories">
+                          
+                            
+                            <br>
+                            <br>
+                            
+
+                            <div class="hero__categories__all">
+                                <i class="fa fa-trophy fa-2x"></i>
+                                
+                                <span>Total Rank</span>
+                            </div>
+                            <ul>
+                            <li>{% for rank in rank_list %}
+                                   {% if forloop.counter == 1 %}
+                                        <li><img src="/static/img/crown1.png" alt=""> - {{ rank.username }} -Score: {{ rank.score }}</li>
+                                    {% elif forloop.counter == 2 %}
+                                        <li><img src="/static/img/crown2.png" alt=""> - {{ rank.username }} -Score: {{ rank.score }}</li>
+                                    {% elif forloop.counter == 3 %}
+                                        <li><img src="/static/img/crown3.png" alt=""> - {{ rank.username }} -Score: {{ rank.score }}</li>
+                                    {% elif forloop.counter < 15 %}
+                                        <li>{{forloop.counter}}등 - {{ rank.username }}-Score: {{ rank.score }}　　</li>
+                                    {% else %}    
+                                    {% endif%}
+                                    <div class="col my-1">
+                                    </div>
+                                {% endfor %}
+                            </li>
+                             
+                           
+                        </ul>
+                        </div>
+                    </div>
                 </div>
+            </div>
+
+
+                
+
             </div>
         </div>
     </section>
     <!-- Hero Section End -->
 
     <!-- Categories Section Begin -->
+    <br><br>
     <section class="categories">
         <div class="container">
             <div class="row">
                 <div class="categories__slider owl-carousel">
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="/static/img/categories/ai1.png">
+                        <div class="categories__item set-bg" tyle = "width:200px" data-setbg="/static/img/categories/ai1.png">
                             <h5><a href="#"></a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="/static/img/categories/ai2.png">
+                        <div class="categories__item set-bg" tyle = "width:200px" data-setbg="/static/img/categories/ai2.png">
                             <h5><a href="#"></a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="/static/img/categories/ai3.png">
+                        <div class="categories__item set-bg" tyle = "width:200px" data-setbg="/static/img/categories/ai3.png">
                             <h5><a href="#"></a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="/static/img/categories/ai4.png">
+                        <div class="categories__item set-bg" tyle = "width:200px" data-setbg="/static/img/categories/ai3.png">
                             <h5><a href="#"></a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="/static/img/categories/ai5.png">
+                        <div class="categories__item set-bg" tyle = "width:200px" data-setbg="/static/img/categories/ai5.png">
                             <h5><a href="#"></a></h5>
                         </div>
                     </div>
@@ -301,11 +312,13 @@
             </div>
         </div>
     </section>
+
+
     <!-- Categories Section End -->
 
     
 
-   
+    
 
     
     
@@ -323,5 +336,6 @@
 
 
 </body>
-
 </html>
+<br><br><br>
+
