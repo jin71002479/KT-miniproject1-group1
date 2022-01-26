@@ -123,7 +123,8 @@
 
 <div class="container">
     <h5 class="my-3 border-bottom pb-2">질문등록</h5>
-    <form method="post" class="post-form my-3">
+    <form class="post-form my-3" action="{% url 'board:upload3' %}" method="post"
+    enctype="multipart/form-data">
         {% csrf_token %}
         
         <!-- 오류표시 Start -->
@@ -146,6 +147,8 @@
             <label for="content">내용</label>
             <textarea class="form-control" name="content" rows="10">
                     {{ form.content.value|default_if_none:'' }}</textarea>
+
+            <input type="file" name="file">
         </div>
         <div style='text-align:right;'>
             <br><button type="submit" class="btn btn-primary">저장하기</button>

@@ -74,6 +74,25 @@ def question_create(request):
 
     return render(request, 'board/question_form.html', context)
 
+
+def upload3(request):
+    if request.method == 'POST':
+        form = QuestionForm(request.POST, request.FILES)
+        if form.is_valid():
+            # uploadFile = form.save()
+            uploadFile = form.save(commit=False)
+            name = uploadFile.file.name
+            size = uploadFile.file.size
+            # question = form.save(commit=False)
+            uploadFile.pub_date = timezone.now()
+            uploadFile.username = request.user.username
+            uploadFile.save()
+            return redirect('board:index')
+    else:
+        form = QuestionForm()
+    return render(
+        request, 'board/question_form.html', {'form': form})
+
 def update(request, question_id):
     question = Question.objects.get(id=question_id)
     if(question.username == request.user.username):
@@ -95,3 +114,6 @@ def delete(request, question_id):
         question.delete()
         return redirect('board:index')
     return render(request, 'board/warning.html')
+
+
+# from .forms import UploadFileForm
