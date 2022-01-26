@@ -5,7 +5,7 @@ class QuestionForm(forms.ModelForm):
     
     class Meta:
         model = Question
-        fields = ['subject', 'content']
+        fields = ['subject', 'content', 'file']
        
         labels = {
             'subject': '제목',
@@ -22,4 +22,10 @@ class AnswerForm(forms.ModelForm):
         'content': '답변내용',
         }
 
+
+
+# class UploadFileForm(forms.ModelForm):
+#     class Meta:
+#         model = Question
+#         fields = ['file']
 

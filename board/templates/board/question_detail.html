@@ -135,6 +135,10 @@
                 </div>
             </div>
         </div>
+        
+        
+            
+        
     </div>
     <h5 class="border-bottom my-3 py-2">
         {{question.answer_set.count}}개의 답변이 있습니다.
@@ -153,6 +157,8 @@
         </div>
     </div>
     {% endfor %}
+    
+    
     <form action="{% url 'board:answer_create' question.id %}" method="post" class="my-3">
         {% csrf_token %}
 
@@ -177,10 +183,16 @@
             <a href="{% url 'board:index' %}" class="btn btn-primary">
                 목록으로
             </a>
+            <a href="{% url 'board:download' question.id %}" class="btn btn-primary">다운로드</a>           
             <a href="{% url 'board:update' question.id %}" class="btn btn-primary">수정</a>
             <a href="{% url 'board:delete' question.id %}" class="btn btn-primary">삭제</a>
         </div>
     </form>
+    <div>
+        
+        </form>
+       
+     </div>
     <br><br>
     </div>
     <script src="/static/js/jquery.min.js"></script>
