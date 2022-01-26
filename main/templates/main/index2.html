@@ -164,7 +164,7 @@
                             <li><a href="{% url 'main:index2' %}">채팅</a></li>
                             <li><a href="#">커뮤니티</a>
                                 <ul class="header__menu__dropdown">
-                                    <li><a href="./shop-details.html">자유게시판</a></li>
+                                
                                     <li><a href="{% url 'board:index2' %}">Q&A</a></li>
                                     <li><a href="./checkout.html">게시판</a></li>
                                     <li><a href="{% url 'blog:index2' %}">정보방</a></li>
@@ -228,8 +228,9 @@
                         
                     </div>
                     <div >
-                        <b>　　　　　{{user.username}}님</b>
-                        <div class="header__cart__price">　　　　　score: <span>{{user.score}}</span></div>
+                        <li><a href=""><i class="fa fa-user-circle fa-2x" aria-hidden= "true"></i></a>
+                            <b>{{user.username}}님</b>　<b>score:</b> <span>{{user.score}}
+                       
                     
 
                     <div class="col-lg">

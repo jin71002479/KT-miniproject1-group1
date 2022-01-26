@@ -164,7 +164,7 @@
                             <li><a href="{% url 'main:index' %}">채팅</a></li>
                             <li><a href="#">커뮤니티</a>
                                 <ul class="header__menu__dropdown">
-                                    <li><a href="./shop-details.html">자유게시판</a></li>
+                                   
                                     <li><a href="{% url 'board:index' %}">Q&A</a></li>
                                     <li><a href="./checkout.html">게시판</a></li>
                                     <li><a href="{% url 'blog:index' %}">정보방</a></li>
@@ -227,10 +227,10 @@
                         
                     </div>
                     <div >
-                        <a>　　<img src="/static/img/person.png" alt=""></a>
-                    
-                        <b>　{{user.username}}님</b>　 <b>score:</b> <span>{{user.score}}</span>
-                    
+                        <ul>
+                            <a><i class="fa fa-user-circle fa-2x" aria-hidden= "true"></i></a>
+                            <b>{{user.username}}님</b>　<b>score:</b> <span>{{user.score}}
+                          </ul>
                     
 
                     <div class="col-lg">
