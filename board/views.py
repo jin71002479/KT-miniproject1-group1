@@ -7,6 +7,7 @@ from django.shortcuts import redirect
 from userapp.models import User
 from django.core.paginator import Paginator
 
+
 def index(request):
     now_page = request.GET.get('page', 1)
     question_list = Question.objects.order_by('-pub_date')
@@ -73,7 +74,6 @@ def question_create(request):
 
     return render(request, 'board/question_form.html', context)
 
-
 def update(request, question_id):
     question = Question.objects.get(id=question_id)
     if(question.username == request.user.username):
@@ -89,8 +89,6 @@ def update(request, question_id):
             return render(request, 'board/update.html', {'question':question})
     else :
         return render(request, 'board/warning.html')
-
-        
 def delete(request, question_id):
     question = Question.objects.get(id=question_id)
     if(question.username == request.user.username):
