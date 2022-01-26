@@ -1,1 +1,0 @@
-web: gunicorn kt-miniproject1.wsgi
