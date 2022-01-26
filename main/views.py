@@ -24,6 +24,10 @@ def index2(request):
 def search(request):
     if request.method == 'POST':
         search = request.POST.get('search')
+        sel=request.POST.get('sel')
+        
+
+        print(sel)
         result=Question.objects.filter(subject__contains=search)
         return render(
                 request,
