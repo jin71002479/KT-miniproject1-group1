@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Question
+from .models import Freewrite
 from django.shortcuts import get_object_or_404
 from django.utils import timezone
 from django.shortcuts import redirect
