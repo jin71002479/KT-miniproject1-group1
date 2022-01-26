@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
@@ -16,7 +15,7 @@
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         
-        <link rel="stylesheet" href="/static/css/style.css"> 
+        <link rel="stylesheet" href="/static/css/style2.css"> 
         <link rel="stylesheet" href="/static/css/bootstrap.min.css" type="text/css">
          <link rel="stylesheet" href="/static/css/font-awesome.min.css" type="text/css">
          <link rel="stylesheet" href="/static/css/elegant-icons.css" type="text/css">
@@ -84,31 +83,31 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="header__logo">
-                    <a href="{% url 'main:index' %}"><img src="/static/img/logo2.png" alt=""></a>
+                    <a href="{% url 'main:index2' %}"><img src="/static/img/logo2.png" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6">
                 <nav class="header__menu">
                     <ul>
-                        <li class="active"><a href="{% url 'main:index' %}">홈</a></li>
-                        <li><a href="{% url 'main:index' %}">채팅</a></li>
+                        <li class="active"><a href="{% url 'main:index2' %}">홈</a></li>
+                        <li><a href="{% url 'main:index2' %}">채팅</a></li>
                         <li><a href="#">커뮤니티</a>
                             <ul class="header__menu__dropdown">
                                 <li><a href="./shop-details.html">자유게시판</a></li>
-                                <li><a href="{% url 'board:index' %}">Q&A</a></li>
+                                <li><a href="{% url 'board:index2' %}">Q&A</a></li>
                                 <li><a href="./checkout.html">게시판</a></li>
-                                <li><a href="{% url 'blog:index' %}">정보방</a></li>
+                                <li><a href="{% url 'blog:index2' %}">정보방</a></li>
                                 
                             </ul>
                         </li>
-                        <li><a href="{% url 'rank:rank1_100' %}">랭킹 TOP 100</a></li>
-                        <li><a href="#">학습</a>
+                        <li><a href="{% url 'rank:rank2_100' %}">랭킹 TOP 100</a></li>
+                        <li><a href="">학습</a>
                             <ul class="header__menu__dropdown">
-                                <li><a href="{% url 'study:studying' %}">AIVLE 강의</a></li>
-                                <li><a href="{% url 'youtubeboard:index' %}">YOUTUBE 강의</a></li>   
-                        
-                        </ul>
-                        </li>      
+                                <li><a href="{% url 'study:studying2' %}">AIVLE 강의</a></li>
+                                <li><a href="{% url 'youtubeboard:index2' %}">YOUTUBE 강의</a></li>   
+                            
+                                </ul>
+                            </li>
                         <li><a href="/quiz/main">퀴즈</a></li>
                     </ul>
                 </nav>
