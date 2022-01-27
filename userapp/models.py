@@ -9,3 +9,4 @@ class User(AbstractUser):
     fullname = models.CharField(max_length=10,)
     phone = models.CharField(max_length=10,)
     score = models.IntegerField(null=True)
+    count=models.IntegerField()
