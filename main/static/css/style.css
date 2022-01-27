@@ -129,7 +129,7 @@ ol {
 	right: 0;
 	height: 4px;
 	width: 80px;
-	background: #7fad39;
+	background: #2BB7B3;
 	content: "";
 	margin: 0 auto;
 }
@@ -2724,7 +2724,7 @@ ol {
 }
 
 .footer__widget .footer__widget__social a:hover {
-	background: #7fad39;
+	background: #2BB7B3;
 	color: #ffffff;
 	border-color: #ffffff;
 }
@@ -2762,7 +2762,7 @@ ol {
 
 .contact__widget span {
 	font-size: 36px;
-	color: #7fad39;
+	color: #2BB7B3;
 }
 
 .contact__widget h4 {
