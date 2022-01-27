@@ -132,44 +132,72 @@
 <!-- Header Section End -->
 
 
-   <section class="ftco-section">
-      <div class="container">
-         <div class="row justify-content-center">
-            <div class="col-md-6 text-center mb-5">
-                <a href="#"><img src="/static/images/cap.png" alt="">
-               <h2 class="heading-section">AIVLER'S RANK</h2>
-            </div>
-         </div>
-         <div class="row">
-            <div class="col-md-12">
-               <div class="table-wrap">
-                  <table class="table">
-                    <thead class="thead-primary">
-                      <tr>
-                        <th>Rank</th>
-                        <th>ID</th>
-                        <th>NAME</th>
-                        <th>SCORE</th>
+<section class="ftco-section">
+    <div class="container">
+       <div class="row justify-content-center">
+          <div class="col-md-6 text-center mb-5">
+
+             <h3 class="heading-section">👑 AIVLER'S RANK 👑</h3>
+          </div>
+       </div>
+       <div class="row">
+          <div class="col-md-12">
+             <div class="table-wrap">
+                <table class="table">
+                  <thead class="thead-primary">
+                    <tr>
+                      <th>Rank</th>
+                      <th>계급</th>
+                      <th>ID</th>
+                      <th>NAME</th>
+                      <th>SCORE</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                   
+                   {% for rank in rank_list %}
+                   {% if rank.score > 50 %}
+                   <tr>
+                   <th scope="row">　{{forloop.counter}}</th>
+                   <td><img src="/static/images/user4.png" alt=""></td>
+                   <td><b> {{rank.username}}</b> </td>
+                   <td> <span style="background: linear-gradient(to top, #FF5E00 30%, transparent 30%)"> <b>{{rank.fullname}}</b> </span> </td>
+                   <td><b> 　{{rank.score}}</b> </td>  
+                   </tr>
+                   {% elif rank.score > 30 %}
+                   <tr>
+                      <th scope="row">　{{forloop.counter}}</th>
+                      <td><img src="/static/images/user3.png" alt=""></td>
+                      <td> <b>{{rank.username}} </b> </td>
+                      <td> <span style="background: linear-gradient(to top, #FFBB00 30%, transparent 30%)"><b>{{rank.fullname}} </b> </span></td>
+                      <td> <b>　{{rank.score}} </b></td> 
+                  </tr>
+                  {% elif rank.score > 20 %}
+                  <tr>
+                      <th scope="row">　{{forloop.counter}}</th>
+                      <td><img src="/static/images/user2.png" alt=""></td>
+                      <td> <b>{{rank.username}}</b> </td>
+                      <td> <span style="background: linear-gradient(to top, #FFE400 30%, transparent 30%)"><b>{{rank.fullname}} </b> </span></td>
+                      <td> <b>　{{rank.score}}</b> </td>  
                       </tr>
-                    </thead>
-                    <tbody>
-                     
-                     {% for rank in rank_list %}
-                        <tr>
-                           <th scope="row">{{forloop.counter}}</th>
-                           <td> {{rank.username}} </td>
-                           <td> {{rank.fullname}} </td>
-                           <td> {{rank.score}} </td>                           
-                        </tr>
-                     {% endfor %}
-                      
-                    </tbody>
-                  </table>
-               </div>
-            </div>
-         </div>
-      </div>
-   </section>
+                   {% else %} 
+                   <tr>
+                      <th scope="row">　{{forloop.counter}}</th>
+                      <td><img src="/static/images/user1.png" alt=""></td>
+                      <td> {{rank.username}} </td>
+                      <td> {{rank.fullname}} </td>
+                      <td> 　{{rank.score}} </td>  
+                      </tr>
+                      {%endif%}
+                   {% endfor %}
+                    
+                  </tbody>
+                </table>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
 
    <script src="/static/js/jquery.min.js"></script>
   <script src="/static/js/popper.js"></script>

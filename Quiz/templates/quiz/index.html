@@ -20,6 +20,7 @@
 
 <body>
     <div class="container">
+       
         <section id="main" class="mx-auto mt-5 py-3 px-5">
             <h1></h1>
             <div class="col-lg-9 col-md-6 col-sm-6 col-12 mx-auto">
@@ -76,8 +77,11 @@
         </section>
         <script src="{% static 'css/data.js'%}" charset="utf-8"></script>
         <script src="{% static 'css/start.js'%}" charset="utf-8"></script>
-
-    <h3><a style="display:scroll;position:fixed;top:30px;left:80px;" href="{% url 'main:index' %}"  title="맨 위로">홈화면 가기</h3></a>
+  
+   
+    <a style="display:scroll;position:fixed;top:30px;left:80px;"  href="{% url 'main:index' %}"  title="맨 위로">                             
+    <img src="/static/img/back.png">
+    </a>  
 
 
 
