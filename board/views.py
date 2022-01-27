@@ -62,32 +62,31 @@ def answer_create(request, question_id):
 
 
 from .forms import QuestionForm
-def question_create(request):
-    if request.method == 'POST':
-        form = QuestionForm(request.POST)
-        if form.is_valid():
-            question = form.save(commit=False)
-            question.pub_date = timezone.now()
-            question.username = request.user.username
-            question.save()
-            return redirect('board:index')
-    else:
-        form = QuestionForm()
+# def question_create(request):
+#     if request.method == 'POST':
+#         form = QuestionForm(request.POST)
+#         # if form.is_valid():
+#         question = form.save(commit=False)
+#         question.pub_date = timezone.now()
+#         question.username = request.user.username
+#         question.save()
+#         return redirect('board:index')
+#     else:
+#         form = QuestionForm()
 
-    context = {'form': form}
+#     context = {'form': form}
 
-    return render(request, 'board/question_form.html', context)
+#     return render(request, 'board/question_form.html', context)
 
 
 def upload3(request):
     if request.method == 'POST':
-        form = QuestionForm(request.POST, request.FILES)
+        form = QuestionForm(request.POST, request.FILES)        
         if form.is_valid():
-            # uploadFile = form.save()
             uploadFile = form.save(commit=False)
-            name = uploadFile.file.name
-            size = uploadFile.file.size
-            # question = form.save(commit=False)
+            if uploadFile.file:        
+                name = uploadFile.file.name 
+                size = uploadFile.file.size                              
             uploadFile.pub_date = timezone.now()
             uploadFile.username = request.user.username
             uploadFile.save()
@@ -152,13 +151,14 @@ import os
 def download(request,question_id):   
     
     question = get_object_or_404(Question, pk=question_id)
-    file_url = question.file.url[1:]
-    # filepath = str(settings.BASE_DIR) + ('/media/%s' % question.file.name)   
-    if os.path.exists(file_url) :
-        with open(file_url, 'rb') as f:
-            filename = os.path.basename(file_url)
-            response = HttpResponse(f, content_type='application/octet-stream')
-            response['Content-Disposition'] = 'attachment; filename=%s' % filename
-            return response
+    if question.file:
+        file_url = question.file.url[1:]
+        # filepath = str(settings.BASE_DIR) + ('/media/%s' % question.file.name)   
+        if os.path.exists(file_url) :
+            with open(file_url, 'rb') as f:
+                filename = os.path.basename(file_url)
+                response = HttpResponse(f, content_type='application/octet-stream')
+                response['Content-Disposition'] = 'attachment; filename=%s' % filename
+                return response
     else :  
-        return redirect('board:delete')
+        return render(request, 'board/delete.html')

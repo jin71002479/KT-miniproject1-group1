@@ -164,7 +164,7 @@
                                 <div>AI 개발자</div>
                                 <span class="arrow_carrot-down"></span>
                                 <ul>
-                                    <li><a href="#">AI 개발자</a></li>
+                                    <li><a href="{% url 'main:index'%}">AI 개발자</a></li>
                                     <li><a href="{% url 'main:index2'%}">DX 컨설턴트</a></li>
                                 </ul>
                             </div>
@@ -206,7 +206,7 @@
                                 <ul class="header__menu__dropdown">
                                    
                                     <li><a href="{% url 'board:index' %}">Q&A</a></li>
-                                    <li><a href="./checkout.html">게시판</a></li>
+                                    <li><a href="{% url 'freeboard:index' %}">게시판</a></li>
                                     <li><a href="{% url 'blog:index' %}">정보방</a></li>
                                     
                                 </ul>

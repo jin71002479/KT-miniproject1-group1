@@ -66,7 +66,7 @@
                                   <a href="{% url 'userapp:login' %}"><i class="fa fa-user"></i> logout</a>
                               </div> 
                               
-                              <h6>{{user.username}} 님</h6>
+                              
                               
 
                               {% else %}
@@ -97,7 +97,7 @@
                               <ul class="header__menu__dropdown">
                                   
                                   <li><a href="{% url 'board:index' %}">Q&A</a></li>
-                                  <li><a href="./checkout.html">게시판</a></li>
+                                  <li><a href="{% url 'freeboard:index' %}">게시판</a></li>
                                   <li><a href="{% url 'blog:index' %}">정보방</a></li>
                               </ul>
                           </li>

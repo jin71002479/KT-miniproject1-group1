@@ -37,7 +37,7 @@
                   <div class="col-lg-6 col-md-6">
                       <div class="header__top__left">
                           <ul>
-                            <li>{{user.username}} 에이블러님 반갑습니다 !!</li>
+                            
                               
                           </ul>
                       </div>
@@ -52,11 +52,11 @@
                           </div>
                           <div class="header__top__right__language">
                               <img src="img/language.png"alt="">
-                              <div>Korean</div>
+                              <div>DX 컨설턴트</div>
                               <span class="arrow_carrot-down"></span>
                               <ul>
-                                  <li><a href="#">English</a></li>
-                                  <li><a href="#">Korean</a></li>
+                                  <li><a href="{% url 'main:index2'%">DX 컨설턴트</a></li>
+                                  <li><a href="{% url 'main:index'%}">AI 개발자</a></li>
                               </ul>
                           </div>
               
@@ -66,7 +66,7 @@
                                   <a href="{% url 'userapp:login' %}"><i class="fa fa-user"></i> logout</a>
                               </div> 
                               
-                              <h6>{{user.username}} 님</h6>
+                             
                               
 
                               {% else %}
@@ -95,9 +95,9 @@
                           <li><a href="./shop-grid.html">채팅</a></li>
                           <li><a href="#">커뮤니티</a>
                               <ul class="header__menu__dropdown">
-                                  <li><a href="./shop-details.html">자유게시판</a></li>
-                                  <li><a href="{% url 'board:index2' %">Q&A</a></li>
-                                  <li><a href="./checkout.html">게시판</a></li>
+                                 
+                                  <li><a href="{% url 'board:index2' %}">Q&A</a></li>
+                                  <li><a href="{% url 'freeboard:index' %}">게시판</a></li>
                                   <li><a href="{% url 'blog:index2' %}">정보방</a></li>
                               </ul>
                           </li>
@@ -116,10 +116,10 @@
               <div class="col-lg-3">
                   <div class="header__cart">
                       <ul>
-                          <li><a href="#"><i class="fa fa-rss"></i> <span>1</span></a></li>
-                          <li><a href="#"><i class="fa fa-desktop"></i> <span>3</span></a></li>
+                        <a><i class="fa fa-user-circle fa-2x" aria-hidden= "true"></i></a>
+                        <b>　{{user.username}}님</b>　 <b>score:</b> <span>{{user.score}}</span>
                       </ul>
-                      <div class="header__cart__price">item: <span>$150.00</span></div>
+                      
                   </div>
               </div>
           </div>
@@ -132,7 +132,7 @@
   
   <!--체크박스-->
 
-<style>
+  <style>
     input[type="checkbox"] {
         display: none;
     }
@@ -156,37 +156,50 @@
         color: #fff;
     }  
 </style>
+<div class="col-md-12 text-center mb-5">
 
-<input type="checkbox" name="tags" value="1" id="tag_0" onclick="myFunction()">
-       
-            <label for="tag_0" >1번태그</label>
-   
+            
+            <input type="checkbox" name="tags" value="2" id="tag_10" onclick="myFunction10()">
+            
+            <label for="tag_10" >👨‍🏫 에이블스쿨</label>
 
+                     
+            <input type="checkbox" name="tags" value="3" id="tag_30" onclick="myFunction30()">
+            
+            <label for="tag_30" >🎉 이벤트</label>
+            
+            
+            
+            <input type="checkbox" name="tags" value="3" id="tag_20" onclick="myFunction20()">
+            
+            <label for="tag_20" >💡 꿀팁</label>
 
-<input type="checkbox" name="tags" value="2" id="tag_1" onclick="myFunction1()">
-       
-            <label for="tag_1" >2번태그</label>
+            <input  type="checkbox" name="tags" value="1" id="tag_0" onclick="myFunction()">
 
+            <label for="tag_0" >📰 뉴스</label>
+            
+            
+</div>
 
 
 <!-- 1번 게시글-->
 <div class ="container" id="text" style="display:none" >
     <div class="row mt-2 pt-3">
-            <div class="col-md-8"><!-- 좌우 길이-->
+            <div class="col-md-12 text-center mb-5"><!-- 좌우 길이-->
                 <div class="card shadow my-3">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-4">
-                        <img src="" alt="img">
+                        <img src="/static/img/Newdeal.PNG" alt="img">
                     </div>
                     <div class="col-md-8">
-                        <small>20th June 2022</small>
+                        <a class="h6" target='_blank' href="https://www.moel.go.kr/news/enews/report/enewsView.do?news_seq=13117">디지털 대전환 시대 소프트웨어 인재양성을 위한 민.관 협력 본격화</a>
+                        <small>　　2021년 12월 29일</small>
                         <hr>
-                        <a class="h4" href="">First Post</a>
-                        <p>
-                           111111111
-                           111111111
-                     
+                        
+                        <p><br>
+                            디지털 선도기업 아카데미의 경우, 케이티(KT)의 에이블 스쿨,<br> 삼성의 청년 소프트웨어 아카데미(SSAFY) 등이
+                            K-디지털 트레이닝 과정으로 선정되어 <br>더 많은 청년들이 양질의 훈련과정에 참여할 수 있게 되었다.
                         </p>
                     </div>
                 </div>
@@ -197,8 +210,205 @@
 </div>
 
 <div class ="container" id="text1" style="display:none" >
+    <div class="row mt-2 pt-10">
+            <div class="col-md-12 text-center mb-5"><!-- 좌우 길이-->
+                <div class="card shadow my-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                        <img src="/static/img/KTCEO.PNG" alt="img">
+                    </div>
+                    <div class="col-md-8">
+                        <a class="h6" target='_blank' href="https://www.youtube.com/watch?v=iB7Butd-JkE&">청년희망프로젝트</a><small>　　2021년 12월 27일</small>
+                        <hr>
+                        
+                        <p><br>
+                            구현모 KT 대표 모두발언 풀버전<br>
+                            <br>
+                            "KT는 얼마 전 인공지능 기술 교육 ‘에이블 스쿨(AIVLE School)’을 개강한 데 이어 <br>내년부터 9개월 과정 200명을 대상으로 코딩 역량 개발 프로그램을 운영할 계획입니다"
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+<div class ="container" id="text15" style="display:none" >
     <div class="row mt-2 pt-3">
-            <div class="col-md-8"><!-- 좌우 길이-->
+            <div class="col-md-12 text-center mb-5"><!-- 좌우 길이-->
+                <div class="card shadow my-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                        <img src="/static/img/ktaivle6.jpg" alt="img">
+                    </div>
+                    <div class="col-md-8">
+                        <a class="h6" target='_blank' href="https://www.youtube.com/watch?v=__FtxYUQ5B4">[MV] KT AIVLE School + unofficialboyy 로고송 "SELF-MOTIVATION"</a>
+
+                        <hr>
+                       
+                        <p>
+                            <br>
+                            KT AIVLE School + unofficialboyy 로고송 공식 뮤직비디오<br>
+                            unofficialboyy는 항상 에이블러 여러분의 밝은 미래를 응원합니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class ="container" id="text14" style="display:none" >
+    <div class="row mt-2 pt-3">
+            <div class="col-md-12 text-center mb-5"><!-- 좌우 길이-->
+                <div class="card shadow my-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                        <img src="/static/img/ktaivle5.jpg" alt="img">
+                    </div>
+                    <div class="col-md-8">
+                        <a class="h6" target='_blank' href="https://www.youtube.com/watch?v=__FtxYUQ5B4">"열심히 하겠습니다!" KT 에이블스쿨 1기 합격자 인터뷰</a>
+
+                        <hr>
+                       
+                        <p>
+                            <br>
+                            에이블스쿨 1기에 합격한 에이블러들 생생 인터뷰!!<br>
+                            에이블러들의 각오와 다짐이 정말 대단하네요! <br>이 마음 끝까지 가지고 함께 Learning Journey를 완성해봐요!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class ="container" id="text13" style="display:none" >
+    <div class="row mt-2 pt-3">
+            <div class="col-md-12 text-center mb-5"><!-- 좌우 길이-->
+                <div class="card shadow my-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                        <img src="/static/img/ktaivle4.jpg" alt="img">
+                    </div>
+                    <div class="col-md-8">
+                        <a class="h6" target='_blank' href="https://www.youtube.com/watch?v=__FtxYUQ5B4">"기업에서 쓰이는 AI/DX 기술" KT 최고 전문가가 알려드립니다.</a>
+                        <hr>
+                        
+                        <p>
+                            KT AIVLE School에서 최고 전문가를 모시고 <br>기업에서 쓰이는 AI/DX 기술을 알려드립니다.<br>
+                          <br>
+                            초청 전문가 : 최준기(KT AI/Bigdata사업본부장), 배순민(KT AI2XL 연구소장)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<div class ="container" id="text12" style="display:none" >
+    <div class="row mt-2 pt-3">
+            <div class="col-md-12 text-center mb-5"><!-- 좌우 길이-->
+                <div class="card shadow my-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                        <img src="/static/img/ktaivle3.jpg" alt="img">
+                    </div>
+                    <div class="col-md-8">
+                        <a class="h6" target='_blank' href="https://www.youtube.com/watch?v=__FtxYUQ5B4">에이블스쿨 직접 소개해 드릴께요 "브이로그 크루편"</a>
+
+                        <hr>
+                       
+                        <p>
+                            <br>
+                            에이블스쿨을 크루가 직접 브이로그를 통해 소개해 드립니다.<br>
+                            교육장부터 에이블매니저, 코치와 함께 에이블크루를 만나보세요!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<div class ="container" id="text11" style="display:none" >
+    <div class="row mt-2 pt-3">
+            <div class="col-md-12 text-center mb-5"><!-- 좌우 길이-->
+                <div class="card shadow my-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                        <img src="/static/img/ktaivle2.jpg" alt="img">
+                    </div>
+                    <div class="col-md-8">
+                        <a class="h6" target='_blank' href="https://www.youtube.com/watch?v=__FtxYUQ5B4">에이블러의 'A to Z' 하루일기</a>
+                        <hr>
+                       
+                        <p>
+                            <br>
+                            에이블스쿨 교육생을 에이블러라고 부르기로 했어요^^<br>
+                            에이블러가 되면 하루가 어떨까요? <br>에이블러의 하루일기를 웹툰으로 만들어봤어요 ㅋㅋㅋ
+                            
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<div class ="container" id="text10" style="display:none" >
+    <div class="row mt-2 pt-3">
+            <div class="col-md-12 text-center mb-5"><!-- 좌우 길이-->
+                <div class="card shadow my-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                        <img src="/static/img/ktaivle.jpg" alt="img">
+                    </div>
+                    <div class="col-md-8">
+                        <a class="h6" target='_blank' href="https://www.youtube.com/watch?v=FzY_u_q8VzU&t">AIVLE과 함께 무한한 가능성을 깨워봐! KT AIVLE School 1기 모집</a>
+                      
+                        <hr>
+                       
+                        <p>
+                            AIVLE? 에이블!<br>
+                            KT AIVLE School은 KT가 운영하는 청년 AI/DX 인재양성 프로그램입니다.<br>
+                            
+                            꿈을 이루고 싶은 대한민국 청년 모두에게 열려있어요!<br>
+                            2기도 곧 모집 예정이니 기회를 놓치지 마세요.
+                            
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<div class ="container" id="text10" style="display:none" >
+    <div class="row mt-2 pt-3">
+            <div class="col-md-12 text-center mb-5"><!-- 좌우 길이-->
                 <div class="card shadow my-3">
                     <div class="card-body">
                         <div class="row">
@@ -206,9 +416,10 @@
                         <img src="" alt="img">
                     </div>
                     <div class="col-md-8">
-                        <small>20th June 2022</small>
+                        <a class="h6" target='_blank' href="https://www.youtube.com/watch?v=__FtxYUQ5B4">KT aivle school [디지털 선도기업 아카데미]</a>
+                        <small>　　2021년 12월 29일</small>
                         <hr>
-                        <a class="h4" href="">First Post</a>
+                       
                         <p>
                            2222222
                         </p>
@@ -219,6 +430,205 @@
     </div>
 </div>
 </div>
+
+
+<div class ="container" id="text10" style="display:none" >
+    <div class="row mt-2 pt-3">
+            <div class="col-md-12 text-center mb-5"><!-- 좌우 길이-->
+                <div class="card shadow my-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                        <img src="" alt="img">
+                    </div>
+                    <div class="col-md-8">
+                        <a class="h6" target='_blank' href="https://www.youtube.com/watch?v=__FtxYUQ5B4">KT aivle school [디지털 선도기업 아카데미]</a>
+                        <small>　　2021년 12월 29일</small>
+                        <hr>
+                       
+                        <p>
+                           2222222
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<div class ="container" id="text10" style="display:none" >
+    <div class="row mt-2 pt-3">
+            <div class="col-md-12 text-center mb-5"><!-- 좌우 길이-->
+                <div class="card shadow my-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                        <img src="" alt="img">
+                    </div>
+                    <div class="col-md-8">
+                        <a class="h6" target='_blank' href="https://www.youtube.com/watch?v=__FtxYUQ5B4">KT aivle school [디지털 선도기업 아카데미]</a>
+                        <small>　　2021년 12월 29일</small>
+                        <hr>
+                       
+                        <p>
+                           2222222
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<div class ="container" id="text10" style="display:none" >
+    <div class="row mt-2 pt-3">
+            <div class="col-md-12 text-center mb-5"><!-- 좌우 길이-->
+                <div class="card shadow my-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                        <img src="" alt="img">
+                    </div>
+                    <div class="col-md-8">
+                        <a class="h6" target='_blank' href="https://www.youtube.com/watch?v=__FtxYUQ5B4">KT aivle school [디지털 선도기업 아카데미]</a>
+                        <small>　　2021년 12월 29일</small>
+                        <hr>
+                       
+                        <p>
+                           2222222
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<div class ="container" id="text10" style="display:none" >
+    <div class="row mt-2 pt-3">
+            <div class="col-md-12 text-center mb-5"><!-- 좌우 길이-->
+                <div class="card shadow my-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                        <img src="" alt="img">
+                    </div>
+                    <div class="col-md-8">
+                        <a class="h6" target='_blank' href="https://www.youtube.com/watch?v=__FtxYUQ5B4">KT aivle school [디지털 선도기업 아카데미]</a>
+                        <small>　　2021년 12월 29일</small>
+                        <hr>
+                       
+                        <p>
+                           2222222
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+<div class ="container" id="text20" style="display:none" >
+    <div class="row mt-2 pt-3">
+            <div class="col-md-12 text-center mb-5"><!-- 좌우 길이-->
+                <div class="card shadow my-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                        <img src="/static/img/helper.PNG" alt="img">
+                    </div>
+                    <div class="col-md-8">
+                        <a class="h6" target='_blank' href="https://www.kua.go.kr/uaptm010/selectMain.do">국민취업제도</a>
+                        <hr>
+                     
+                        <p>
+                           <br><br>
+                           K디지털 트레이닝 (KT AIVLE School포함) 훈련 받으면<br>
+                           2유형은 대부분 신청 가능합니다. <br><br>
+                           <mark><i> Tip. 1유형부터 신청하세요.</i></mark>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+<div class ="container" id="text31" style="display:none" >
+    <div class="row mt-2 pt-3">
+            <div class="col-md-12 text-center mb-5"><!-- 좌우 길이-->
+                <div class="card shadow my-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                        <img src="/static/img/event2.png" alt="img">
+                    </div>
+                    <div class="col-md-8">
+                        <a class="h6" target='_blank' href="https://www.instagram.com/p/CX2xExxPkPf/?utm_source=ig_web_copy_link">❣ 에이블스쿨 로고송 챌린지에 초대합니다 ❣</a>
+                        <small>　　2022년 01월 25일</small>
+                        <hr>
+                        
+                        <p><br><br>
+                            수화로 구성된 안무가 들어간 릴스영상을 보고 로고송 챌린지에 참여해주세요😖<br>
+                            참여기간 2022.01.25 ~ 2022.02.11 (3주간)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+<div class ="container" id="text30" style="display:none" >
+    <div class="row mt-2 pt-3">
+            <div class="col-md-12 text-center mb-5"><!-- 좌우 길이-->
+                <div class="card shadow my-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                        <img src="/static/img/event.PNG" alt="img">
+                    </div>
+                    <div class="col-md-8">
+                        <a class="h6" target='_blank' href="https://www.instagram.com/p/CX2xExxPkPf/?utm_source=ig_web_copy_link">🎄 Happy Merry Christmas Event 결과 🎄</a>
+                        <small>　　2021년 12월 22일</small>
+                        <hr>
+                        
+                        <p><br><br>
+                            크리스마스에도 공부하는 에이블러들을 위한 이벤트 ♥<br>
+                            에이블러만의 크리스마스트리를 만들어줘! 푸짐한선물 장전완료🥇🥈🥉
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+<a style="display:scroll;position:fixed;bottom:30px;right:50px;" href="#" img src="/static/img/crown2.png" title="맨 위로">맨위로</a>
 
 
 

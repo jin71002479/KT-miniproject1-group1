@@ -64,7 +64,7 @@
                               <a href="{% url 'userapp:login' %}"><i class="fa fa-user"></i> logout</a>
                           </div> 
                           
-                          <h6>{{user.username}} 님</h6>
+                          
                           
 
                           {% else %}
@@ -95,7 +95,7 @@
                           <ul class="header__menu__dropdown">
                               
                               <li><a href="{% url 'board:index' %}">Q&A</a></li>
-                              <li><a href="./checkout.html">게시판</a></li>
+                              <li><a href="{% url 'freeboard:index' %}">게시판</a></li>
                               <li><a href="{% url 'blog:index' %}">정보방</a></li>
                           </ul>
                       </li>
@@ -122,7 +122,10 @@
 </header>
 <!-- Header Section End -->
 
+
 <div class="container my-3">
+    <h3 class="heading-section">🙋 Q&A </h3>
+    <br><br>
     <table class="table">
         <thead class="thead-primary">
             <tr>
@@ -169,7 +172,7 @@
                 </ul>
             </div>
         <div style='text-align:right;'>
-            <a href="{% url 'board:question_create' %}" class="btn btn-primary">
+            <a href="{% url 'board:upload3' %}" class="btn btn-primary">
                 질문 등록하기
             </a>
             <a href="{% url 'board:index' %}" class="btn btn-primary">

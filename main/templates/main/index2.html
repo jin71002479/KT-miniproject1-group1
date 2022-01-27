@@ -52,11 +52,11 @@
         <div class="humberger__menu__widget">
             <div class="header__top__right__language">
                 <img src="img/language.png" alt="">
-                <div>AI 개발자</div>
+                <div></div>
                 <span class="arrow_carrot-down"></span>
                 <ul>
-                    <li><a href="#">AI 개발자</a></li>
                     <li><a href="#">DX 컨설턴트</a></li>
+                    <li><a href="#">AI 개발자</a></li>
                 </ul>
             </div>
             <div class="header__top__right__auth">
@@ -98,6 +98,46 @@
         </div>
     </div>
     <!-- Humberger End -->
+ <style>
+        .dropbtn {
+          background-color: #3498DB;
+          color: white;
+          padding: 16px;
+          font-size: 16px;
+          border: none;
+        }
+        
+        .dropup {
+          position: relative;
+          display: inline-block;
+        }
+        
+        .dropup-content {
+          display: none;
+          position: absolute;
+          background-color: #f1f1f1;
+          min-width: 160px;
+          bottom: 50px;
+          z-index: 1;
+        }
+        
+        .dropup-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+        }
+        
+        .dropup-content a:hover {background-color: #ccc}
+        
+        .dropup:hover .dropup-content {
+          display: block;
+        }
+        
+        .dropup:hover .dropbtn {
+          background-color: #2980B9;
+        }
+        </style>
 
     <!-- Header Section Begin -->
     <header class="header">
@@ -164,7 +204,7 @@
                             <li><a href="{% url 'main:index2' %}">채팅</a></li>
                             <li><a href="#">커뮤니티</a>
                                 <ul class="header__menu__dropdown">
-                                    <li><a href="./shop-details.html">자유게시판</a></li>
+                                   
                                     <li><a href="{% url 'board:index2' %}">Q&A</a></li>
                                     <li><a href="./checkout.html">게시판</a></li>
                                     <li><a href="{% url 'blog:index2' %}">정보방</a></li>
@@ -195,7 +235,31 @@
         </div>
     </header>
     <!-- Header Section End -->
+    
+  <style>
+    input[type="checkbox"] {
+        display: none;
+    }
+ 
+    label {
+        display: inline-block;
+        border-radius: 20px;
+        text-align: center;
+        text-decoration: none;
+        border: solid 1px #ccc;
+        transition: 0.25s;
+        padding: 6px 18px;
+        cursor: pointer;
+        font-size: 14px;
+        margin: -5px;
+        
+    }
 
+    input[type="checkbox"]:checked + label {
+        background: #00809d;
+        color: #fff;
+    }  
+</style>
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="container">
@@ -209,18 +273,13 @@
                             <form method="post" action="{% url 'main:search' %}">
                                 {% csrf_token %}
                                 <div class="hero__search__categories">
-                                    All Categories
-                                    <span class="arrow_carrot-down"></span>
+                                    　 🔍 Question & Answer
                                 </div>
-                                <head>
-                                    <meta charset="utf-8" />
-                                    <title>datalist 태그</title>
-                                    </head>
+                               
                                     <input type="text" name="search" placeholder="검색어를 입력하세요"><br>
                                     <button type="submit" class="site-btn" value="로그인">search</button>
                                 
                             </form>
-                            
                         </div>
                       
                     </div>
@@ -228,15 +287,15 @@
                         
                     </div>
                     <div >
-                        <b>　　　　　{{user.username}}님</b>
-                        <div class="header__cart__price">　　　　　score: <span>{{user.score}}</span></div>
+                        <a><i class="fa fa-user-circle fa-2x" aria-hidden= "true"></i></a>
+                        <b>　{{user.username}}님</b>　 <b>score:</b> <span>{{user.score}}</span>
                     
+                        
 
                     <div class="col-lg">
                         <div class="hero__categories">
                           
                             
-                            <br>
                             <br>
                             
 
@@ -284,27 +343,27 @@
             <div class="row">
                 <div class="categories__slider owl-carousel">
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" tyle = "width:200px" data-setbg="/static/img/categories/ai1.png">
+                        <div class="categories__item set-bg" data-setbg="/static/img/categories/ai1.png">
                             <h5><a href="#"></a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" tyle = "width:200px" data-setbg="/static/img/categories/ai2.png">
+                        <div class="categories__item set-bg"  data-setbg="/static/img/categories/ai2.png">
                             <h5><a href="#"></a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" tyle = "width:200px" data-setbg="/static/img/categories/ai3.png">
+                        <div class="categories__item set-bg"  data-setbg="/static/img/categories/ai3.png">
                             <h5><a href="#"></a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" tyle = "width:200px" data-setbg="/static/img/categories/ai3.png">
+                        <div class="categories__item set-bg"  data-setbg="/static/img/categories/ai3.png">
                             <h5><a href="#"></a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" tyle = "width:200px" data-setbg="/static/img/categories/ai5.png">
+                        <div class="categories__item set-bg"  data-setbg="/static/img/categories/ai5.png">
                             <h5><a href="#"></a></h5>
                         </div>
                     </div>
@@ -312,16 +371,139 @@
             </div>
         </div>
     </section>
-
-
     <!-- Categories Section End -->
+    <!-- Footer Section Begin -->
+    <br><br><br>
+    <hr>
+    <!-- Related Blog Section Begin -->
+    <section class="related-blog spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title related-blog-title">
+                       
+                        <h2>Dreams Come True</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="blog__item">
+                        <div class="blog__item__pic">
+                            <img src="img/blog/blog-1.jpg" alt="">
+                        </div>
+                        <div class="blog__item__text">
+                            <ul>
+                                <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
+                                <li><i class="fa fa-comment-o"></i> 5</li>
+                            </ul>
+                            <h5><a href="#">Cooking tips make cooking simple</a></h5>
+                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="blog__item">
+                        <div class="blog__item__pic">
+                            <img src="img/blog/blog-2.jpg" alt="">
+                        </div>
+                        <div class="blog__item__text">
+                            <ul>
+                                <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
+                                <li><i class="fa fa-comment-o"></i> 5</li>
+                            </ul>
+                            <h5><a href="#">6 ways to prepare breakfast for 30</a></h5>
+                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="blog__item">
+                        <div class="blog__item__pic">
+                            <img src="img/blog/blog-3.jpg" alt="">
+                        </div>
+                        <div class="blog__item__text">
+                            <ul>
+                                <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
+                                <li><i class="fa fa-comment-o"></i> 5</li>
+                            </ul>
+                            <h5><a href="#">Visit the clean farm in the US</a></h5>
+                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Related Blog Section End -->
+    
+    <footer class="footer spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__about__logo">
+                            <a href="./index.html"><img src="/static/img/aivle.PNG" class="mb-3"></a>
+                        </div>
+                        <ul>
+                            <li>Address: 60-49 Road 11378 New York</li>
+                            <li>Phone: +65 11.188.888</li>
+                            <li>Email: hello@colorlib.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                    <div class="footer__widget">
+                        <h6>Useful Links</h6>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">About Our Shop</a></li>
+                            <li><a href="#">Secure Shopping</a></li>
+                            <li><a href="#">Delivery infomation</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Our Sitemap</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Who We Are</a></li>
+                            <li><a href="#">Our Services</a></li>
+                            <li><a href="#">Projects</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Innovation</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer__widget">
+                        <h6>Join Our Newsletter Now</h6>
+                        <p>Get E-mail updates about our latest shop and special offers.</p>
+                        <form action="#">
+                            <input type="text" placeholder="Enter your mail">
+                            <button type="submit" class="site-btn">Subscribe</button>
+                        </form>
+                        <div class="footer__widget__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer__copyright">
+                        <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
+                        <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-    
 
-    
-
-    
-    
 
     <!-- Js Plugins -->
     <script src="/static/js/jquery-3.3.1.min.js"></script>
@@ -337,5 +519,5 @@
 
 </body>
 </html>
-<br><br><br>
+
 

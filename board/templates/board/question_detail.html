@@ -93,9 +93,8 @@
                       <li><a href="./shop-grid.html">채팅</a></li>
                       <li><a href="#">커뮤니티</a>
                           <ul class="header__menu__dropdown">
-                              <li><a href="./shop-details.html">자유게시판</a></li>
                               <li><a href="{% url 'board:index' %}">Q&A</a></li>
-                              <li><a href="./checkout.html">게시판</a></li>
+                              <li><a href="{% url 'freeboard:index' %}">게시판</a></li>
                               <li><a href="{% url 'blog:index' %}">정보방</a></li>
                           </ul>
                       </li>
@@ -123,10 +122,14 @@
 <!-- Header Section End -->
 
 <div class="container my-3">
-    <h2 class="border-bottom py-2">{{ question.subject }}</h2>
+    <h3 class="heading-section">❓ Question ❓</h3>
+    <h2 class="border-bottom py-2">{{ question.subject }}
+        <br></h2>
+        작성자 ID : {{question.username}}
     <div class="card my-3">
         <div class="card-body">
             <div class="card-text" style="white-space: pre-line;">
+                
                 {{ question.content }}
             </div>
             <div class="d-flex justify-content-end">
@@ -141,6 +144,7 @@
         
     </div>
     <h5 class="border-bottom my-3 py-2">
+        <h3 class="heading-section">❗ Answer ❗</h3>
         {{question.answer_set.count}}개의 답변이 있습니다.
     </h5>
     {% for answer in question.answer_set.all %}
