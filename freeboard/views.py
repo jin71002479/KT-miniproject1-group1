@@ -52,7 +52,9 @@ def comment_create(request, freewrite_id):
 
 
 from .forms import FreewriteForm
+from userapp.models import User
 def freewrite_create(request):
+    user = User.objects.get(username = request.user.username)
     if request.method == 'POST':
         form = FreewriteForm(request.POST)
         if form.is_valid():
@@ -60,6 +62,8 @@ def freewrite_create(request):
             freewrite.free_pub_date = timezone.now()
             freewrite.username = request.user.username
             freewrite.save()
+            user.score = user.score + 5
+            user.save()
             return redirect('freeboard:index')
     else:
         form = FreewriteForm()
