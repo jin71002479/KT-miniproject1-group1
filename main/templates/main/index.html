@@ -31,73 +31,7 @@
 
 
 <body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
-
-    <!-- Humberger Begin -->
-    <div class="humberger__menu__overlay"></div>
-    <div class="humberger__menu__wrapper">
-        <div class="humberger__menu__logo">
-            <a href="#"><img src="/static/img/logo2.png" alt=""></a>
-        </div>
-        <div class="humberger__menu__cart">
-            <ul>
-                <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
-            </ul>
-            <div class="header__cart__price">item: <span>$150.00</span></div>
-        </div>
-        <div class="humberger__menu__widget">
-            <div class="header__top__right__language">
-                <img src="img/language.png" alt="">
-                <div>AI 개발자</div>
-                <span class="arrow_carrot-down"></span>
-                <ul>
-                    <li><a href="#">AI 개발자</a></li>
-                    <li><a href="#">DX 컨설턴트</a></li>
-                </ul>
-            </div>
-            <div class="header__top__right__auth">
-                <a href=""><i class="fa fa-user"></i> Login</a>
-            </div>
-        </div>
-        <nav class="humberger__menu__nav mobile-menu">
-            <ul>
-                <li class="active"><a href="./index.html">홈</a></li>
-                <li><a href="./shop-grid.html">채팅</a></li>
-                <li><a href="#">테스트</a>
-                    <ul class="header__menu__dropdown">
-                        <li><a href="./shop-details.html">Shop Details</a></li>
-                        <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                        <li><a href="./checkout.html">Check Out</a></li>
-                        <li><a href="./blog-details.html">Blog Details</a></li>
-                    </ul>
-                </li>
-                <li><a href="./blog.html">랭킹 TOP100</a></li>
-                <li><a href="./contact.html">학습</a></li>
-                <ul class="header__menu__dropdown">
-                    
-                </ul>
-                <li><a href="./contact.html">커뮤니티</a></li>
-            </ul>
-        </nav>
-        <div id="mobile-menu-wrap"></div>
-        <div class="header__top__right__social">
-            <a href="https://instagram.com/aivlestory?utm_medium=copy_link "><i class="fa fa-instagram fa-2x" aria-hidden= "true"></i></a>
-            <a href="https://classum.com/"><i class="fa fa-copyright fa-2x" aria-hidden="true"></i></a>
-            <a href="https://blog.naver.com/porory_rei"><i class="fa fa-bold fa-2x" aria-hidden="true"></i></a>
-            <a href="https://ktedu.kt.com/aivle/about.html"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
-        </div>
-        <div class="humberger__menu__contact">
-            <ul>
-                <li>{{user.username}}님</li>
-                
-            </ul>
-        </div>
-    </div>
-    <!-- Humberger End -->
+  
  <style>
         .dropbtn {
           background-color: #3498DB;
@@ -139,7 +73,7 @@
         }
         </style>
 
-    <!-- Header Section Begin -->
+    
     <header class="header">
         <div class="header__top">
             <div class="container">
@@ -206,7 +140,7 @@
                                 <ul class="header__menu__dropdown">
                                    
                                     <li><a href="{% url 'board:index' %}">Q&A</a></li>
-                                    <li><a href="{% url 'freeboard:index' %}">게시판</a></li>
+                                    <li><a href="{% url 'freeboard:index' %}">자유게시판</a></li>
                                     <li><a href="{% url 'blog:index' %}">정보방</a></li>
                                     
                                 </ul>
