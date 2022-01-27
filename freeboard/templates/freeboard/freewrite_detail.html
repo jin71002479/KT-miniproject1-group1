@@ -122,39 +122,81 @@
 <!-- Header Section End -->
 
 <div class="container my-3">
-    <h2 class="border-bottom py-2">{{ freewrite.free_subject }}</h2>
-    <div class="card my-3">
-        <div class="card-body">
-            <div class="card-text" style="white-space: pre-line;">
-                {{ freewrite.free_content }}
-            </div>
-            <div class="d-flex justify-content-end">
-                <div class="badge badge-light p-2" style="text-align:left; background-color: white;">
-                    작성자:{{ freewrite.username }}<br>
-                    작성일자:{{ freewrite.free_pub_date }}
-                </div>
-            </div>
+    <br>
+    
+    <br>
+    
+    <h3 class="border-bottom py-2"> <img src="/static/img/q.jpg"> <b>{{ freewrite.free_subject }}</b>
+        <br>
+    </h3>
+    
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <b style='color: #000000'>
+                작성자 ID : <b>{{ freewrite.username }}</b>
         </div>
-    </div>
-    <h5 class="border-bottom my-3 py-2">
-        {{freewrite.comment_set.count}}개의 댓글이 있습니다.
-    </h5>
-    {% for comment in freewrite.comment_set.all %}
-    <div class="card my-3">
+    
+        <div class="card-text" style="white-space: pre-line;">
+            　{{ freewrite.free_content }}
+        </div>
         <div class="card-body">
-            <div class="card-text" style="white-space: pre-line;">
-                {{ comment.comment_content }}
-            </div>
             <div class="d-flex justify-content-end">
                 <div class="badge badge-light p-2">
-                    {{ comment.comment_create_date }}
+    
+    
+                    {{ freewrite.free_pub_date }}
                     <br><br>
-                    작성자 : {{ comment.username }}  
+    
                 </div>
+    
             </div>
         </div>
     </div>
-    {% endfor %}
+    
+    
+    <br>
+    <h4 class="border-bottom my-2 py-2">
+        <div><img src="/static/img/A.png"><b>
+                등록된 답변</div>
+        </b>
+    </h4>
+    
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary"> <span
+                    style="background: linear-gradient(to top, #FFE400 30%, transparent 70%)">{{question.answer_set.count}}개</span>의
+                답변</h6>
+        </div>
+        <div class="card-body">
+    
+            <div>
+    
+            </div>
+    
+            {% for comment in freewrite.comment_set.all %}
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <b style='color: #FF1244'>
+                        작성자 : {{ comment.username }} </b>
+                </div>
+    
+                <div class="card-text" style="white-space: pre-line;">
+                    　 {{ comment.comment_content }}
+                </div>
+                <div class="card-body">
+                    <div class="d-flex justify-content-end">
+                        <div class="badge badge-light p-2">
+    
+    
+                            {{ comment.comment_create_date }}
+                            <br><br>
+    
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
     <form action="{% url 'freeboard:comment_create' freewrite.id %}" method="post" class="my-3">
         {% csrf_token %}
 
