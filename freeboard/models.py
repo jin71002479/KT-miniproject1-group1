@@ -10,3 +10,4 @@ class Comment(models.Model):
     freewrite = models.ForeignKey(Freewrite, on_delete=models.CASCADE)
     comment_content = models.TextField()
     comment_create_date = models.DateTimeField()
+    username = models.CharField(max_length=200)
