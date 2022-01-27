@@ -160,8 +160,9 @@
 
     {% for answer in question.answer_set.all %}
     <div class="card shadow mb-4">
-        <div class="card-header py-3">
-             {{ answer.content }}
+        <div class="card-header py-3" >
+            <b style='color: #FF0800'
+            > 작성자 : {{ answer.username }} </b>
         </div>
         
             <div class="card-text" style="white-space: pre-line;">
@@ -174,7 +175,7 @@
 
                     {{ answer.create_date }}
                     <br><br>
-                    작성자 : {{ answer.username }}  
+               
                 </div>
                 
             </div>
