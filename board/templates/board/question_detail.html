@@ -53,8 +53,8 @@
                           <div>Korean</div>
                           <span class="arrow_carrot-down"></span>
                           <ul>
-                              <li><a href="#">English</a></li>
-                              <li><a href="#">Korean</a></li>
+                            <li><a href="#">AI 개발자</a></li>
+                            <li><a href="{% url 'main:index2'%}">DX 컨설턴트</a></li>
                           </ul>
                       </div>
           
@@ -83,7 +83,7 @@
       <div class="row">
           <div class="col-lg-3">
               <div class="header__logo">
-                  <a href="{% url 'main:index' %}"><img src="/static/img/logo2.png" alt=""></a>
+                  <a href="{% url 'main:index' %}"><img src="/static/img/aivle.PNG" class="mt-2"></a>
               </div>
           </div>
           <div class="col-lg-6">
@@ -107,10 +107,10 @@
           <div class="col-lg-3">
               <div class="header__cart">
                   <ul>
-                      <li><a href="#"><i class="fa fa-rss"></i> <span>1</span></a></li>
-                      <li><a href="#"><i class="fa fa-desktop"></i> <span>3</span></a></li>
+                    <a ><i class="fa fa-user-circle fa-2x" aria-hidden= "true"></i></a>
+                    <b>　{{user.username}}님</b>　 <b>score:</b> <span>{{user.score}}</span>
                   </ul>
-                  <div class="header__cart__price">item: <span>$150.00</span></div>
+                 
               </div>
           </div>
       </div>
