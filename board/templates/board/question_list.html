@@ -13,7 +13,7 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-   
+    <link rel="stylesheet" href="/static/jinho.css"> 
     <link rel="stylesheet" href="/static/css/style.css"> 
     <link rel="stylesheet" href="/static/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="/static/css/font-awesome.min.css" type="text/css">
@@ -123,16 +123,44 @@
 <!-- Header Section End -->
 
 
-<div class="container my-3">
-    <h3 class="heading-section">🙋 Q&A </h3>
+
+<div class="container">
+
     <br><br>
-    <table class="table">
+    <table class="board-table">
+        
+
+ 
+            <div id="board-search">
+                <div class="container">
+                    <div class="search-window">
+                        <form method="post" action="{% url 'main:search' %}">
+                            {% csrf_token %}
+                            <div class="search-wrap">
+                                <input type="text" name="search" placeholder="검색어를 입력해주세요." value="">
+                                <button type="submit" class="btn btn-dark">검색</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="d-grid gap-2 d-md-block">
+      
+                <a href="{% url 'board:upload3' %}" class="btn btn-danger">
+                   질문 등록하기
+                </a>
+
+           
+        </div>
+        <br>
         <thead class="thead-primary">
             <tr>
-                <th>번호</th>
-                <th>제목</th>
-                <th>작성자</th>
-                <th>작성일시</th>
+                
+                <b><th scope="col" class="th-num">번호</th>
+                <th scope="col" class="th-title">제목</th>
+                <th scope="col" class="th-date">작성자</th>
+                <th scope="col" class="th-date">작성일지</th>
+                
             </tr>
         </thead>
         <tbody>
@@ -140,6 +168,7 @@
           
                 {% for question in info %}
                 <tr>
+                   
                     <td>{{ forloop.revcounter }}</td>
                     <td>
                         <a href="{% url 'board:detail' question.id %}">
@@ -160,7 +189,10 @@
             {% endif %}
         </tbody>
         </table>
-        <div style='text-align:center;'>
+    </div>
+    <br>
+        <div class="d-grid gap-2 col-2 mx-auto">
+        <div style='text-align:right;'>
             <ul class='pagination'>
                 {% for i in page_range %}
                 <li>
@@ -171,13 +203,8 @@
                 {% endfor %}
                 </ul>
             </div>
-        <div style='text-align:right;'>
-            <a href="{% url 'board:upload3' %}" class="btn btn-primary">
-                질문 등록하기
-            </a>
-            <a href="{% url 'board:index' %}" class="btn btn-primary">
-                목록으로
-            </a>
+            </div>
+           
         </div>
         <br><br>
     </div>
@@ -185,4 +212,7 @@
     <script src="/static/js/popper.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
     <script src="/static/js/main.js"></script>
+
+
+
 </body>
