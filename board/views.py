@@ -52,6 +52,7 @@ def answer_create(request, question_id):
             answer = form.save(commit=False)
             answer.create_date = timezone.now()
             answer.question = question
+            answer.username = request.user.username
             answer.save()
             return redirect('board:detail', question_id=question.id)
     else:
