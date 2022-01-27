@@ -148,6 +148,8 @@
             <div class="d-flex justify-content-end">
                 <div class="badge badge-light p-2">
                     {{ comment.comment_create_date }}
+                    <br><br>
+                    작성자 : {{ comment.username }}  
                 </div>
             </div>
         </div>
@@ -170,7 +172,7 @@
         <!-- 오류표시 End -->
 
         <div class="form-group">
-            <input type="text" name="free_content" id="free_content" class="form-control" rows="10">
+            <textarea name="comment_content" id="comment_content" class="form-control" rows="10"></textarea>
         </div>
         <div style='text-align:right;'>
             <input type="submit" value="댓글등록" class="btn btn-primary">

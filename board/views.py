@@ -10,6 +10,7 @@ from django.core.paginator import Paginator
 from django.views.generic.detail import SingleObjectMixin
 from django.http import FileResponse
 from django.core.files.storage import FileSystemStorage
+from userapp.models import User
 
 
 def index(request):
@@ -51,6 +52,7 @@ def answer_create(request, question_id):
             answer = form.save(commit=False)
             answer.create_date = timezone.now()
             answer.question = question
+            answer.username = request.user.username
             answer.save()
             return redirect('board:detail', question_id=question.id)
     else:
@@ -80,8 +82,10 @@ from .forms import QuestionForm
 
 
 def upload3(request):
+    user = User.objects.get(username = request.user.username)   
     if request.method == 'POST':
-        form = QuestionForm(request.POST, request.FILES)        
+        form = QuestionForm(request.POST, request.FILES)
+             
         if form.is_valid():
             uploadFile = form.save(commit=False)
             if uploadFile.file:        
@@ -90,6 +94,8 @@ def upload3(request):
             uploadFile.pub_date = timezone.now()
             uploadFile.username = request.user.username
             uploadFile.save()
+            user.score = user.score + 10
+            user.save()
             return redirect('board:index')
     else:
         form = QuestionForm()
