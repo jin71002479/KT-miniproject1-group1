@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="/static/css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="/static/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="/static/css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="/static/css/style_rank2.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/style_rank.css" type="text/css">
 </head>
 
 <body>
@@ -35,25 +35,26 @@
               <div class="col-lg-6 col-md-6">
                   <div class="header__top__left">
                       <ul>
-                        
+                        <li>{{user.username}} 에이블러님 반갑습니다 !!</li>   
+                          
                       </ul>
                   </div>
               </div>
               <div class="col-lg-6 col-md-6">
                   <div class="header__top__right">
                       <div class="header__top__right__social">
-                          <a href="https://instagram.com/aivlestory?utm_medium=copy_link "target='_blank'><i class="fa fa-instagram fa-2x" aria-hidden= "true"></i></a>
-                          <a href="https://classum.com/"target='_blank'><i class="fa fa-copyright fa-2x" aria-hidden="true"></i></a>
-                          <a href="https://blog.naver.com/porory_rei"target='_blank'><i class="fa fa-bold fa-2x" aria-hidden="true"></i></a>
-                          <a href="https://ktedu.kt.com/aivle/about.html"target='_blank'><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
+                          <a href="https://instagram.com/aivlestory?utm_medium=copy_link "><i class="fa fa-instagram fa-2x" aria-hidden= "true"></i></a>
+                          <a href="https://classum.com/"><i class="fa fa-copyright fa-2x" aria-hidden="true"></i></a>
+                          <a href="https://blog.naver.com/porory_rei"><i class="fa fa-bold fa-2x" aria-hidden="true"></i></a>
+                          <a href="https://ktedu.kt.com/aivle/about.html"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
                       </div>
                       <div class="header__top__right__language">
                           <img src="img/language.png"alt="">
-                          <div>DX 컨설턴트</div>
+                          <div>Korean</div>
                           <span class="arrow_carrot-down"></span>
                           <ul>
-                              <li><a href="{% url 'main:index2'%}">DX 컨설턴트</a></li>
-                              <li><a href="{% url 'main:index'%}">AI 개발자</a></li>
+                              <li><a href="#">English</a></li>
+                              <li><a href="#">Korean</a></li>
                           </ul>
                       </div>
           
@@ -63,12 +64,12 @@
                               <a href="{% url 'userapp:login' %}"><i class="fa fa-user"></i> logout</a>
                           </div> 
                           
-                          
+                          <h6>{{user.username}} 님</h6>
                           
 
                           {% else %}
                           <div class="header__top__right__auth">
-                              <a href="{% url 'userapp:login2' %}"><i class="fa fa-user"></i> Login</a>
+                              <a href="{% url 'userapp:login' %}"><i class="fa fa-user"></i> Login</a>
                           </div>
                           {% endif %}
 
@@ -91,26 +92,20 @@
                       <li class="active"><a href="{% url 'main:index2' %}">홈</a></li>
                       <li><a href="./shop-grid.html">채팅</a></li>
                       <li><a href="#">커뮤니티</a>
-                          <ul class="header__menu__dropdown">
-                         
-                      <li><a href="">학습</a>
-                        <ul class="header__menu__dropdown">
-                            <li><a href="{% url 'study:studying2' %}">AIVLE 강의</a></li>
-                            <li><a href="{% url 'youtubeboard:index2' %}">YOUTUBE 강의</a></li>   
-                        
-                        </ul>
-
-                      <li><a href="/quiz/main2">퀴즈</a></li>
+                          
+                      <li><a href="{% url 'rank:rank2_100' %}">랭킹 TOP 100</a></li>
+                      <li><a href="{% url 'study:studying2' %}">학습</a></li>
+                      <li><a href="/quiz/main">퀴즈</a></li>
                   </ul>
               </nav>
           </div>
           <div class="col-lg-3">
               <div class="header__cart">
                   <ul>
-                    <a><i class="fa fa-user-circle fa-2x" aria-hidden= "true"></i></a>
-                    <b>　{{user.username}}님</b>　 <b>score:</b> <span>{{user.score}}</span>   
+                      <li><a href="#"><i class="fa fa-rss"></i> <span>1</span></a></li>
+                      <li><a href="#"><i class="fa fa-desktop"></i> <span>3</span></a></li>
                   </ul>
-                  
+                  <div class="header__cart__price">item: <span>$150.00</span></div>
               </div>
           </div>
       </div>
