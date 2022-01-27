@@ -30,8 +30,19 @@ def index(request):
     return render(request, 'board/question_list.html', context)
 
 def index2(request):
+    now_page = request.GET.get('page', 1)
     question_list = Question.objects.order_by('-pub_date')
-    context = {'question_list': question_list}
+    p = Paginator(question_list, 10)
+    info = p.get_page(now_page)
+    # context = {'question_list': question_list}
+    start_page = (int(now_page) - 1) // 10 * 10 + 1
+    end_page = start_page + 9
+    if end_page > p.num_pages:
+        end_page = p.num_pages
+
+    context = {'info': info,
+        'page_range' : range(start_page, end_page + 1)
+    }
     return render(request, 'board/question_list2.html', context)
 
 def detail(request, question_id):
