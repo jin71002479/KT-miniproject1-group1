@@ -174,7 +174,7 @@
         <div class="card-header py-3" >
             <b style='color: #FF1244'>
                 작성자 : {{ answer.username }} </b>
-                <a href="{% url 'board:comment_delete' answer.id %}" class="btn btn-primary" style="float:right"onClick="alert('삭제되었습니다.')">삭제</a>
+                <a href="{% url 'board:answer_delete' answer.id %}" class="btn btn-primary" style="float:right"onClick="alert('삭제되었습니다.')">삭제</a>
         </div>
         
             <div class="card-text" style="white-space: pre-line;">
