@@ -137,29 +137,25 @@
         </div>
         {% endif %}
         <!-- 오류표시 End -->
-        <table border="1" width=1000 class="mt-4">
-            <tr>
-                <th colspan="2">
-                    자유게시판 글쓰기
-                </th>
-            </tr>
-            <tr>
-               <td >
-                <input type="text" class="form-control" name="free_subject"  placeholder="제목을 입력하세요." style="width:100%;"  maxlength=20  >
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" height=400>
-                   <textarea class="form-control" name="free_content" placeholder="내용을 입력하세요." style="width: 100%; height: 100%"></textarea>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" align=right>
-                    <button type="submit" class="btn btn-primary">저장하기</button>
-                    <a href="{% url 'freeboard:index' %}" class="btn btn-primary">목록으로</a>
-                </td>
-            </tr>
-        </table>
+        <div class="form-group">
+            <label for="subject" >제목</label>
+            <input type="text" class="form-control" name="free_subject" placeholder = "제목을 입력해주세요" value="{{ form.subject.value|default_if_none:'' }}">
+        </div>
+        <div class="form-group">
+            <label for="content">내용</label>
+
+            
+            <textarea name="free_content" id ="content" class="form-control" rows="10"
+            placeholder = "내용을 입력해주세요"></textarea> 
+
+            
+        </div>
+        <div style='text-align:right;'>
+            <br><button type="submit" class="btn btn-primary">저장하기</button>
+            <a href="{% url 'freeboard:index' %}" class="btn btn-primary">
+                목록으로
+            </a>
+        </div>
         </form>
         </div>
         <script src="/static/js/jquery.min.js"></script>
