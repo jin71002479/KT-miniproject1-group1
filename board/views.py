@@ -103,6 +103,28 @@ def upload3(request):
     return render(
         request, 'board/question_form.html', {'form': form})
 
+@login_required (login_url='userapp:login2')
+def upload4(request):
+    user = User.objects.get(username = request.user.username)   
+    if request.method == 'POST':
+        form = QuestionForm(request.POST, request.FILES)
+             
+        if form.is_valid():
+            uploadFile = form.save(commit=False)
+            if uploadFile.file:        
+                name = uploadFile.file.name 
+                size = uploadFile.file.size                              
+            uploadFile.pub_date = timezone.now()
+            uploadFile.username = request.user.username
+            uploadFile.save()
+            user.score = user.score + 10
+            user.save()
+            return redirect('board:index2')
+    else:
+        form = QuestionForm()
+    return render(
+        request, 'board/question_form.html', {'form': form})
+
 def update(request, question_id):
     question = Question.objects.get(id=question_id)
     if(question.username == request.user.username):

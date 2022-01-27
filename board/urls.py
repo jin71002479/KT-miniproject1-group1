@@ -19,6 +19,7 @@ urlpatterns = [
     path('<int:question_id>/update/',views.update, name="update"),
     path('<int:question_id>/delete/',views.delete, name="delete"),
     path('upload3/', views.upload3, name='upload3'),
+    path('upload4/', views.upload4, name='upload4'),
     path('download/<int:question_id>/', views.download, name='download'),
     # path('download/%3Fid=<int:question_id>/', views.download, name='download'),
     # path('download/', views.download, name='download'),

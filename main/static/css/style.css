@@ -618,6 +618,7 @@ ol {
 
 .hero__categories ul {
 	border: 1px solid #ebebeb;
+	padding-right: 50px;
 	padding-left: 40px;
 	padding-top: 10px;
 	padding-bottom: 12px;

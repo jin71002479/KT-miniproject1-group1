@@ -216,43 +216,47 @@
                     <div class="hero__item set-bg" data-setbg="/static/img/aivleshedule.png"></div>
                         
                     </div>
-                    <div >
-                        
-                    
-                        
-
+                   
+                  
                     <div class="col-lg">
-                     
                         <div class="hero__categories">
-                       
                                 <div class="header__cart ">
                                     <a><i class="fa fa-user-circle fa-2x" aria-hidden= "true"></i></a>
-                                    <b>　{{user.username}}님</b>　<b>score:</b><span>{{user.score}}</span>　　
-                                   
-                                </div>
-                           
-                      
-                            
-
+                                    <b>　{{user.username}}&nbsp님</b>　　　　　　
+                                    <br>
+                                    <b>score:</b><span>{{user.score}}</span>　　　　　　
+                                    <br/>
+                                
+                               
+                                
                             <div class="hero__categories__all">
                                 <i class="fa fa-trophy fa-2x"></i>
                                 
                                 <span>Total Rank</span>
                             </div>
+                            
                             <ul>
-                            <li>{% for rank in rank_list %}
-                                   {% if forloop.counter == 1 %}
-                                        <li><img src="/static/img/crown1.png" alt=""> - {{ rank.username }} -Score: {{ rank.score }}</li>
-                                    {% elif forloop.counter == 2 %}
-                                        <li><img src="/static/img/crown2.png" alt=""> - {{ rank.username }} -Score: {{ rank.score }}</li>
-                                    {% elif forloop.counter == 3 %}
-                                        <li><img src="/static/img/crown3.png" alt=""> - {{ rank.username }} -Score: {{ rank.score }}</li>
-                                    {% elif forloop.counter < 15 %}
-                                        <li>{{forloop.counter}}등 - {{ rank.username }}-Score: {{ rank.score }}　　</li>
-                                    {% else %}    
-                                    {% endif%}
+                             
+                              
+                           
+                                <div style="text-align:left">
+                                <li>{% for rank in rank_list %}
+                                {% if forloop.counter == 1 %}
+                                         <li><img src="/static/img/crown1.png" alt=""> - {{ rank.username }} -Score: {{ rank.score }}</li>
+                                     {% elif forloop.counter == 2 %}
+                                         <li><img src="/static/img/crown2.png" alt=""> - {{ rank.username }} -Score: {{ rank.score }}</li>
+                                     {% elif forloop.counter == 3 %}
+                                         <li><img src="/static/img/crown3.png" alt=""> - {{ rank.username }} -Score: {{ rank.score }}</li>
+                                     {% elif forloop.counter < 15 %}
+                                         <li>{{forloop.counter}}등 - {{ rank.username }}-Score: {{ rank.score }}　　</li>
+                                     {% else %}    
+                                     {% endif%}
+                                     <div class="col my-1">
+                                     </div>
+                                
                                     <div class="col my-1">
                                     </div>
+                                    
                                 {% endfor %}
                             </li>
                              
