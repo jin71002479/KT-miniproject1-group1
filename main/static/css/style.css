@@ -3169,6 +3169,7 @@ ol {
 @media only screen and (max-width: 767px) {
 	.hero__categories {
 		margin-bottom: 30px;
+		
 	}
 	.hero__search {
 		margin-bottom: 30px;
@@ -3468,5 +3469,8 @@ ol {
 	}
 	.blog__details__hero__text h2 {
 		font-size: 24px;
+
 	}
 }
+
+    
