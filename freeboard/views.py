@@ -6,6 +6,7 @@ from django.utils import timezone
 from django.shortcuts import redirect
 from userapp.models import User
 from django.core.paginator import Paginator
+from django.contrib.auth.decorators import login_required #로그인여부
 
 def index(request):
     now_page = request.GET.get('page', 1)
@@ -47,6 +48,7 @@ def detail(request, freewrite_id):
 
 
 from .forms import CommentForm
+@login_required (login_url='userapp:login')
 def comment_create(request, freewrite_id):
     freewrite = get_object_or_404(Freewrite, pk=freewrite_id)
     
@@ -69,6 +71,7 @@ def comment_create(request, freewrite_id):
 
 from .forms import FreewriteForm
 from userapp.models import User
+@login_required (login_url='userapp:login')
 def freewrite_create(request):
     user = User.objects.get(username = request.user.username)
     if request.method == 'POST':
@@ -87,7 +90,7 @@ def freewrite_create(request):
     context = {'form': form}
 
     return render(request, 'freeboard/freewrite_form.html', context)
-
+@login_required (login_url='userapp:login')
 def freewrite_create2(request):
     user = User.objects.get(username = request.user.username)
     if request.method == 'POST':
