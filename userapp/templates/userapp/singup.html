@@ -83,7 +83,7 @@
         </div>
         <div class="humberger__menu__contact">
             <ul>
-              <li><i class="fa fa-home fa-2x"></i>https://ktedu.kt.com/aivle</li>
+             
                 <li>Free </li>
             </ul>
         </div>
@@ -98,7 +98,7 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="header__top__left">
                         <ul>
-                            <li>{{user.username}} 에이블러님 반갑습니다 !!</li>
+                            
                             
                         </ul>
                     </div>
@@ -106,9 +106,10 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="header__top__right">
                         <div class="header__top__right__social">
-                            <a href="https://instagram.com/aivlestory?utm_medium=copy_link "><i class="fa fa-instagram fa-2x" aria-hidden= "true"></i></a>
-                            <a href="https://classum.com/"><i class="fa fa-copyright fa-2x" aria-hidden="true"></i></a>
-                            <a href="https://blog.naver.com/porory_rei"><i class="fa fa-bold fa-2x" aria-hidden="true"></i></a>
+                            <a href="https://instagram.com/aivlestory?utm_medium=copy_link "target='_blank'><i class="fa fa-instagram fa-2x" aria-hidden= "true"></i></a>
+                            <a href="https://classum.com/"target='_blank'><i class="fa fa-copyright fa-2x" aria-hidden="true"></i></a>
+                            <a href="https://blog.naver.com/porory_rei"target='_blank'><i class="fa fa-bold fa-2x" aria-hidden="true"></i></a>
+                            <a href="https://ktedu.kt.com/aivle/about.html"target='_blank'><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
                         </div>
                         <div class="header__top__right__language">
                             <img src="img/language.png"alt="">
@@ -155,7 +156,7 @@
                         <li><a href="{% url 'main:index' %}">채팅</a></li>
                         <li><a href="#">커뮤니티</a>
                             <ul class="header__menu__dropdown">
-                                <li><a href="./shop-details.html">자유게시판</a></li>
+                               
                                 <li><a href="{% url 'board:index' %}">Q&A</a></li>
                                 <li><a href="./checkout.html">게시판</a></li>
                                 <li><a href="{% url 'blog:index' %}">정보방</a></li>
@@ -163,7 +164,13 @@
                             </ul>
                         </li>
                         <li><a href="{% url 'rank:rank1_100' %}">랭킹 TOP 100</a></li>
-                        <li><a href="{% url 'study:studying' %}">학습</a></li>
+                        <li><a href="{% url 'study:studying' %}">학습</a>
+                            <ul class="header__menu__dropdown">
+                              <li><a href="{% url 'study:studying' %}">AIVLE 강의</a></li>
+                              <li><a href="{% url 'youtubeboard:index' %}">YOUTUBE 강의</a></li>   
+                      
+                        </ul>
+                     
                         <li><a href="/quiz/main">퀴즈</a></li>
                     </ul>
                 </nav>
@@ -171,10 +178,9 @@
             <div class="col-lg-3">
                 <div class="header__cart">
                     <ul>
-                        <li><a href="#"><i class="fa fa-rss"></i> <span>1</span></a></li>
-                        <li><a href="#"><i class="fa fa-desktop"></i> <span>3</span></a></li>
+                        
                     </ul>
-                   <div class="header__cart__price">score: <span>{{user.score}}</span></div>
+                   
                 </div>
             </div>
         </div>
