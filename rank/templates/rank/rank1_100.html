@@ -137,8 +137,8 @@
       <div class="container">
          <div class="row justify-content-center">
             <div class="col-md-6 text-center mb-5">
-                <a href="#"><img src="/static/images/cap.png" alt="">
-               <h2 class="heading-section">AIVLER'S RANK</h2>
+
+               <h3 class="heading-section">👑 AIVLER'S RANK 👑</h3>
             </div>
          </div>
          <div class="row">
@@ -148,6 +148,7 @@
                     <thead class="thead-primary">
                       <tr>
                         <th>Rank</th>
+                        <th>계급</th>
                         <th>ID</th>
                         <th>NAME</th>
                         <th>SCORE</th>
@@ -156,12 +157,39 @@
                     <tbody>
                      
                      {% for rank in rank_list %}
-                        <tr>
-                           <th scope="row">{{forloop.counter}}</th>
-                           <td> {{rank.username}} </td>
-                           <td> {{rank.fullname}} </td>
-                           <td> {{rank.score}} </td>                           
+                     {% if rank.score > 70 %}
+                     <tr>
+                     <th scope="row">　{{forloop.counter}}</th>
+                     <td><img src="/static/images/user4.png" alt=""></td>
+                     <td><b> {{rank.username}}</b> </td>
+                     <td> <b>{{rank.fullname}}</b> </td>
+                     <td><b> 　{{rank.score}}</b> </td>  
+                     </tr>
+                     {% elif rank.score > 50 %}
+                     <tr>
+                        <th scope="row">　{{forloop.counter}}</th>
+                        <td><img src="/static/images/user3.png" alt=""></td>
+                        <td> <b>{{rank.username}} </b> </td>
+                        <td> <b>{{rank.fullname}} </b></td>
+                        <td> <b>　{{rank.score}} </b></td> 
                         </tr>
+                     {% elif rank.score > 20 %}
+                     <tr>
+                        <th scope="row">　{{forloop.counter}}</th>
+                        <td><img src="/static/images/user2.png" alt=""></td>
+                        <td> <b>{{rank.username}}</b> </td>
+                        <td> <b>{{rank.fullname}} </b></td>
+                        <td> <b>　{{rank.score}}</b> </td>  
+                        </tr>
+                     {% else %} 
+                     <tr>
+                        <th scope="row">　{{forloop.counter}}</th>
+                        <td><img src="/static/images/user1.png" alt=""></td>
+                        <td> {{rank.username}} </td>
+                        <td> {{rank.fullname}} </td>
+                        <td> 　{{rank.score}} </td>  
+                        </tr>
+                        {%endif%}
                      {% endfor %}
                       
                     </tbody>
