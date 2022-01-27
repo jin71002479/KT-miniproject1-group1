@@ -157,28 +157,28 @@
                     <tbody>
                      
                      {% for rank in rank_list %}
-                     {% if rank.score > 70 %}
+                     {% if rank.score > 50 %}
                      <tr>
                      <th scope="row">　{{forloop.counter}}</th>
                      <td><img src="/static/images/user4.png" alt=""></td>
                      <td><b> {{rank.username}}</b> </td>
-                     <td> <b>{{rank.fullname}}</b> </td>
+                     <td> <span style="background: linear-gradient(to top, #FF5E00 30%, transparent 30%)"> <b>{{rank.fullname}}</b> </span> </td>
                      <td><b> 　{{rank.score}}</b> </td>  
                      </tr>
-                     {% elif rank.score > 50 %}
+                     {% elif rank.score > 30 %}
                      <tr>
                         <th scope="row">　{{forloop.counter}}</th>
                         <td><img src="/static/images/user3.png" alt=""></td>
                         <td> <b>{{rank.username}} </b> </td>
-                        <td> <b>{{rank.fullname}} </b></td>
+                        <td> <span style="background: linear-gradient(to top, #FFBB00 30%, transparent 30%)"><b>{{rank.fullname}} </b> </span></td>
                         <td> <b>　{{rank.score}} </b></td> 
-                        </tr>
-                     {% elif rank.score > 20 %}
-                     <tr>
+                    </tr>
+                    {% elif rank.score > 20 %}
+                    <tr>
                         <th scope="row">　{{forloop.counter}}</th>
                         <td><img src="/static/images/user2.png" alt=""></td>
                         <td> <b>{{rank.username}}</b> </td>
-                        <td> <b>{{rank.fullname}} </b></td>
+                        <td> <span style="background: linear-gradient(to top, #FFE400 30%, transparent 30%)"><b>{{rank.fullname}} </b> </span></td>
                         <td> <b>　{{rank.score}}</b> </td>  
                         </tr>
                      {% else %} 
