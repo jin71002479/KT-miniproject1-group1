@@ -21,7 +21,7 @@ urlpatterns = [
     path('upload3/', views.upload3, name='upload3'),
     path('upload4/', views.upload4, name='upload4'),
     path('download/<int:question_id>/', views.download, name='download'),
-    path('<int:answer_id>/comment_delete/',views.comment_delete, name="comment_delete"),
+    path('<int:answer_id>/answer_delete/',views.answer_delete, name="answer_delete"),
     # path('download/%3Fid=<int:question_id>/', views.download, name='download'),
     # path('download/', views.download, name='download'),
     # path('document/<int:document_id>/', FileDownloadView.as_view(), name="download"),
