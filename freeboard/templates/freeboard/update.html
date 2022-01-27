@@ -56,22 +56,20 @@
                               <li><a href="#">DX 컨설턴트</a></li>
                           </ul>
                       </div>
-          
-                          
+                      {% if user.is_authenticated %}
                             
-                          <div class="header__top__right__auth">
-                              <a href="{% url 'userapp:login' %}"><i class="fa fa-user"></i> logout</a>
-                          </div> 
-                          
-                         
-                          
+                      <div class="header__top__right__auth">
+                          <a href="{% url 'userapp:login' %}"><i class="fa fa-user"></i> logout</a>
+                      </div> 
+                      
+                      <h6>{{user.username}} 님</h6>
+                      
 
-                          {% else %}
-                          <div class="header__top__right__auth">
-                              <a href="{% url 'userapp:login' %}"><i class="fa fa-user"></i> Login</a>
-                          </div>
-                          {% endif %}
-
+                      {% else %}
+                      <div class="header__top__right__auth">
+                          <a href="{% url 'userapp:login' %}"><i class="fa fa-user"></i> Login</a>
+                      </div>
+                      {% endif %}
                       
                   </div>
               </div>

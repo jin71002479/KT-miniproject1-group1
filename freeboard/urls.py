@@ -16,4 +16,5 @@ urlpatterns = [
     path('freewrite/create2/', views.freewrite_create2, name='freewrite_create2'),
     path('<int:freewrite_id>/update/',views.update, name="update"),
     path('<int:freewrite_id>/delete/',views.delete, name="delete"),
+    path('<int:comment_id>/comment_delete/',views.comment_delete, name="comment_delete"),
 ]
