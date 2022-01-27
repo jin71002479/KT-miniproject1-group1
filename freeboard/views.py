@@ -115,9 +115,9 @@ def update(request, freewrite_id):
     freewrite = Freewrite.objects.get(id=freewrite_id)
     if(freewrite.username == request.user.username):
         if request.method == "POST":
-            freewrite.subject = request.POST['subject']
-            freewrite.content = request.POST['content']
-            freewrite.pub_date = timezone.now()
+            freewrite.free_subject = request.POST['subject']
+            freewrite.free_content = request.POST['content']
+            freewrite.free_pub_date = timezone.now()
             
             freewrite.save()
             return redirect('freeboard:index')
