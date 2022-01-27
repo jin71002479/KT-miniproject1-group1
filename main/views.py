@@ -28,7 +28,9 @@ def search(request):
         return render(
                 request,
                 'main/show.html',
-                {'data':result}
+                {'data':result, 
+                'search':search}
+                
             )
 
     

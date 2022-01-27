@@ -9,7 +9,11 @@ def main(request): ## 점수 저장
         score = request.POST["score"]
         user_score=User.objects.get(username= request.user.username)
         user_score.score=score
-        user_score.save()
+        user_score.count=1
+        if user_score.count=='NULL':
+            user_score.save()
+        else:
+            return render(request,'Quiz/msg.js')
     return render(request,'Quiz/index.html')
 
 @login_required (login_url='userapp:login2')
@@ -19,5 +23,6 @@ def main2(request): ## 점수 저장
         score = request.POST["score"]
         user_score=User.objects.get(username= request.user.username)
         user_score.score=score
+        user_score.count=1
         user_score.save()
     return render(request,'Quiz/index.html')    
