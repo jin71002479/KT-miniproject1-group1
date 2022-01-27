@@ -54,3 +54,24 @@ def signup_view(request):
         return redirect("userapp:login")
 
     return render(request, "userapp/singup.html")
+
+
+def signup2_view(request):
+    if request.method == "POST":
+        print(request.POST)
+        username = request.POST["username"]
+        password = request.POST["password"]
+        fullname = request.POST["fullname"]
+        phone = request.POST["phone"]
+        email = request.POST["email"]
+        score  = request.POST["score"]
+
+        user = User.objects.create_user(username,email,password)
+        user.fullname = fullname
+        user.phone= phone
+        user.score = score
+        user.save()
+
+        return redirect("userapp:login2")
+
+    return render(request, "userapp/singup2.html")    
