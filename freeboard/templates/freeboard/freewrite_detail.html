@@ -148,13 +148,16 @@
                     <br><br>
     
                 </div>
-    
+               
             </div>
         </div>
+       
     </div>
-    
-    
-    <br>
+    <div style="float:right">
+    <a href="{% url 'freeboard:update' freewrite.id %}" class="btn btn-primary">수정</a>
+    <a href="{% url 'freeboard:delete' freewrite.id %}" class="btn btn-primary">삭제</a>
+    </div>
+    <br><br>
     <h4 class="border-bottom my-2 py-2">
         <div><img src="/static/img/reply.png"><b>
                 등록된 댓글</div>
@@ -178,6 +181,7 @@
                 <div class="card-header py-3">
                     <b style='color: #FF1244'>
                         작성자 : {{ comment.username }} </b>
+                        <a href="{% url 'freeboard:comment_delete' comment.id %}" class="btn btn-primary" style="float:right"onClick="alert('삭제되었습니다.')">삭제</a>
                 </div>
     
                 <div class="card-text" style="white-space: pre-line;">
@@ -221,8 +225,7 @@
             <a href="{% url 'freeboard:index' %}" class="btn btn-primary">
                 목록으로
             </a>
-            <a href="{% url 'freeboard:update' freewrite.id %}" class="btn btn-primary">수정</a>
-            <a href="{% url 'freeboard:delete' freewrite.id %}" class="btn btn-primary">삭제</a>
+            
         </div>
     </form>
     <br><br>

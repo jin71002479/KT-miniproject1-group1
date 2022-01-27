@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Freewrite
+from .models import Freewrite,Comment
 from django.shortcuts import get_object_or_404
 from django.utils import timezone
 from django.shortcuts import redirect
 from userapp.models import User
 from django.core.paginator import Paginator
+from django.contrib.auth.decorators import login_required #로그인여부
 
 def index(request):
     now_page = request.GET.get('page', 1)
@@ -47,6 +48,7 @@ def detail(request, freewrite_id):
 
 
 from .forms import CommentForm
+@login_required (login_url='userapp:login')
 def comment_create(request, freewrite_id):
     freewrite = get_object_or_404(Freewrite, pk=freewrite_id)
     
@@ -69,6 +71,7 @@ def comment_create(request, freewrite_id):
 
 from .forms import FreewriteForm
 from userapp.models import User
+@login_required (login_url='userapp:login')
 def freewrite_create(request):
     user = User.objects.get(username = request.user.username)
     if request.method == 'POST':
@@ -87,7 +90,7 @@ def freewrite_create(request):
     context = {'form': form}
 
     return render(request, 'freeboard/freewrite_form.html', context)
-
+@login_required (login_url='userapp:login')
 def freewrite_create2(request):
     user = User.objects.get(username = request.user.username)
     if request.method == 'POST':
@@ -108,16 +111,13 @@ def freewrite_create2(request):
     return render(request, 'freeboard/freewrite_form2.html', context)
 
 
-
-
-
 def update(request, freewrite_id):
     freewrite = Freewrite.objects.get(id=freewrite_id)
     if(freewrite.username == request.user.username):
         if request.method == "POST":
-            freewrite.subject = request.POST['subject']
-            freewrite.content = request.POST['content']
-            freewrite.pub_date = timezone.now()
+            freewrite.free_subject = request.POST['subject']
+            freewrite.free_content = request.POST['content']
+            freewrite.free_pub_date = timezone.now()
             
             freewrite.save()
             return redirect('freeboard:index')
@@ -132,5 +132,13 @@ def delete(request, freewrite_id):
     freewrite = Freewrite.objects.get(id=freewrite_id)
     if(freewrite.username == request.user.username):
         freewrite.delete()
+        return redirect('freeboard:index')
+    return render(request, 'freeboard/warning.html')
+
+
+def comment_delete(request,comment_id):
+    comment = Comment.objects.get(id=comment_id)
+    if(comment.username == request.user.username):
+        comment.delete()
         return redirect('freeboard:index')
     return render(request, 'freeboard/warning.html')
