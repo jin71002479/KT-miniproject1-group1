@@ -157,12 +157,7 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="col-lg-2">
-                    <div class="header__cart">
-                        <a><i class="fa fa-user-circle fa-2x" aria-hidden= "true"></i></a>
-                        <b>&nbsp{{user.username}}님</b>&nbsp<b>score:</b><span>{{user.score}}</span>
-                    </div>
-                </div>
+                
             </div>
             <div class="humberger__open">
                 <i class="fa fa-bars"></i>
@@ -227,10 +222,16 @@
                         
 
                     <div class="col-lg">
+                     
                         <div class="hero__categories">
-                          
-                            
-                            <br>
+                       
+                                <div class="header__cart ">
+                                    <a><i class="fa fa-user-circle fa-2x" aria-hidden= "true"></i></a>
+                                    <b>　{{user.username}}님</b>　<b>score:</b><span>{{user.score}}</span>　　
+                                   
+                                </div>
+                           
+                      
                             
 
                             <div class="hero__categories__all">
