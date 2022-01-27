@@ -22,6 +22,21 @@ def index(request):
     }
     return render(request, 'freeboard/freewrite_list.html', context)
 
+def index2(request):
+    now_page = request.GET.get('page', 1)
+    freewrite_list = Freewrite.objects.order_by('-free_pub_date')
+    p = Paginator(freewrite_list, 10)
+    freeinfo = p.get_page(now_page)
+    start_page = (int(now_page) - 1) // 10 * 10 + 1
+    end_page = start_page + 9
+    if end_page > p.num_pages:
+        end_page = p.num_pages
+
+    context = {'freeinfo': freeinfo,
+        'page_range' : range(start_page, end_page + 1)
+    }
+    return render(request, 'freeboard/freewrite_list2.html', context)
+
 
 def detail(request, freewrite_id):
     freewrite = get_object_or_404(Freewrite, id=freewrite_id)
@@ -72,6 +87,28 @@ def freewrite_create(request):
     context = {'form': form}
 
     return render(request, 'freeboard/freewrite_form.html', context)
+
+def freewrite_create2(request):
+    user = User.objects.get(username = request.user.username)
+    if request.method == 'POST':
+        form = FreewriteForm(request.POST)
+        if form.is_valid():
+            freewrite = form.save(commit=False)
+            freewrite.free_pub_date = timezone.now()
+            freewrite.username = request.user.username
+            freewrite.save()
+            user.score = user.score + 5
+            user.save()
+            return redirect('freeboard:index2')
+    else:
+        form = FreewriteForm()
+
+    context = {'form': form}
+
+    return render(request, 'freeboard/freewrite_form2.html', context)
+
+
+
 
 
 def update(request, freewrite_id):

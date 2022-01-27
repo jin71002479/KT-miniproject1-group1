@@ -1,19 +1,20 @@
 {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
 
 <!doctype html>
 <html lang="en">
 
 <head>
-    <title>질문답변게시판 - 질문등록</title>
+    <title>자유게시판 - 목록</title>
     <meta charset="utf-8">
    
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
    
-    <link rel="stylesheet" href="/static/css/style.css"> 
+    <link rel="stylesheet" href="/static/css/style2.css"> 
     <link rel="stylesheet" href="/static/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="/static/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="/static/css/elegant-icons.css" type="text/css">
@@ -21,7 +22,7 @@
     <link rel="stylesheet" href="/static/css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="/static/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="/static/css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="/static/css/style_rank.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/style_rank2.css" type="text/css">
 </head>
 
 <body>
@@ -34,7 +35,7 @@
               <div class="col-lg-6 col-md-6">
                   <div class="header__top__left">
                       <ul>
-                           
+                          
                           
                       </ul>
                   </div>
@@ -49,11 +50,11 @@
                       </div>
                       <div class="header__top__right__language">
                           <img src="img/language.png"alt="">
-                          <div>AI 개발자</div>
+                          <div>DX 컨설턴트</div>
                           <span class="arrow_carrot-down"></span>
                           <ul>
-                              <li><a href="{% url 'main:index' %}">AI 개발자</a></li>
-                              <li><a href="{% url 'main:index2' %}">DX 컨설턴트</a></li>
+                              <li><a href="{% url 'main:index' %}">DX 컨설턴트</a></li>
+                              <li><a href="{% url 'main:index2' %}">AI 개발자</a></li>
                           </ul>
                       </div>
           
@@ -68,7 +69,7 @@
 
                           {% else %}
                           <div class="header__top__right__auth">
-                              <a href="{% url 'userapp:login' %}"><i class="fa fa-user"></i> Login</a>
+                              <a href="{% url 'userapp:login2' %}"><i class="fa fa-user"></i> Login</a>
                           </div>
                           {% endif %}
 
@@ -82,23 +83,23 @@
       <div class="row">
           <div class="col-lg-3">
               <div class="header__logo">
-                  <a href="{% url 'main:index' %}"><img src="/static/img/aivle.PNG" class="mt-2"></a>
+                  <a href="{% url 'main:index2' %}"><img src="/static/img/aivle.PNG" class="mt-2"></a>
               </div>
           </div>
           <div class="col-lg-6">
               <nav class="header__menu">
                   <ul>
-                      <li class="active"><a href="{% url 'main:index' %}">홈</a></li>
+                      <li class="active"><a href="{% url 'main:index2' %}">홈</a></li>
                       <li><a href="./shop-grid.html">채팅</a></li>
                       <li><a href="#">커뮤니티</a>
                           <ul class="header__menu__dropdown">
-                              <li><a href="{% url 'board:index' %}">Q&A</a></li>
-                              <li><a href="{% url 'freeboard:index' %}">게시판</a></li>
-                              <li><a href="{% url 'blog:index' %}">정보방</a></li>
+                              <li><a href="{% url 'board:index2' %}">Q&A</a></li>
+                              <li><a href="{% url 'freeboard:index2' %}">게시판</a></li>
+                              <li><a href="{% url 'blog:index2' %}">정보방</a></li>
                           </ul>
                       </li>
-                      <li><a href="{% url 'rank:rank1_100' %}">랭킹 TOP 100</a></li>
-                      <li><a href="{% url 'study:studying' %}">학습</a></li>
+                      <li><a href="{% url 'rank:rank2_100' %}">랭킹 TOP 100</a></li>
+                      <li><a href="{% url 'study:studying2' %}">학습</a></li>
                       <li><a href="/quiz/main">퀴즈</a></li>
                   </ul>
               </nav>
@@ -120,48 +121,65 @@
 </header>
 <!-- Header Section End -->
 
-<div class="container">
-    <h5 class="my-3 border-bottom pb-2">질문등록</h5>
-    <form class="post-form my-3" action="{% url 'board:upload3' %}" method="post"
-    enctype="multipart/form-data" > 
-        {% csrf_token %}
-        
-        <!-- 오류표시 Start -
-        {% if form.errors %}
-        <div class="alert alert-danger" role="alert">
-            {% for field in form %}
-                {% if field.errors %}
-                    <strong>{{ field.label }}</strong>
-                    {{ field.errors }}
-                {% endif %}
+<div class="container my-3">
+    <h3 class="heading-section">🙋 자유게시판!! </h3><br>
+    <table class="table">
+        <thead class="thead-primary">
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>작성일시</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if freeinfo %}
+          
+                {% for freewrite in freeinfo %}
+                <tr>
+                    <td>{{ forloop.revcounter }}</td>
+                    <td>
+                        <a href="{% url 'freeboard:detail' freewrite.id %}">
+                            {{ freewrite.free_subject }}
+                        </a>
+                    </td>
+                    <td>
+                        {{freewrite.username}}
+                    </td>
+                    <td>{{ freewrite.free_pub_date }}</td>
+                </tr>
+                
             {% endfor %}
-        </div>
-        {% endif %}
-         오류표시 End -->
-        <div class="form-group">
-            <label for="subject">제목</label>
-            <input type="text" class="form-control" name="subject" value="{{ form.subject.value|default_if_none:'' }}">
-        </div>
-        <div class="form-group">
-            <label for="content">내용</label>
-
-            
-            <textarea name="content" id ="content" class="form-control" rows="10"
-            placeholder = "내용을 입력해주세요"></textarea> 
-
-            <input type="file" name="file">
-            
-        </div>
+            {% else %}
+            <tr>
+                <td colspan="3">글이 없습니다.</td>
+            </tr>
+            {% endif %}
+        </tbody>
+        </table>
+        <div style='text-align:center;'>
+            <ul class='pagination'>
+                {% for i in page_range %}
+                <li>
+                <a href='{% url "freeboard:index" %}?page={{ i }}'>
+                    {{ i }}
+                </a>
+                </li>
+                {% endfor %}
+                </ul>
+            </div>
         <div style='text-align:right;'>
-            <br><button type="submit" class="btn btn-primary">저장하기</button>
-            <a href="{% url 'board:index' %}" class="btn btn-primary">
+            <a href="{% url 'freeboard:freewrite_create2' %}" class="btn btn-primary">
+                글쓰기
+            </a>
+            <a href="{% url 'freeboard:index' %}" class="btn btn-primary">
                 목록으로
             </a>
         </div>
-        </form>
-        </div>
-        <script src="/static/js/jquery.min.js"></script>
-        <script src="/static/js/popper.js"></script>
-        <script src="/static/js/bootstrap.min.js"></script>
-        <script src="/static/js/main.js"></script>
-    </body>
+        <br><br>
+    </div>
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/main.js"></script>
+</body>
