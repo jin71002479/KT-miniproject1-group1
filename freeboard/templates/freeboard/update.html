@@ -56,22 +56,20 @@
                               <li><a href="#">DX 컨설턴트</a></li>
                           </ul>
                       </div>
-          
-                          
+                      {% if user.is_authenticated %}
                             
-                          <div class="header__top__right__auth">
-                              <a href="{% url 'userapp:login' %}"><i class="fa fa-user"></i> logout</a>
-                          </div> 
-                          
-                         
-                          
+                      <div class="header__top__right__auth">
+                          <a href="{% url 'userapp:login' %}"><i class="fa fa-user"></i> logout</a>
+                      </div> 
+                      
+                      <h6>{{user.username}} 님</h6>
+                      
 
-                          {% else %}
-                          <div class="header__top__right__auth">
-                              <a href="{% url 'userapp:login' %}"><i class="fa fa-user"></i> Login</a>
-                          </div>
-                          {% endif %}
-
+                      {% else %}
+                      <div class="header__top__right__auth">
+                          <a href="{% url 'userapp:login' %}"><i class="fa fa-user"></i> Login</a>
+                      </div>
+                      {% endif %}
                       
                   </div>
               </div>
@@ -143,12 +141,12 @@
         </div>
         <div class="form-group">
             <label for="content">내용</label>
-            <textarea class="form-control" name="content" rows="10">
-                    {{ form.content.value|default_if_none:'' }}</textarea>
+            <textarea name="content" id ="content" class="form-control" rows="10"
+            placeholder = "내용을 입력해주세요"></textarea> 
         </div>
         <div style='text-align:right;'>
             <br><button type="submit" class="btn btn-primary">수정하기</button>
-            <a href="{% url 'board:index' %}" class="btn btn-primary">
+            <a href="{% url 'freeboard:index' %}" class="btn btn-primary">
                 목록으로
             </a>
         </div>
