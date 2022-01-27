@@ -6,7 +6,7 @@ from django.utils import timezone
 from django.shortcuts import redirect
 from userapp.models import User
 from django.core.paginator import Paginator
-
+from django.contrib.auth.decorators import login_required #로그인여부
 from django.views.generic.detail import SingleObjectMixin
 from django.http import FileResponse
 from django.core.files.storage import FileSystemStorage
@@ -43,6 +43,7 @@ def detail(request, question_id):
 
 
 from .forms import AnswerForm
+@login_required (login_url='userapp:login')
 def answer_create(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     
@@ -80,7 +81,7 @@ from .forms import QuestionForm
 
 #     return render(request, 'board/question_form.html', context)
 
-
+@login_required (login_url='userapp:login')
 def upload3(request):
     user = User.objects.get(username = request.user.username)   
     if request.method == 'POST':
