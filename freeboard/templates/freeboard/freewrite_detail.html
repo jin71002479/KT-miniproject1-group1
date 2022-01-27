@@ -129,8 +129,9 @@
                 {{ freewrite.free_content }}
             </div>
             <div class="d-flex justify-content-end">
-                <div class="badge badge-light p-2">
-                    {{ freewrite.free_pub_date }}
+                <div class="badge badge-light p-2" style="text-align:left; background-color: white;">
+                    작성자:{{ freewrite.username }}<br>
+                    작성일자:{{ freewrite.free_pub_date }}
                 </div>
             </div>
         </div>
@@ -169,7 +170,7 @@
         <!-- 오류표시 End -->
 
         <div class="form-group">
-            <textarea name="free_content" id="free_content" class="form-control" rows="10"></textarea>
+            <input type="text" name="free_content" id="free_content" class="form-control" rows="10">
         </div>
         <div style='text-align:right;'>
             <input type="submit" value="댓글등록" class="btn btn-primary">
