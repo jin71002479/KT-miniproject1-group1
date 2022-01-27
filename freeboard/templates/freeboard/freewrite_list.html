@@ -122,14 +122,18 @@
 <!-- Header Section End -->
 
 <div class="container my-3">
-    <h3 class="heading-section">🙋 자유게시판!! </h3><br>
-    <table class="table">
+    <h3 class="heading-section">자유게시판 </h3><br>
+    <div class="row">
+        <div class="col-md-12">
+    <table class="table table-hover">
+
         <thead class="thead-primary">
             <tr>
-                <th>번호</th>
-                <th>제목</th>
-                <th>작성자</th>
-                <th>작성일시</th>
+                <th width="4%">번호</th>
+                <th width="30%">　　　　　　　　　　　제목</th>
+                <th width="10%">　　　작성자</th>
+                <th width="30%">　　　　　　　　작성일시</th>
+      
             </tr>
         </thead>
         <tbody>
@@ -137,16 +141,16 @@
           
                 {% for freewrite in freeinfo %}
                 <tr>
-                    <td>{{ forloop.revcounter }}</td>
+                    <td>　{{ forloop.revcounter }}</td>
                     <td>
                         <a href="{% url 'freeboard:detail' freewrite.id %}">
-                            {{ freewrite.free_subject }}
+                            　　　　　　　 {{ freewrite.free_subject }}
                         </a>
                     </td>
                     <td>
-                        {{freewrite.username}}
+                        　　　 {{freewrite.username}}
                     </td>
-                    <td>{{ freewrite.free_pub_date }}</td>
+                    <td>　　　　　　　　{{ freewrite.free_pub_date }}</td>
                 </tr>
                 
             {% endfor %}
@@ -157,11 +161,12 @@
             {% endif %}
         </tbody>
         </table>
+        
         <div style='text-align:center;'>
             <ul class='pagination'>
                 {% for i in page_range %}
                 <li>
-                <a href='{% url "freeboard:index" %}?page={{ i }}'>
+                    <a href='{% url "freeboard:index" %}?page={{ i }}'>
                     {{ i }}
                 </a>
                 </li>

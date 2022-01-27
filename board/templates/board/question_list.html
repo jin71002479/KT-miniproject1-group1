@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/static/jinho.css"> 
     <link rel="stylesheet" href="/static/css/style.css"> 
+    <link rel="stylesheet" href="/static/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="/static/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="/static/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="/static/css/elegant-icons.css" type="text/css">
@@ -144,12 +145,15 @@
                     </div>
                 </div>
             </div>
+            
+            
             <div class="d-grid gap-2 d-md-block">
       
-                <a href="{% url 'board:upload3' %}" class="btn btn-danger">
-                   질문 등록하기
+                <a href="{% url 'board:upload3' %}" class="btn btn-info float-left">
+                   <h4 style="color: #FFFFFF;"              
+                   ><b>질문하기 </b></h4>
                 </a>
-
+                <br>
            
         </div>
         <br>
@@ -195,11 +199,12 @@
         <div style='text-align:right;'>
             <ul class='pagination'>
                 {% for i in page_range %}
-                <li>
-                <a href='{% url "board:index" %}?page={{ i }}'>
+                <li class="page-item">
+                <a class="page-link" href='{% url "board:index" %}?page={{ i }}'>
                     {{ i }}
                 </a>
                 </li>
+                
                 {% endfor %}
                 </ul>
             </div>
@@ -216,3 +221,4 @@
 
 
 </body>
+
