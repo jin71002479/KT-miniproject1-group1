@@ -122,10 +122,13 @@
 <!-- Header Section End -->
 
 <div class="container my-3">
-    <h3 class="heading-section">❓ Question ❓</h3>
-    <h2 class="border-bottom py-2">{{ question.subject }}
-        <br></h2>
-        작성자 ID : {{question.username}}
+    <br>
+  
+    <br>
+
+    <h3 class="border-bottom py-2">  <img src="/static/img/q.jpg"> <b>{{ question.subject }}</b>
+        <br></h3>
+        작성자 ID : <b>{{question.username}}</b>
     <div class="card my-3">
         <div class="card-body">
             <div class="card-text" style="white-space: pre-line;">
@@ -137,25 +140,39 @@
                     {{ question.pub_date }}
                 </div>
             </div>
+        </div>       
+    </div>
+    <br>
+   <h4 class="border-bottom my-2 py-2">
+        <div><img src="/static/img/A.png"><b>
+            등록된 답변</div>
+    </b></h4>
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary"> <span style="background: linear-gradient(to top, #FFE400 30%, transparent 70%)">{{question.answer_set.count}}개</span>의 답변</h6>
+        </div>
+        <div class="card-body">
+        
+            <div>
+                
+            </div>
+
+    {% for answer in question.answer_set.all %}
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+             {{ answer.content }}
         </div>
         
-        
-            
-        
-    </div>
-    <h5 class="border-bottom my-3 py-2">
-        <h3 class="heading-section">❗ Answer ❗</h3>
-        {{question.answer_set.count}}개의 답변이 있습니다.
-    </h5>
-    {% for answer in question.answer_set.all %}
-    <div class="card my-3">
-        <div class="card-body">
             <div class="card-text" style="white-space: pre-line;">
-                {{ answer.content }}
+                　 {{ answer.content }}
             </div>
+            <div class="card-body">
             <div class="d-flex justify-content-end">
                 <div class="badge badge-light p-2">
-                    {{ answer.create_date }}
+                   　 {{ answer.create_date }}
+
+                    
                 </div>
             </div>
         </div>
