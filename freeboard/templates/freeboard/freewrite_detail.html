@@ -181,13 +181,13 @@
                 <div class="card-header py-3">
                     <b style='color: #FF1244'>
                         작성자 : {{ comment.username }} </b>
-                        <a href="{% url 'freeboard:comment_delete' comment.id %}" class="btn btn-primary" style="float:right"onClick="alert('삭제되었습니다.')">삭제</a>
+                        <a href="{% url 'freeboard:comment_delete' q.id %}" class="btn btn-primary" style="float:right"onClick="alert('삭제되었습니다.')">삭제</a>
                 </div>
     
                 <div class="card-text" style="white-space: pre-line;">
                     　 {{ comment.comment_content }}
                 </div>
-                <div class="card-body">
+                <div class="card-body" >
                     <div class="d-flex justify-content-end">
                         <div class="badge badge-light p-2">
     
@@ -218,7 +218,7 @@
         <!-- 오류표시 End -->
 
         <div class="form-group">
-            <textarea name="comment_content" id="comment_content" class="form-control" rows="10"></textarea>
+            <textarea name="comment_content" id="comment_content" class="form-control" placeholder="댓글을 입력하세요" rows="3"></textarea>
         </div>
         <div style='text-align:right;'>
             <input type="submit" value="댓글등록" class="btn btn-primary">
