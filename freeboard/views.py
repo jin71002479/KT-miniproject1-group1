@@ -89,8 +89,8 @@ def freewrite_create(request):
 
     context = {'form': form}
 
-    return render(request, 'freeboard/freewrite_form.html', context)
-@login_required (login_url='userapp:login')
+    return render(request, 'freeboard/freewrite_form2.html', context)
+@login_required (login_url='userapp:login2')
 def freewrite_create2(request):
     user = User.objects.get(username = request.user.username)
     if request.method == 'POST':
