@@ -128,20 +128,31 @@
 
     <h3 class="border-bottom py-2">  <img src="/static/img/q.jpg"> <b>{{ question.subject }}</b>
         <br></h3>
-        작성자 ID : <b>{{question.username}}</b>
-    <div class="card my-3">
-        <div class="card-body">
-            <div class="card-text" style="white-space: pre-line;">
-                
-                {{ question.content }}
+     
+        <div class="card shadow mb-4" >
+            <div class="card-header py-3"  >
+                <b style='color: #000000'>
+                      작성자 ID : <b>{{question.username}}</b>
             </div>
-            <div class="d-flex justify-content-end">
-                <div class="badge badge-light p-2">
-                    {{ question.pub_date }}
+            
+                <div class="card-text" style="white-space: pre-line;">
+                    　{{ question.content }}
+                </div>
+                <div class="card-body">
+                <div class="d-flex justify-content-end">
+                    <div class="badge badge-light p-2">
+    
+    
+                        {{ question.pub_date }}
+                        <br><br>
+                   
+                    </div>
+                    
                 </div>
             </div>
-        </div>       
-    </div>
+        </div>
+
+       
     <br>
    <h4 class="border-bottom my-2 py-2">
         <div><img src="/static/img/A.png"><b>
@@ -161,8 +172,8 @@
     {% for answer in question.answer_set.all %}
     <div class="card shadow mb-4">
         <div class="card-header py-3" >
-            <b style='color: #FF0800'
-            > 작성자 : {{ answer.username }} </b>
+            <b style='color: #FF1244'>
+                작성자 : {{ answer.username }} </b>
         </div>
         
             <div class="card-text" style="white-space: pre-line;">
@@ -201,7 +212,7 @@
         <!-- 오류표시 End -->
 
         <div class="form-group">
-            <textarea name="content" id="content" class="form-control" rows="10"></textarea>
+            <textarea name="content" id="content" class="form-control" rows="10" placeholder="내용을 입력해주세요"></textarea>
         </div>
         <div style='text-align:right;'>
             <input type="submit" value="답변등록" class="btn btn-primary">
@@ -214,7 +225,7 @@
         </div>
     </form>
     <div>
-        
+       
         </form>
        
      </div>
