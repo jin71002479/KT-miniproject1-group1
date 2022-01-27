@@ -35,7 +35,7 @@
               <div class="col-lg-6 col-md-6">
                   <div class="header__top__left">
                       <ul>
-                        <li>{{user.username}} 에이블러님 반갑습니다 !!</li>        
+                                
                           
                       </ul>
                   </div>
@@ -50,11 +50,11 @@
                       </div>
                       <div class="header__top__right__language">
                           <img src="img/language.png"alt="">
-                          <div>Korean</div>
+                          <div>AI 개발자</div>
                           <span class="arrow_carrot-down"></span>
                           <ul>
-                              <li><a href="#">English</a></li>
-                              <li><a href="#">Korean</a></li>
+                              <li><a href="{% url 'main:index'%}">AI 개발자</a></li>
+                              <li><a href="{% url 'main:index2'%}">DX 컨설턴트</a></li>
                           </ul>
                       </div>
           
@@ -64,7 +64,7 @@
                               <a href="{% url 'userapp:login' %}"><i class="fa fa-user"></i> logout</a>
                           </div> 
                           
-                          <h6>{{user.username}} 님</h6>
+                          
                           
 
                           {% else %}
@@ -107,10 +107,10 @@
           <div class="col-lg-3">
               <div class="header__cart">
                   <ul>
-                      <li><a href="#"><i class="fa fa-rss"></i> <span>1</span></a></li>
-                      <li><a href="#"><i class="fa fa-desktop"></i> <span>3</span></a></li>
+                    <a><i class="fa fa-user-circle fa-2x" aria-hidden= "true"></i></a>
+                    <b>　{{user.username}}님</b>　 <b>score:</b> <span>{{user.score}}</span>
                   </ul>
-                  <div class="header__cart__price">score: <span>{{user.score}}</span></div>
+                  
               </div>
           </div>
       </div>

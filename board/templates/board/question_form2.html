@@ -4,7 +4,7 @@
 <html lang="en">
 
 <head>
-    <title>자유게시판 - 글쓰기</title>
+    <title>질문답변게시판 - 질문등록</title>
     <meta charset="utf-8">
    
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,7 +13,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
    
-    <link rel="stylesheet" href="/static/css/style.css"> 
+    <link rel="stylesheet" href="/static/css/style2.css"> 
     <link rel="stylesheet" href="/static/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="/static/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="/static/css/elegant-icons.css" type="text/css">
@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="/static/css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="/static/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="/static/css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="/static/css/style_rank.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/style_rank2.css" type="text/css">
 </head>
 
 <body>
@@ -34,7 +34,7 @@
               <div class="col-lg-6 col-md-6">
                   <div class="header__top__left">
                       <ul>
-                          
+                           
                           
                       </ul>
                   </div>
@@ -42,18 +42,18 @@
               <div class="col-lg-6 col-md-6">
                   <div class="header__top__right">
                       <div class="header__top__right__social">
-                          <a href="https://instagram.com/aivlestory?utm_medium=copy_link "><i class="fa fa-instagram fa-2x" aria-hidden= "true"></i></a>
-                          <a href="https://classum.com/"><i class="fa fa-copyright fa-2x" aria-hidden="true"></i></a>
-                          <a href="https://blog.naver.com/porory_rei"><i class="fa fa-bold fa-2x" aria-hidden="true"></i></a>
-                          <a href="https://ktedu.kt.com/aivle/about.html"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
+                          <a href="https://instagram.com/aivlestory?utm_medium=copy_link "target='_blank'><i class="fa fa-instagram fa-2x" aria-hidden= "true"></i></a>
+                          <a href="https://classum.com/"target='_blank'><i class="fa fa-copyright fa-2x" aria-hidden="true"></i></a>
+                          <a href="https://blog.naver.com/porory_rei"target='_blank'><i class="fa fa-bold fa-2x" aria-hidden="true"></i></a>
+                          <a href="https://ktedu.kt.com/aivle/about.html"target='_blank'><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
                       </div>
                       <div class="header__top__right__language">
                           <img src="img/language.png"alt="">
-                          <div>AI 개발자</div>
+                          <div>DX 컨설턴트</div>
                           <span class="arrow_carrot-down"></span>
                           <ul>
-                              <li><a href="{% url 'main:index'%}">AI 개발자</a></li>
-                              <li><a href="{% url 'main:index2'%}">DX 컨설턴트</a></li>
+                              <li><a href="{% url 'main:index' %}">DX 컨설턴트</a></li>
+                              <li><a href="{% url 'main:index2' %}">AI 개발자</a></li>
                           </ul>
                       </div>
           
@@ -121,11 +121,12 @@
 <!-- Header Section End -->
 
 <div class="container">
-    
-    <form method="post" class="post-form my-3">
+    <h5 class="my-3 border-bottom pb-2">질문등록</h5>
+    <form class="post-form my-3" action="{% url 'board:upload3' %}" method="post"
+    enctype="multipart/form-data" > 
         {% csrf_token %}
         
-        <!-- 오류표시 Start -->
+        <!-- 오류표시 Start -
         {% if form.errors %}
         <div class="alert alert-danger" role="alert">
             {% for field in form %}
@@ -136,30 +137,27 @@
             {% endfor %}
         </div>
         {% endif %}
-        <!-- 오류표시 End -->
-        <table border="1" width=1000 class="mt-4">
-            <tr>
-                <th colspan="2">
-                    자유게시판 글쓰기
-                </th>
-            </tr>
-            <tr>
-               <td >
-                <input type="text" class="form-control" name="free_subject"  placeholder="제목을 입력하세요." style="width:100%;"  maxlength=20  >
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" height=400>
-                   <textarea class="form-control" name="free_content" placeholder="내용을 입력하세요." style="width: 100%; height: 100%"></textarea>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" align=right>
-                    <button type="submit" class="btn btn-primary">저장하기</button>
-                    <a href="{% url 'freeboard:index' %}" class="btn btn-primary">목록으로</a>
-                </td>
-            </tr>
-        </table>
+         오류표시 End -->
+        <div class="form-group">
+            <label for="subject">제목</label>
+            <input type="text" class="form-control" name="subject" value="{{ form.subject.value|default_if_none:'' }}">
+        </div>
+        <div class="form-group">
+            <label for="content">내용</label>
+
+            
+            <textarea name="content" id ="content" class="form-control" rows="10"
+            placeholder = "내용을 입력해주세요"></textarea> 
+
+            <input type="file" name="file">
+            
+        </div>
+        <div style='text-align:right;'>
+            <br><button type="submit" class="btn btn-primary">저장하기</button>
+            <a href="{% url 'board:index' %}" class="btn btn-primary">
+                목록으로
+            </a>
+        </div>
         </form>
         </div>
         <script src="/static/js/jquery.min.js"></script>
