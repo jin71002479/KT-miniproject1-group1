@@ -20,23 +20,25 @@
 
 <body>
     <div class="container">
-        <section id="main" class="mx-auto mt-3 py-3 px-5">
+        <section id="main" class="mx-auto mt-5 py-3 px-5">
             <h1></h1>
             <div class="col-lg-9 col-md-6 col-sm-6 col-12 mx-auto">
                 <img src="/static/img/quizshow.png" class="img-fluid mt-4">
             </div>
 
-            <p class="mt-5"><h2>
-                나의 CS 지식을 테스트 할 수 있는 사이트 입니다! <br>
-                아래 시작하기 버튼을 눌러주세요!</h2>
-                
-            </p>
-            <div>
-                <button class="btn btn-outline-info mt-3" onclick="js:begin()">시작하기</button> 　　　   <button class="btn btn-outline-info mt-3" onclick="location.href='/main/index'">돌아가기</button>
+        
+           
+           
+         <div class="d-grid gap-2 col-8 mx-auto">
+            <br>
+           <button class="btn btn-primary mt-3" style="font-size:1.4em"  4px, onclick="js:begin()">시작하기</button>
             </div>
-              
+             <br>   <br>  <br> 
         </section>
+
         <section id=qna>
+        <section id="main" class="mx-auto mt-5 py-4 px-5">
+        
             <div class="status mx-auto mt-5">
                 <div class="statusBar">
 
@@ -49,6 +51,8 @@
 
             </div>
         </section>
+    </section>
+
         <section id=result class="mx-auto mt-5 py-5 px-3">
             <h1>결과 창</h1>
             <div class="resultname">
@@ -71,6 +75,8 @@
         </section>
         <script src="{% static 'css/data.js'%}" charset="utf-8"></script>
         <script src="{% static 'css/start.js'%}" charset="utf-8"></script>
+
+    <h3><a style="display:scroll;position:fixed;top:30px;left:80px;" href="#" img src="{% url 'main:index' %}" title="맨 위로">홈화면 가기</h3></a>
 
 
     </div>
