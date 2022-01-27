@@ -150,7 +150,7 @@ def delete(request, question_id):
     return render(request, 'board/warning.html')
 
 
-def comment_delete(request,answer_id):
+def answer_delete(request,answer_id):
     comment = Answer.objects.get(id=answer_id)
     if(comment.username == request.user.username):
         comment.delete()
