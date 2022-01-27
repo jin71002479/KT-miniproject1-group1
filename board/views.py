@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Question
+from .models import Answer, Question
 from django.shortcuts import get_object_or_404
 from django.utils import timezone
 from django.shortcuts import redirect
@@ -124,6 +124,14 @@ def delete(request, question_id):
     question = Question.objects.get(id=question_id)
     if(question.username == request.user.username):
         question.delete()
+        return redirect('board:index')
+    return render(request, 'board/warning.html')
+
+
+def comment_delete(request,answer_id):
+    comment = Answer.objects.get(id=answer_id)
+    if(comment.username == request.user.username):
+        comment.delete()
         return redirect('board:index')
     return render(request, 'board/warning.html')
 

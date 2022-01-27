@@ -20,6 +20,7 @@ urlpatterns = [
     path('<int:question_id>/delete/',views.delete, name="delete"),
     path('upload3/', views.upload3, name='upload3'),
     path('download/<int:question_id>/', views.download, name='download'),
+    path('<int:answer_id>/comment_delete/',views.comment_delete, name="comment_delete"),
     # path('download/%3Fid=<int:question_id>/', views.download, name='download'),
     # path('download/', views.download, name='download'),
     # path('document/<int:document_id>/', FileDownloadView.as_view(), name="download"),
