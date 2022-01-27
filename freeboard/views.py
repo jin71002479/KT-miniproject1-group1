@@ -41,6 +41,7 @@ def comment_create(request, freewrite_id):
             comment = form.save(commit=False)
             comment.comment_create_date = timezone.now()
             comment.freewrite = freewrite
+            comment.username = request.user.username
             comment.save()
             return redirect('freeboard:detail', freewrite_id=freewrite.id)
     else:
