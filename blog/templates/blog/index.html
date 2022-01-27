@@ -37,7 +37,7 @@
                   <div class="col-lg-6 col-md-6">
                       <div class="header__top__left">
                           <ul>
-                            <li>{{user.username}} 에이블러님 반갑습니다 !!</li>
+                            
                               
                           </ul>
                       </div>
@@ -95,7 +95,7 @@
                           <li><a href="./shop-grid.html">채팅</a></li>
                           <li><a href="#">커뮤니티</a>
                               <ul class="header__menu__dropdown">
-                                  <li><a href="./shop-details.html">자유게시판</a></li>
+                                  
                                   <li><a href="{% url 'board:index' %}">Q&A</a></li>
                                   <li><a href="./checkout.html">게시판</a></li>
                                   <li><a href="{% url 'blog:index' %}">정보방</a></li>
@@ -116,10 +116,10 @@
               <div class="col-lg-3">
                   <div class="header__cart">
                       <ul>
-                          <li><a href="#"><i class="fa fa-rss"></i> <span>1</span></a></li>
-                          <li><a href="#"><i class="fa fa-desktop"></i> <span>3</span></a></li>
+                        <a><i class="fa fa-user-circle fa-2x" aria-hidden= "true"></i></a>
+                        <b>　{{user.username}}님</b>　 <b>score:</b> <span>{{user.score}}</span>
                       </ul>
-                      <div class="header__cart__price">item: <span>$150.00</span></div>
+                      
                   </div>
               </div>
           </div>
@@ -161,22 +161,22 @@
             
             <input type="checkbox" name="tags" value="2" id="tag_10" onclick="myFunction10()">
             
-            <label for="tag_10" >에이블스쿨</label>
+            <label for="tag_10" >👨‍🏫 에이블스쿨</label>
 
                      
             <input type="checkbox" name="tags" value="3" id="tag_30" onclick="myFunction30()">
             
-            <label for="tag_30" >이벤트</label>
+            <label for="tag_30" >🎉 이벤트</label>
             
             
             
             <input type="checkbox" name="tags" value="3" id="tag_20" onclick="myFunction20()">
             
-            <label for="tag_20" >꿀팁</label>
+            <label for="tag_20" >💡 꿀팁</label>
 
             <input  type="checkbox" name="tags" value="1" id="tag_0" onclick="myFunction()">
 
-            <label class=" " for="tag_0" >뉴스</label>
+            <label for="tag_0" >📰 뉴스</label>
             
             
 </div>
