@@ -57,9 +57,9 @@ Django Channel을 이용하여 웹소켓 연동
 
 
 ### 실시간 채팅 구현
-```
+- 채팅 
+![채팅](https://user-images.githubusercontent.com/76045608/151493872-3ecc6b9a-1dd8-44d2-87d4-9b825788a0de.PNG)
 
-```
 ### Q&A 및 자유게시판 구현
 ```
 https://user-images.githubusercontent.com/85106442/151490754-d84556d5-2707-42f1-82c6-91a81bd6b29b.png
@@ -73,9 +73,9 @@ https://user-images.githubusercontent.com/85106442/151490754-d84556d5-2707-42f1-
 ![aivle 강의](https://user-images.githubusercontent.com/96154446/151490651-b039e1c6-eadd-4266-b576-c1f0236a687d.PNG)
 
 ### 퀴즈 구현
-```
-(https://user-images.githubusercontent.com/76045608/151490953-df6a79ce-014d-47d6-a22b-0973c435dd38.PNG)
-```
-
+- 퀴즈 메인
+![퀴즈1](https://user-images.githubusercontent.com/76045608/151493840-73024c4f-7ebd-4eaf-8f1a-bc502e6c4537.PNG)
+- 퀴즈 저장
+![퀴즈2](https://user-images.githubusercontent.com/76045608/151493862-93caa8a8-e549-4063-88fb-f907a1915538.PNG)
 
 
