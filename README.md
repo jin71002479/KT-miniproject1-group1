@@ -87,5 +87,5 @@ https://user-images.githubusercontent.com/85106442/151490754-d84556d5-2707-42f1-
 ![유튜브강의장](https://user-images.githubusercontent.com/94459523/151494271-97d9c35b-10e6-4778-ae16-41012c9d2a51.PNG)
 
 ### 정보방 구현
-- 에이블스쿨 관련 언론, 이벤트, 팁을 볼 수 있는 페이지
+- 에이블스쿨 관련 , 이벤트, 팁을 볼 수 있는 페이지
 ![정보방](https://user-images.githubusercontent.com/94459523/151494793-baa8ff7f-67ac-43c7-a273-7d8c26b9cd60.PNG)
