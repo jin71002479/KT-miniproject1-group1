@@ -48,7 +48,7 @@ Django Channel을 이용하여 웹소켓 연동
 기능 및 결과 예시 화면
 &nbsp;
 
-## 샵샵
+## 로그인, 회원가입 구현
 ![login](https://user-images.githubusercontent.com/94459523/151492540-8ceece9c-0b7f-4db7-99d6-f86ebd4d15e1.PNG)
 
 
