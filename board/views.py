@@ -134,7 +134,7 @@ def upload4(request):
     else:
         form = QuestionForm()
     return render(
-        request, 'board/question_form.html', {'form': form})
+        request, 'board/question_form2.html', {'form': form})
 
 def update(request, question_id):
     question = Question.objects.get(id=question_id)
