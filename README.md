@@ -50,6 +50,7 @@ Django Channel을 이용하여 웹소켓 연동
 
 ### 로그인, 회원가입 구현
 ![login](https://user-images.githubusercontent.com/94459523/151492540-8ceece9c-0b7f-4db7-99d6-f86ebd4d15e1.PNG)
+![회원가입 사진](https://user-images.githubusercontent.com/94459523/151493183-250d5b76-af3e-4662-9204-cf447a4990ec.PNG)
 
 
 
