@@ -1,0 +1,1 @@
+config에 asgi랑 settings,urls 설정 하기 
