@@ -73,7 +73,7 @@ Django Channel을 이용하여 웹소켓 연동
 ```
 ### 퀴즈 구현
 ```
-
+(https://user-images.githubusercontent.com/76045608/151490953-df6a79ce-014d-47d6-a22b-0973c435dd38.PNG)
 ```
 
 
