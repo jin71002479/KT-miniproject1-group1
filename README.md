@@ -51,10 +51,11 @@ Django Channel을 이용하여 웹소켓 연동
 ### 로그인, 회원가입 구현
 - Django 내 authentication 기능 사용 
 
+- 로그인
 ![login](https://user-images.githubusercontent.com/94459523/151492540-8ceece9c-0b7f-4db7-99d6-f86ebd4d15e1.PNG)
+
+- 회원가입
 ![캡처](https://user-images.githubusercontent.com/94459523/151493346-b8d99a30-c0e9-4e3d-b969-07a4bdb07f47.PNG)
-
-
 
 ### 실시간 채팅 구현
 - 채팅 
@@ -78,4 +79,8 @@ https://user-images.githubusercontent.com/85106442/151490754-d84556d5-2707-42f1-
 - 퀴즈 저장
 ![퀴즈2](https://user-images.githubusercontent.com/76045608/151493862-93caa8a8-e549-4063-88fb-f907a1915538.PNG)
 
+### 유튜브 강의장 구현
+- 개발 입문에 도움되는 유명한 유튜브 자료
+- 카드 형식으로 제작 
+![유튜브강의장](https://user-images.githubusercontent.com/94459523/151494271-97d9c35b-10e6-4778-ae16-41012c9d2a51.PNG)
 
