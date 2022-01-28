@@ -52,11 +52,11 @@ Django Channel을 이용하여 웹소켓 연동
 - Django 내 authentication 기능 사용 
 
 - 로그인
-- 
+
 ![login](https://user-images.githubusercontent.com/94459523/151492540-8ceece9c-0b7f-4db7-99d6-f86ebd4d15e1.PNG)
 
 - 회원가입
-- 
+
 ![캡처](https://user-images.githubusercontent.com/94459523/151493346-b8d99a30-c0e9-4e3d-b969-07a4bdb07f47.PNG)
 
 ### 실시간 채팅 구현
