@@ -48,6 +48,12 @@ Django Channel을 이용하여 웹소켓 연동
 기능 및 결과 예시 화면
 &nbsp;
 
+### 메인 페이지
+
+![메인페이지](https://user-images.githubusercontent.com/94459523/151495437-ef1bccb7-3713-40bd-b846-ed807d8360b5.PNG)
+![메인 하단](https://user-images.githubusercontent.com/94459523/151495439-fecf5c9b-0b1d-4667-a3cd-76583d9a18a8.PNG)
+
+
 ### 로그인, 회원가입 구현
 - Django 내 authentication 기능 사용 
 
