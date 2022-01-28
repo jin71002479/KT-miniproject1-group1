@@ -9,6 +9,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Youtube 강의실</title>
+        <link rel ="icon" type="image/x-icon" href="/static/img/ktlogo.ico">
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -97,7 +98,7 @@
                             <ul class="header__menu__dropdown">
                                
                                 <li><a href="{% url 'board:index' %}">Q&A</a></li>
-                                <li><a href="./checkout.html">자유게시판</a></li>
+                                <li><a href="{% url 'freeboard:index' %}">자유게시판</a></li>
                                 <li><a href="{% url 'blog:index' %}">정보방</a></li>
                                 
                             </ul>

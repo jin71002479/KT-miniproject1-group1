@@ -8,9 +8,10 @@ def main(request): ## 점수 저장
     if request.method == "POST":
         score = request.POST["score"]
         user_score=User.objects.get(username= request.user.username)
-        user_score.score=score
-        user_score.count=1
-        if user_score.count=='NULL':
+        
+        if user_score.count== 0 :
+            user_score.score=score
+            user_score.count=1
             user_score.save()
         else:
             return render(request,'Quiz/msg.js')
