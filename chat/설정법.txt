@@ -1,1 +1,3 @@
-config에 asgi랑 settings,urls 설정 하기 
+1. settings 파일에 인스톨 앱에 chat,channels 추가 및 맨 및에 channels_layer 추가
+2. urls 설정
+3. config 안에 asgi 넣기
