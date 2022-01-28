@@ -64,6 +64,9 @@ Docker에 redis port를 구성하여 Django와 연동하여 웹소켓을 사용�
 - 회원가입
 
 ![캡처](https://user-images.githubusercontent.com/94459523/151493346-b8d99a30-c0e9-4e3d-b969-07a4bdb07f47.PNG)
+### Socre(점수) 얻는 방법
+- 퀴즈를 통해 score를 얻을 수 있음
+- 게시글 작성을 통해 Socre를 얻을 수 있음
 
 ### 실시간 채팅 구현
 - 채팅 
