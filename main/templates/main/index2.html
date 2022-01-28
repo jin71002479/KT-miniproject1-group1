@@ -95,18 +95,18 @@
                             </div>
                             <div class="header__top__right__language">
                                 <img src="img/language.png"alt="">
-                                <div>DX 컨설턴트</div>
+                                <div>DX 개발자</div>
                                 <span class="arrow_carrot-down"></span>
                                 <ul>
-                                    <li><a href="{% url 'main:index2'%}">DX 컨설턴트</a></li>
                                     <li><a href="{% url 'main:index'%}">AI 개발자</a></li>
+                                    <li><a href="{% url 'main:index2'%}">DX 컨설턴트</a></li>
                                 </ul>
                             </div>
                 
                                 {% if user.is_authenticated %}
                                   
                                 <div class="header__top__right__auth">
-                                    <a href="{% url 'userapp:logout2' %}"><i class="fa fa-user"></i>logout</a>
+                                    <a href="{% url 'userapp:logout' %}"><i class="fa fa-user"></i>logout</a>
                                  
                                 </div> 
                                
@@ -128,14 +128,14 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="{% url 'main:index2' %}"><img src="/static/img/logo2.png" alt=""></a>
+                        <a href="{% url 'main:index2' %}"><img src="/static/img/logo.4.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
                             <li class="active"><a href="{% url 'main:index2' %}">홈</a></li>
-                            <li><a href="{% url 'main:index' %}">채팅</a></li>
+                            <li><a href="{% url 'main:index2' %}">채팅</a></li>
                             <li><a href="#">커뮤니티</a>
                                 <ul class="header__menu__dropdown">
                                    
@@ -153,7 +153,7 @@
                                 
                                 </ul>
                             </li>                           
-                            <li><a href="/quiz/main2">퀴즈</a></li>
+                            <li><a href="/quiz/main">퀴즈</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -221,17 +221,17 @@
                     
                         
 
-                    <div class="col-lg">
+                        <div class="col-lg">
                      
-                        <div class="hero__categories">
-                       
-                                <div class="header__cart ">
-                                    <a><i class="fa fa-user-circle fa-2x" aria-hidden= "true"></i></a>
-                                    <b>{{user.fullname}}님</b>　　　　　　
-                                    <br>
-                                    <b>score:</b><span>{{user.score}}</span>　　　　　　
-                                    <br/>
-                                </div>
+                            <div class="hero__categories">
+                           
+                                    <div class="header__cart ">
+                                        <a><i class="fa fa-user-circle fa-2x" aria-hidden= "true"></i></a>
+                                        <b>{{user.fullname}}님</b>　　　　　　
+                                        <br>
+                                        <b>score:</b><span>{{user.score}}</span>　　　　　　
+                                        <br/>
+                                    </div>
                            
                       
                             
@@ -242,21 +242,21 @@
                                 <span>Total Rank</span>
                             </div>
                             <ul>
-                                <li>{% for rank in rank_list %}
-                                    {% if forloop.counter == 1 %}
-                                         <li><img src="/static/img/crown1.png" alt=""> 　<b>{{ rank.username }} - {{ rank.score }}점</b> </li>
-                                     {% elif forloop.counter == 2 %} 
-                                         <li><img src="/static/img/crown2.png" alt=""> 　<b>{{ rank.username }} - {{ rank.score }}점</b> </li>
-                                     {% elif forloop.counter == 3 %}
-                                         <li><img src="/static/img/crown3.png" alt="">  　{{ rank.username }} - {{ rank.score }}점</b> </li>
-                                     {% elif forloop.counter < 15 %}
-                                         <li>{{forloop.counter}}위 - {{ rank.username }} - {{ rank.score }}점</li>
-                                     {% else %}    
-                                     {% endif%}
-                                     <div class="col my-1">
-                                     </div>
-                                 {% endfor %}
-                             </li>
+                            <li>{% for rank in rank_list %}
+                                   {% if forloop.counter == 1 %}
+                                        <li><img src="/static/img/crown1.png" alt=""> 　<b>{{ rank.username }} - {{ rank.score }}점</b> </li>
+                                    {% elif forloop.counter == 2 %} 
+                                        <li><img src="/static/img/crown2.png" alt=""> 　<b>{{ rank.username }} - {{ rank.score }}점</b> </li>
+                                    {% elif forloop.counter == 3 %}
+                                        <li><img src="/static/img/crown3.png" alt="">  　{{ rank.username }} - {{ rank.score }}점</b> </li>
+                                    {% elif forloop.counter < 15 %}
+                                        <li>{{forloop.counter}}위 - {{ rank.username }} - {{ rank.score }}점</li>
+                                    {% else %}    
+                                    {% endif%}
+                                    <div class="col my-1">
+                                    </div>
+                                {% endfor %}
+                            </li>
                              
                            
                         </ul>
@@ -279,31 +279,35 @@
         <div class="container">
             <div class="row">
                 <div class="categories__slider owl-carousel">
+                    
+                  
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="/static/img/categories/ai1.png">
-                            <h5><a href="#"></a></h5>
+                        <div class="categories__item set-bg" >
+                            <h1><a  href="{% url 'study:studying2' %}"><img src="/static/img/PDF.png" width="100" height="150" alt=""></a></h1>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg"  data-setbg="/static/img/categories/ai2.png">
-                            <h5><a href="#"></a></h5>
+                        <div class="categories__item set-bg" >
+                            <h1><a href="{% url 'youtubeboard:index2'%}"><img src="/static/img/유튜브.png" width="100" height="150" alt=""></a></h1>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg"  data-setbg="/static/img/categories/ai3.png">
-                            <h5><a href="#"></a></h5>
+                        <div class="categories__item set-bg">
+                            <h1><a href="{% url 'freeboard:index2' %}"><img src="/static/img/자유.png" width="100" height="150" alt=""></a></h1>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg"  data-setbg="/static/img/categories/ai3.png">
-                            <h5><a href="#"></a></h5>
+                        <div class="categories__item set-bg" >
+                            <h4><a href="{% url 'board:index2' %}"><img src="/static/img/QNA.png" width="100" height="150" alt=""></a></h4>
                         </div>
                     </div>
+
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg"  data-setbg="/static/img/categories/ai5.png">
-                            <h5><a href="#"></a></h5>
+                        <div class="categories__item set-bg"  >
+                            <h1><a target='_blank' href="https://www.instagram.com/p/CZJVQ0UpHyE/?utm_source=ig_web_copy_link"><img src="/static/img/로고송.png" width="100" height="150"></a></h1>
                         </div>
                     </div>
+                   
                 </div>
             </div>
         </div>
@@ -316,25 +320,20 @@
     <section class="related-blog spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title related-blog-title">
-                       
-                        <h2>Dreams Come True</h2>
-                    </div>
-                </div>
+                
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-3 col-sm-6">
                     <div class="blog__item">
                         <div class="blog__item__pic">
-                            <img src="/static/img/news1.jpg"alt="">
+                            <h5><a target='_blank' href="https://www.news2day.co.kr/article/20211213500249"><img src="/static/img/news1.jpg"alt=""></a></h5>
                         </div>
                         <div class="blog__item__text">
                             <ul>
                                 <li><i class="fa fa-calendar-o"></i> Dec 13,2021</li>
                                 
                             </ul>
-                            <h5><a href="https://www.news2day.co.kr/article/20211213500249">KT, AI 분야 청년 인재 직접 키운다…</a></h5>
+                            <h5><a target='_blank' href="https://www.news2day.co.kr/article/20211213500249">KT, AI 분야 청년 인재 직접 키운다…</a></h5>
                             <p>KT 에이블스쿨은 청년들의 취업 경쟁력 향상과 신산업 분야 일자리 생산을 목표로 고용노동부가 후원하는 청년 AI 인재양성 프로그램이다.  </p>
                         </div>
                     </div>
@@ -342,14 +341,14 @@
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="blog__item">
                         <div class="blog__item__pic">
-                            <img src="/static/img/news2.jfif" alt="">
+                            <h5><a target='_blank' href="https://www.yna.co.kr/view/AKR20220124045700017?input=1195m"><img src="/static/img/news2.jfif" alt=""></a></h5>
                         </div>
                         <div class="blog__item__text">
                             <ul>
                                 <li><i class="fa fa-calendar-o"></i> Jan 22,2022</li>
                                 
                             </ul>
-                            <h5><a href="https://www.yna.co.kr/view/AKR20220124045700017?input=1195m">과기부 "기업-대학 '청년미소'사업으로 SW인재 1천250명 양성"</a></h5>
+                            <h5><a target='_blank' href="https://www.yna.co.kr/view/AKR20220124045700017?input=1195m">과기부 "기업-대학 '청년미소'사업으로 SW인재 1천250명 양성"</a></h5>
                             <p>과기정통부는 지난해 6월부터 민·관 협력 기반 SW 인재양성 대책에 따라 기업-대학 협력형 SW 인재양성을 위한 '청년미소' 프로젝트를 추진하고 있다. </p>
                         </div>
                     </div>
@@ -357,15 +356,15 @@
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="blog__item">
                         <div class="blog__item__pic">
-                            <img src="/static/img/news3.jpg" alt="">
+                            <h5><a  target='_blank' href="http://www.ksmnews.co.kr/default/index_view_page.php?idx=362912&part_idx=7"><img src="/static/img/news3.jpg" alt=""></a></h5>
                         </div>
                         <div class="blog__item__text">
                             <ul>
                                 <li><i class="fa fa-calendar-o"></i> Dec 27,2021</li>
                                 
                             </ul>
-                            <h5><a href="http://www.ksmnews.co.kr/default/index_view_page.php?idx=362912&part_idx=7">6개 대기업 청년 일자리 18만개 창출</a></h5>
-                            <p>지난 9월 KT를 시작으로 삼성, LG, SK, 포스코, 현대차 등 6개 기업이 참여했고, 이들 6개 기업은 2022년부터 2024년까지 3년 동안 모두 17만9만개의 일자리 창출, 청년을 위한 교육훈련 기회의 제공 등을 약속했다 </p>
+                            <h5><a  target='_blank' href="http://www.ksmnews.co.kr/default/index_view_page.php?idx=362912&part_idx=7">6개 대기업 청년 일자리 18만개 창출</a></h5>
+                            <p>지난 9월 KT를 시작으로 삼성, LG, SK, 포스코, 현대차 등 6개 기업이 참여했고, 이들 6개 기업은 2022년부터 2024년까지 3년 동안 모두 17만9만개의 일자리 창출, 청년을 위한 교육훈련 기회의 제공 등을 약속했다. </p>
                         </div>
                     </div>
                 </div>
@@ -383,9 +382,9 @@
                             <a href="./index.html"><img src="/static/img/aivle.PNG" class="mb-3"></a>
                         </div>
                         <ul>
-                            <li>Address: KT</li>
-                            <li>Phone: 100</li>
-                            <li>Email: kt@aivle.kt.co.kr</li>
+                            <li><b>Address:</b> KT</li>
+                            <li><b>Phone:</b> 100</li>
+                            <li><b>Email:</b> kt@aivle.kt.co.kr</li>
                         </ul>
                     </div>
                 </div>
@@ -393,20 +392,20 @@
                     <div class="footer__widget">
                         <h6>Developers Useful Links</h6>
                         <ul>
-                            <li><a href="https://github.com/">GitHub</a></li>
-                            <li><a href="https://stackoverflow.com/">stackoverflow</a></li>
-                            <li><a href="https://www.jumpit.co.kr/">jumpit</a></li>
-                            <li><a href="https://www.acmicpc.net/">BaekJoon</a></li>
-                            <li><a href="https://programmers.co.kr/">programmers</a></li>
-                            <li><a href="https://kr.linkedin.com/">Linkedin</a></li>
+                            <li><a  target='_blank' href="https://github.com/"><img src="/static/vicon/깃허브.PNG">　GitHub</a></li>
+                            <li><a  target='_blank' href="https://stackoverflow.com/"><img src="/static/vicon/스택.PNG">　stackoverflow</a></li>
+                            <li><a  target='_blank' href="https://www.jumpit.co.kr/"><img src="/static/vicon/점프잇.PNG">　jumpit</a></li>
+                            <li><a  target='_blank'href="https://www.acmicpc.net/"><img src="/static/vicon/백준.PNG">　BaekJoon</a></li>
+                            <li><a  target='_blank'href="https://programmers.co.kr/"><img src="/static/vicon/프로그래머스.PNG">　programmers</a></li>
+                            <li><a  target='_blank'href="https://kr.linkedin.com/"><img src="/static/vicon/링크드인.PNG">　Linkedin</a></li>
                         </ul>
                         <ul>
-                            <li><a href="https://apilink.kt.co.kr/">Kt API Link</a></li>
-                            <li><a href="https://developers.naver.com/main/">Naver Developers</a></li>
-                            <li><a href="https://aiopen.etri.re.kr/">ETRI AI API</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Innovation</a></li>
-                            <li><a href="#">Testimonials</a></li>
+                            <li><a  target='_blank'href="https://aifb.kt.co.kr/main"><img src="/static/vicon/AIFB.ico">　AIFB</a></li>
+                            <li><a  target='_blank'href="https://apilink.kt.co.kr/"><img src="/static/vicon/KT.PNG">　KT API Link</a></li>
+                            <li><a  target='_blank'href="https://aiopen.etri.re.kr/"><img src="/static/vicon/AI.PNG">　ETRI AI API</a></li>
+                            <li><a  target='_blank'href="https://developers.naver.com/main/"><img src="/static/vicon/네이버.png">　Naver Developers</a></li>
+                            <li><a  target='_blank'href="https://developers.kakao.com/"><img src="/static/vicon/카카오.PNG">　Kakao Developers</a></li>
+                            <li><a  target='_blank'href="https://developers.google.com/"><img src="/static/vicon/구글.PNG">　Google Developers</a></li>
                         </ul>
                     </div>
                 </div>
@@ -430,10 +429,13 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="footer__copyright">
-                        <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <div style="text-align:center">
+
+                          
   Copyright &copy;<script>document.write(new Date().getFullYear());</script> 충남/충북 1조 
-  
+                            <br>
                         <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -456,5 +458,4 @@
 
 </body>
 </html>
-
 

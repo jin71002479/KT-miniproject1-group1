@@ -4,7 +4,7 @@
 <html lang="en">
 
   <head>
-     <title>studying</title>
+     <title>AIVLE 강의</title>
      <link rel ="icon" type="image/x-icon" href="/static/img/ktlogo.ico">
     <meta charset="utf-8">
    
@@ -53,11 +53,11 @@
                             </div>
                             <div class="header__top__right__language">
                                 <img src="img/language.png"alt="">
-                                <div>AI 개발자</div>
+                                <div>DX 컨설턴트</div>
                                 <span class="arrow_carrot-down"></span>
                                 <ul>
-                                    <li><a href="#">AI 개발자</a></li>
                                     <li><a href="{% url 'main:index2'%}">DX 컨설턴트</a></li>
+                                    <li><a href="{% url 'main:index'%}">AI 개발자</a></li>
                                 </ul>
                             </div>
                 
@@ -72,7 +72,7 @@
   
                                 {% else %}
                                 <div class="header__top__right__auth">
-                                    <a href="{% url 'userapp:login' %}"><i class="fa fa-user"></i> Login</a>
+                                    <a href="{% url 'userapp:login2' %}"><i class="fa fa-user"></i> Login</a>
                                 </div>
                                 {% endif %}
   
@@ -92,25 +92,25 @@
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="{% url 'main:index' %}">홈</a></li>
+                            <li class="active"><a href="{% url 'main:index2' %}">홈</a></li>
                             <li><a href="./shop-grid.html">채팅</a></li>
                             <li><a href="#">커뮤니티</a>
                                 <ul class="header__menu__dropdown">
                                     
-                                    <li><a href="{% url 'board:index' %}">Q&A</a></li>
-                                    <li><a href="{% url 'freeboard:index' %}">자유게시판</a></li>
-                                    <li><a href="{% url 'blog:index' %}">정보방</a></li>
+                                    <li><a href="{% url 'board:index2' %}">Q&A</a></li>
+                                    <li><a href="{% url 'freeboard:index2' %}">자유게시판</a></li>
+                                    <li><a href="{% url 'blog:index2' %}">정보방</a></li>
                                 </ul>
                             </li>
-                            <li><a href="{% url 'rank:rank1_100' %}">랭킹 TOP 100</a></li>
+                            <li><a href="{% url 'rank:rank2_100' %}">랭킹 TOP 100</a></li>
                             <li><a href="">학습</a>
                                   <ul class="header__menu__dropdown">
-                                      <li><a href="{% url 'study:studying' %}">AIVLE 강의</a></li>
-                                      <li><a href="{% url 'youtubeboard:index' %}">YOUTUBE 강의</a></li>   
+                                      <li><a href="{% url 'study:studying2' %}">AIVLE 강의</a></li>
+                                      <li><a href="{% url 'youtubeboard:index2' %}">YOUTUBE 강의</a></li>   
                           
                               </ul>
                           </li>      
-                            <li><a href="/quiz/main">퀴즈</a></li>
+                            <li><a href="/quiz/main2">퀴즈</a></li>
                         </ul>
                     </nav>
                 </div>
