@@ -79,6 +79,8 @@ Django Channel을 이용하여 웹소켓 연동
 ![자유게시판](https://user-images.githubusercontent.com/74363678/151495202-d543d064-c552-4769-9bfd-9881b3293945.PNG)
 ![자유게시판2](https://user-images.githubusercontent.com/74363678/151495254-76d73d6b-6278-4ca6-a0da-31a71bc4c72a.PNG)
 
+- 게시판 내부
+![게시판 디테일](https://user-images.githubusercontent.com/76045608/151508790-3e770919-633d-44b1-b07f-3ad7e014459d.PNG)
 ### Ranking 시스템
 - 각 사용자들의 Score를 기반으로 랭킹
 ![랭크](https://user-images.githubusercontent.com/96154446/151490568-d780c1b8-793f-4342-8f96-175f9d3d97d8.PNG)
@@ -88,8 +90,10 @@ Django Channel을 이용하여 웹소켓 연동
 ![aivle 강의](https://user-images.githubusercontent.com/96154446/151490651-b039e1c6-eadd-4266-b576-c1f0236a687d.PNG)
 
 ### 퀴즈 구현
-- 퀴즈 메인
+- 퀴즈 시작부분
 ![퀴즈1](https://user-images.githubusercontent.com/76045608/151493840-73024c4f-7ebd-4eaf-8f1a-bc502e6c4537.PNG)
+- 퀴즈 메인
+![퀴즈](https://user-images.githubusercontent.com/76045608/151508784-db51a5ed-bb1e-4012-81dc-ad550e1e2f44.PNG)
 - 퀴즈 저장
 ![퀴즈2](https://user-images.githubusercontent.com/76045608/151493862-93caa8a8-e549-4063-88fb-f907a1915538.PNG)
 
