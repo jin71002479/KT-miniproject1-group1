@@ -58,7 +58,7 @@ Django Channel을 이용하여 웹소켓 연동
 ```
 ### Q&A 및 자유게시판 구현
 ```
-
+![검색](https://user-images.githubusercontent.com/85106442/151490754-d84556d5-2707-42f1-82c6-91a81bd6b29b.png)
 ```
 ### Ranking 시스템
 ```
