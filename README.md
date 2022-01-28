@@ -62,10 +62,13 @@ Django Channel을 이용하여 웹소켓 연동
 ```
 ### Ranking 시스템
 ```
+![랭크](https://user-images.githubusercontent.com/96154446/151490568-d780c1b8-793f-4342-8f96-175f9d3d97d8.PNG)
 
 ```
 ### 학습 
 ```
+- AIVLE 수업 때 수강했던 모든 강의 및 PDF 다운 지원
+![aivle 강의](https://user-images.githubusercontent.com/96154446/151490651-b039e1c6-eadd-4266-b576-c1f0236a687d.PNG)
 
 ```
 ### 퀴즈 구현
