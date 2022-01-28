@@ -50,6 +50,7 @@ Django Channel을 이용하여 웹소켓 연동
 
 ### 회원가입/로그인/로그아웃 구현
 ```
+![login](./image/login.png)
 
 ```
 ### 실시간 채팅 구현
