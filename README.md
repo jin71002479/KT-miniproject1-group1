@@ -88,5 +88,5 @@ https://user-images.githubusercontent.com/85106442/151490754-d84556d5-2707-42f1-
 
 ### 정보방 구현
 - 에이블스쿨 관련 뉴스, 이벤트, 팁을 볼 수 있는 페이지
-- 태그를 체크박스로 제작하여 해당 부분 클릭 시 정보가 
+- 태그를 체크박스로 제작하여 해당 부분 클릭 시 정보가 나타남
 ![정보방](https://user-images.githubusercontent.com/94459523/151494793-baa8ff7f-67ac-43c7-a273-7d8c26b9cd60.PNG)
