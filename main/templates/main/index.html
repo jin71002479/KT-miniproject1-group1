@@ -135,7 +135,7 @@
                     <nav class="header__menu">
                         <ul>
                             <li class="active"><a href="{% url 'main:index' %}">홈</a></li>
-                            <li><a href="{% url 'main:index' %}">채팅</a></li>
+                            <li><a href="/chat/chat_1">채팅</a></li>
                             <li><a href="#">커뮤니티</a>
                                 <ul class="header__menu__dropdown">
                                    
@@ -225,13 +225,13 @@
                      
                             <div class="hero__categories">
                            
-                                    <div class="header__cart ">
-                                        <a><i class="fa fa-user-circle fa-2x" aria-hidden= "true"></i></a>
-                                        <b>{{user.fullname}}님</b>　　　　　　
-                                        <br>
-                                        <b>score:</b><span>{{user.score}}</span>　　　　　　
-                                        <br/>
-                                    </div>
+                                <div class="header__cart ">
+                                    <a><i class="fa fa-user-circle fa-2x" aria-hidden= "true"></i></a>
+                                    <b>　{{user.fullname}}님</b>　<b>score:</b><span>{{user.score}}</span>　　
+                                   
+                                </div>
+                           
+                      
                            
                       
                             
@@ -388,7 +388,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                <div class="col-lg-4 col-md-6 col-sm-6 ">
                     <div class="footer__widget">
                         <h6>Developers Useful Links</h6>
                         <ul>
@@ -409,21 +409,9 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-12">
-                    <div class="footer__widget">
-                        <h6>Join Our Newsletter Now</h6>
-                        <p>Get E-mail updates about our latest shop and special offers.</p>
-                        <form action="#">
-                            <input type="text" placeholder="Enter your mail">
-                            <button type="submit" class="site-btn">Subscribe</button>
-                        </form>
-                        <div class="footer__widget__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                        </div>
-                    </div>
+                <div class="col-lg-4 col-md-12 offset-lg-1">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3171.3147297485957!2d127.11266131526381!3d37.358729179837304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b59cd63fdd901%3A0x4fbb3a64ca6ee137!2zS1Qg67O47IKs!5e0!3m2!1sko!2skr!4v1643334811200!5m2!1sko!2skr" 
+                    width="380" height="220" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
             <div class="row">
