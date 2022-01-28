@@ -3,12 +3,12 @@
 에이블스쿨 커뮤니티 사이트로, 에이블러를 위한 소통채널 및 자료실
 
 &nbsp;
-### 환경 설치
+### 환경 설치(필수)
 
 채팅 사용을 위한 설치
 
 ```
-docker run -p 6379:6379 -d redis:5(도커의 redis를 사용함)
+docker run -p 6379:6379 -d redis:5(도커의 redis를 사용함 없을시 채팅창 전송이 안됨)
 
 python -m pip install -U channels
 
