@@ -40,7 +40,7 @@ Django
 
 Django Channel을 이용하여 웹소켓 연동
 ```
-도커에 redis port를 구성하여 Django와 연동하여 웹소켓을 사용함
+Docker에 redis port를 구성하여 Django와 연동하여 웹소켓을 사용함
 ```
 
 ## 프로젝트 결과물
