@@ -93,6 +93,7 @@ Docker에 redis port를 구성하여 Django와 연동하여 웹소켓을 사용�
 ![aivle 강의](https://user-images.githubusercontent.com/96154446/151490651-b039e1c6-eadd-4266-b576-c1f0236a687d.PNG)
 
 ### 퀴즈 구현
+- 퀴즈를 시작하기 위해 로그인이 
 - 퀴즈 시작부분
 ![퀴즈1](https://user-images.githubusercontent.com/76045608/151493840-73024c4f-7ebd-4eaf-8f1a-bc502e6c4537.PNG)
 - 퀴즈 메인
