@@ -280,32 +280,34 @@
             <div class="row">
                 <div class="categories__slider owl-carousel">
                     
+                  
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg"  data-setbg="/static/img/6.png">
-                            <h1><a href="{% url 'board:index' %}">　　</a></h1>
+                        <div class="categories__item set-bg" >
+                            <h1><a  href="{% url 'study:studying' %}"><img src="/static/img/PDF.png" width="100" height="150" alt=""></a></h1>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="categories__item set-bg" >
+                            <h1><a href="{% url 'youtubeboard:index'%}"><img src="/static/img/유튜브.png" width="100" height="150" alt=""></a></h1>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="categories__item set-bg">
+                            <h1><a href="{% url 'freeboard:index' %}"><img src="/static/img/자유.png" width="100" height="150" alt=""></a></h1>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="categories__item set-bg" >
+                            <h4><a href="{% url 'board:index' %}"><img src="/static/img/QNA.png" width="100" height="150" alt=""></a></h4>
                         </div>
                     </div>
 
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg"  data-setbg="/static/img/5.png">
-                            <h1><a  href="{% url 'study:studying' %}">　　</a></h1>
+                        <div class="categories__item set-bg"  >
+                            <h1><a target='_blank' href="https://www.instagram.com/p/CZJVQ0UpHyE/?utm_source=ig_web_copy_link"><img src="/static/img/로고송.png" width="100" height="150"></a></h1>
                         </div>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="/static/img/7.png">
-                            <h1><a href="{% url 'freeboard:index' %}">　　</a></h1>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg"  data-setbg="/static/img/4.png">
-                            <h1><a target='_blank' href="https://www.instagram.com/p/CZJVQ0UpHyE/?utm_source=ig_web_copy_link">　　</a></h1>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg"  data-setbg="/static/img/3.png">
-                            <h1><a href="{% url 'youtubeboard:index'%}">　　</a></h1>
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
         </div>
@@ -324,7 +326,7 @@
                 <div class="col-lg-4 col-md-3 col-sm-6">
                     <div class="blog__item">
                         <div class="blog__item__pic">
-                            <img src="/static/img/news1.jpg"alt="">
+                            <h5><a target='_blank' href="https://www.news2day.co.kr/article/20211213500249"><img src="/static/img/news1.jpg"alt=""></a></h5>
                         </div>
                         <div class="blog__item__text">
                             <ul>
@@ -339,7 +341,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="blog__item">
                         <div class="blog__item__pic">
-                            <img src="/static/img/news2.jfif" alt="">
+                            <h5><a target='_blank' href="https://www.yna.co.kr/view/AKR20220124045700017?input=1195m"><img src="/static/img/news2.jfif" alt=""></a></h5>
                         </div>
                         <div class="blog__item__text">
                             <ul>
@@ -354,7 +356,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="blog__item">
                         <div class="blog__item__pic">
-                            <img src="/static/img/news3.jpg" alt="">
+                            <h5><a  target='_blank' href="http://www.ksmnews.co.kr/default/index_view_page.php?idx=362912&part_idx=7"><img src="/static/img/news3.jpg" alt=""></a></h5>
                         </div>
                         <div class="blog__item__text">
                             <ul>
@@ -362,7 +364,7 @@
                                 
                             </ul>
                             <h5><a  target='_blank' href="http://www.ksmnews.co.kr/default/index_view_page.php?idx=362912&part_idx=7">6개 대기업 청년 일자리 18만개 창출</a></h5>
-                            <p>지난 9월 KT를 시작으로 삼성, LG, SK, 포스코, 현대차 등 6개 기업이 참여했고, 이들 6개 기업은 2022년부터 2024년까지 3년 동안 모두 17만9만개의 일자리 창출, 청년을 위한 교육훈련 기회의 제공 등을 약속했다 </p>
+                            <p>지난 9월 KT를 시작으로 삼성, LG, SK, 포스코, 현대차 등 6개 기업이 참여했고, 이들 6개 기업은 2022년부터 2024년까지 3년 동안 모두 17만9만개의 일자리 창출, 청년을 위한 교육훈련 기회의 제공 등을 약속했다. </p>
                         </div>
                     </div>
                 </div>
@@ -380,9 +382,9 @@
                             <a href="./index.html"><img src="/static/img/aivle.PNG" class="mb-3"></a>
                         </div>
                         <ul>
-                            <li>Address: KT</li>
-                            <li>Phone: 100</li>
-                            <li>Email: kt@aivle.kt.co.kr</li>
+                            <li><b>Address:</b> KT</li>
+                            <li><b>Phone:</b> 100</li>
+                            <li><b>Email:</b> kt@aivle.kt.co.kr</li>
                         </ul>
                     </div>
                 </div>
@@ -390,20 +392,20 @@
                     <div class="footer__widget">
                         <h6>Developers Useful Links</h6>
                         <ul>
-                            <li><a href="https://github.com/">GitHub</a></li>
-                            <li><a href="https://stackoverflow.com/">stackoverflow</a></li>
-                            <li><a href="https://www.jumpit.co.kr/">jumpit</a></li>
-                            <li><a href="https://www.acmicpc.net/">BaekJoon</a></li>
-                            <li><a href="https://programmers.co.kr/">programmers</a></li>
-                            <li><a href="https://kr.linkedin.com/">Linkedin</a></li>
+                            <li><a  target='_blank' href="https://github.com/"><img src="/static/vicon/깃허브.PNG">　GitHub</a></li>
+                            <li><a  target='_blank' href="https://stackoverflow.com/"><img src="/static/vicon/스택.PNG">　stackoverflow</a></li>
+                            <li><a  target='_blank' href="https://www.jumpit.co.kr/"><img src="/static/vicon/점프잇.PNG">　jumpit</a></li>
+                            <li><a  target='_blank'href="https://www.acmicpc.net/"><img src="/static/vicon/백준.PNG">　BaekJoon</a></li>
+                            <li><a  target='_blank'href="https://programmers.co.kr/"><img src="/static/vicon/프로그래머스.PNG">　programmers</a></li>
+                            <li><a  target='_blank'href="https://kr.linkedin.com/"><img src="/static/vicon/링크드인.PNG">　Linkedin</a></li>
                         </ul>
                         <ul>
-                            <li><a href="https://apilink.kt.co.kr/">Kt API Link</a></li>
-                            <li><a href="https://developers.naver.com/main/">Naver Developers</a></li>
-                            <li><a href="https://aiopen.etri.re.kr/">ETRI AI API</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Innovation</a></li>
-                            <li><a href="#">Testimonials</a></li>
+                            <li><a  target='_blank'href="https://aifb.kt.co.kr/main"><img src="/static/vicon/AIFB.ico">　AIFB</a></li>
+                            <li><a  target='_blank'href="https://apilink.kt.co.kr/"><img src="/static/vicon/KT.PNG">　KT API Link</a></li>
+                            <li><a  target='_blank'href="https://aiopen.etri.re.kr/"><img src="/static/vicon/AI.PNG">　ETRI AI API</a></li>
+                            <li><a  target='_blank'href="https://developers.naver.com/main/"><img src="/static/vicon/네이버.png">　Naver Developers</a></li>
+                            <li><a  target='_blank'href="https://developers.kakao.com/"><img src="/static/vicon/카카오.PNG">　Kakao Developers</a></li>
+                            <li><a  target='_blank'href="https://developers.google.com/"><img src="/static/vicon/구글.PNG">　Google Developers</a></li>
                         </ul>
                     </div>
                 </div>
@@ -427,10 +429,13 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="footer__copyright">
-                        <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <div style="text-align:center">
+
+                          
   Copyright &copy;<script>document.write(new Date().getFullYear());</script> 충남/충북 1조 
-  
+                            <br>
                         <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
+                        </div>
                     </div>
                 </div>
             </div>
